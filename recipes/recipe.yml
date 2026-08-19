@@ -1,45 +1,45 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
+
 name: starlight-hearth
-# description will be included in the image's metadata
-description: This is my personal OS image.
+description: starlightOS Hearth - Bazzite-based living-room gaming and remote workstation
 
-# the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: latest # You can pin to a specific version of Fedora as well
+base-image: ghcr.io/ublue-os/bazzite-deck
+image-version: stable
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
+  # Starlight-owned files. Keep this first and keep the directory small.
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: /
 
-  - type: dnf
-    repos:
-      copr:
-        - atim/starship
-    install:
-      packages:
-        - micro
-        - starship
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
+  # Default GUI applications. Flathub is used when no repo is specified.
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: true
         scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+        install:
+          - org.jellyfin.JellyfinDesktop
+          - io.mpv.Mpv
+          - org.localsend.localsend_app
+          - io.github.flattool.Warehouse
+          - io.missioncenter.MissionCenter
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+      # Also make a user-scoped Flathub remote available so a normal user can
+      # install personal Flatpaks without turning the OS recipe into an app lockfile.
+      - scope: user
+
+  # Bazzite already contains Tailscale. Starlight requires the daemon to exist
+  # and start automatically for its remote-management policy.
+  - type: systemd
+    system:
+      enabled:
+        - tailscaled.service
+
+  # Native Starlight maintenance commands become part of Bazzite's `ujust`.
+  - type: justfiles
+    validate: true
+
+  # Keep signing last.
+  - type: signing
