@@ -1,6 +1,6 @@
 # VS-002 — Controller Handoff and Hearth Home
 
-**Status:** in implementation
+**Status:** audit-ready; owner acceptance pending
 **Owner:** @akippnn
 **Repositories:** `akippnn/starlight-hearth`, `akippnn/starlight-hearth-shell`
 **Target:** x86_64 AMD/Intel living-room Hearth PC; Pro 3 receiver `2dc8:310b`
@@ -53,8 +53,8 @@ artifact, or manually injected Steam account file can satisfy this path.
 - [x] Session/input adapter unit contracts pass on x86_64 Bazzite.
 - [x] Public shell repository and signed `hearth-v0.1.0-7` release exist.
 - [x] hearthOS pins the exact release URL and release-asset SHA-256.
-- [ ] BlueBuild expansion and complete signed OCI build pass.
-- [ ] Built image proves package replacement, services, profiles, session,
+- [x] BlueBuild expansion and complete signed OCI build pass.
+- [x] Built image proves package replacement, services, profiles, session,
   branding, recovery, and stale-stub absence.
 
 ## Owner audit
