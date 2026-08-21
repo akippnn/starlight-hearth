@@ -51,8 +51,8 @@ artifact, or manually injected Steam account file can satisfy this path.
   compatibility provide/obsolete, permissions, and version checks pass.
 - [x] Composite and profile YAML validate against InputPlumber 0.78.0 schemas.
 - [x] Session/input adapter unit contracts pass on x86_64 Bazzite.
-- [ ] Public shell repository and signed `hearth-v0.1.0` release exist.
-- [ ] hearthOS pins the exact release URL and release-asset SHA-256.
+- [x] Public shell repository and signed `hearth-v0.1.0-7` release exist.
+- [x] hearthOS pins the exact release URL and release-asset SHA-256.
 - [ ] BlueBuild expansion and complete signed OCI build pass.
 - [ ] Built image proves package replacement, services, profiles, session,
   branding, recovery, and stale-stub absence.
