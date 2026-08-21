@@ -2,12 +2,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 name: starlight-hearth
-description: hearthOS - controller-first living-room gaming and desktop operating system
+description: PRE-ALPHA / OWNER TESTING ONLY - DO NOT INSTALL FOR GENERAL USE. VS-001 foundation is proven; VS-002 is audit-ready and awaits owner hardware acceptance.
 
 base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
 platforms:
   - linux/amd64
+labels:
+  org.opencontainers.image.source: https://github.com/akippnn/starlight-hearth
 # BlueBuild appends `-installer` when it templates the CLI copy stage.
 blue-build-tag: v0.9.37
 
