@@ -1,0 +1,25 @@
+{
+  "name": "Hearth Desktop v1",
+  "schema_version": 1,
+  "logical_controller": "xbox-style",
+  "input_owner": "steam-input",
+  "actions": [
+    {"control": "dpad_up", "semantic": "focus-up", "emits": "Up"},
+    {"control": "dpad_down", "semantic": "focus-down", "emits": "Down"},
+    {"control": "dpad_left", "semantic": "focus-left", "emits": "Left"},
+    {"control": "dpad_right", "semantic": "focus-right", "emits": "Right"},
+    {"control": "a", "semantic": "accept", "emits": "Enter"},
+    {"control": "b", "semantic": "back", "emits": "Escape"},
+    {"control": "lb", "semantic": "previous-focus", "emits": "Shift+Tab"},
+    {"control": "rb", "semantic": "next-focus", "emits": "Tab"},
+    {"control": "right_stick", "semantic": "pointer", "emits": "Mouse"},
+    {"control": "rt", "semantic": "primary-click", "emits": "MouseLeft"},
+    {"control": "lt", "semantic": "secondary-click", "emits": "MouseRight"},
+    {"control": "left_stick", "semantic": "scroll", "emits": "MouseWheel"},
+    {"control": "x", "semantic": "space-toggle", "emits": "Space"},
+    {"control": "y", "semantic": "on-screen-keyboard", "emits": "Steam:ShowKeyboard"},
+    {"control": "menu", "semantic": "home", "emits": "F10"},
+    {"control": "view", "semantic": "overview", "emits": "F9"},
+    {"control": "guide", "semantic": "steam-overlay", "emits": "Steam:Guide"}
+  ]
+}

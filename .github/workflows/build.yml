@@ -15,8 +15,19 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
 jobs:
+  contracts:
+    name: Hearth contracts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run local contract tests
+        run: python3 -m unittest discover -s tests -v
+
   bluebuild:
     name: Build Custom Image
+    needs: contracts
     runs-on: ubuntu-latest
     permissions:
       contents: read
