@@ -71,7 +71,7 @@ Out of scope:
 - [x] Initial signed OCI, base digest, package versions, revision, and artifact digest recorded.
 - [x] Regression fixtures for first-user Desktop selection, 4K-TV scaling,
   owner scale precedence, malformed output data, and KDE-only Video Bridge.
-- [ ] Complete and verify the corrected candidate containing the owner-audit fixes.
+- [x] Complete and verify the corrected candidate containing the owner-audit fixes.
 
 ## Owner audit
 

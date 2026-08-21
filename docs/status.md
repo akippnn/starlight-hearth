@@ -15,6 +15,10 @@ repair at `08d2a461e2d5f3baff7eb476566e666837ac5ac1`. The successful candidate
 predates the signing rewrite; its original build revision and signed
 tree-equivalent are recorded in the evidence file.
 
+Owner-audit repairs are implemented at signed runtime revision
+`8ec8260b2093b983bd506a4a3dc9200562af30ff` and built from signed revision
+`1394df153aa0992720d7e2ec32aaadb4c27fa2bf`.
+
 - hearthOS `os-release` identity while preserving the Bazzite/Fedora compatibility fields;
 - niri and DMS installation through Fedora/COPR packaging;
 - `Hearth Desktop`, DMS user-service integration, warm defaults, and frozen controller actions;
@@ -32,14 +36,15 @@ tree-equivalent are recorded in the evidence file.
 | Complete OCI image build | Pass | Run `32495095478` at `16664ab9e824a50afdb80bd530b39f7c8997d0d0`; candidate `sha256:fa97f83ee9daddf9f3dd11302d3510e750aecec1ed31a2b88981ac791fa2eb01` |
 | Built-image package/session inspection | Pass at build time | Final verifier completed; niri `26.04-1.fc44`, DMS `1.5.3-1.fc44`, Xwayland Satellite `0.8.2-1.fc44`; candidate signature verified from x86_64 Bazzite |
 | Initial living-room boot | Blocked candidate | Signed image booted and identity/packages/rollback were verified, but default Desktop selection, a full-screen KDE Video Bridge, and unreadable 1× TV scaling require a replacement image |
-| Owner audit | In progress | Automatic 2× policy passed against the live LG 4K TV; corrected immutable image and controller proof remain required |
+| Corrected OCI image | Pass | Run `32504546454`; signed index `sha256:255c3c2f34b572f8056911c01019efe39d9d30e4986e82619e57a9517153791c`, amd64 manifest `sha256:125baf0c64f1a706adc1150999c303db9cb5c6de9c791140ae92d650a9dd7c3c` |
+| Owner audit | In progress | Automatic 2× policy passed against the live LG 4K TV; replacement boot and controller proof remain required |
 | Owner acceptance | Pending | Owner-only verdict |
 
 The slice is not `audit-ready` and is not `accepted`. The next blocking evidence
-is a complete signed build containing the first-boot Desktop selector,
-living-room scale policy, and KDE Video Bridge exclusion. The owner audit then
-resumes on that replacement candidate with controller compatibility grades and
-repeated Gaming↔Desktop transitions.
+is the owner rebase to the immutable replacement and confirmation that its
+first-boot selector, living-room scale policy, and KDE Video Bridge exclusion
+work without intervention. The audit then continues with controller
+compatibility grades and repeated Gaming↔Desktop transitions.
 
 ## Known limitations
 
