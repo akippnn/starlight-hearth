@@ -8,11 +8,12 @@ This is the single current-status source for `starlight-hearth`.
 
 **VS-001 — Controller-Ready Hearth Desktop** is **active**.
 
-Implemented at image-content revision
-`ed70d875e132f5bf814da8302dea1740d324f7af` and contract-suite revision
-`685a3c4bdd733d51c003a9533577d915a383b37b`, with the first image-build
-repair at `fb18d9f16c17072c1aa54bb2d97c4f92a499692a` and successful candidate
-revision `16664ab9e824a50afdb80bd530b39f7c8997d0d0`:
+Implemented at signed image-content revision
+`65dc24dadca7e41fba76769c0df61f9b89aaaf7b` and signed contract-suite revision
+`9af32118976b64287484c3e525e26f38ac95cfbd`, with the signed image-build
+repair at `08d2a461e2d5f3baff7eb476566e666837ac5ac1`. The successful candidate
+predates the signing rewrite; its original build revision and signed
+tree-equivalent are recorded in the evidence file.
 
 - hearthOS `os-release` identity while preserving the Bazzite/Fedora compatibility fields;
 - niri and DMS installation through Fedora/COPR packaging;
