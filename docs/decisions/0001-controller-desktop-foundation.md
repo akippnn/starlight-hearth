@@ -1,6 +1,6 @@
 # ADR-0001 — Controller desktop foundation
 
-**Status:** accepted
+**Status:** superseded by ADR-0002; never owner-accepted as a delivery outcome
 **Date:** 2026-08-21
 
 ## Decision

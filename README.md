@@ -1,13 +1,15 @@
 # hearthOS
 
 hearthOS is the controller-first living-room PC operating system in the
-Starlight family. It keeps Bazzite Gaming Mode as the console experience and
-adds **Hearth Desktop**, an upstream niri session with DankMaterialShell (DMS)
-as its initial desktop shell.
+Starlight family. Steam Gaming Mode remains the console experience. **Hearth
+Desktop** combines the upstream niri compositor with **Hearth Shell**, the
+Starlight-maintained DMS fork built for televisions, controllers, and keyboard
+navigation.
 
 The repository and OCI image remain `starlight-hearth` and
-`ghcr.io/akippnn/starlight-hearth`. The retired name `starlightOS` is not the
-operating-system identity.
+`ghcr.io/akippnn/starlight-hearth`. Bazzite and Fedora remain the compatible
+base platform; they are not the visible product identity. The discontinued
+`starlightOS` name is retained only in historical material.
 
 ## Starlight family
 
@@ -19,50 +21,69 @@ Starlight
     └── Future independent always-on hardware-management service
 ```
 
-Arcturus may share Ember hardware, but it is independent of both Ember and
-Starlight. This repository contains no Ember or Arcturus placeholder UI, data,
-or protocol.
+Arcturus may share Ember hardware, but it is independent of Starlight. This
+repository contains no Ember or Arcturus placeholder interfaces or data.
 
-## Current delivery slice
+## Delivery state
 
-[VS-001 — Controller-Ready Hearth Desktop](docs/slices/VS-001-controller-ready-hearth-desktop.md)
-is active. It delivers the image/session foundation and preserves recovery;
-controller compatibility and the signed candidate still require the owner
-hardware audit recorded in [the evidence record](docs/evidence/VS-001.md).
+VS-001 proved the signed niri/DMS image, TV scaling, and recovery foundation,
+but its owner audit disproved the controller-ready claim. It is preserved as
+**superseded and not accepted**.
 
-The authoritative project state is [docs/status.md](docs/status.md). Later work
-is sequenced in [docs/roadmap.md](docs/roadmap.md).
+[VS-002 — Controller Handoff and Hearth Home](docs/slices/VS-002-controller-handoff-and-hearth-home.md)
+is active. The current source of truth is [docs/status.md](docs/status.md), with
+the remaining slices in [docs/roadmap.md](docs/roadmap.md).
 
-## Desktop architecture
+## Architecture
 
 ```text
 Steam Gaming Mode
+├── Steam Input owns game semantics
+└── InputPlumber exposes an identity gamepad
         │
         ▼
 Bazzite steamos-manager / steamosctl
         │
         ▼
 Hearth Desktop
-└── niri
-    ├── DMS shell and control surfaces
-    ├── Hearth controller bindings
-    └── Return to Gaming Mode action
+├── niri (unmodified upstream compositor)
+├── Hearth Shell (`starlight-hearth-shell` RPM)
+└── InputPlumber exposes only Hearth keyboard/mouse semantics
 
 KDE Plasma
-└── Retained as a recovery desktop
+└── Recovery desktop retained until a later accepted retirement slice
 ```
 
-niri and DMS are upstream packages. Hearth-owned code currently consists only
-of image configuration, a fail-closed session adapter, user-default bootstrap,
-recovery recipes, tests, and delivery records. A future Hearth Shell will
-replace DMS responsibility by responsibility; it will not replace niri or
-Wayland.
+Input ownership is fail-safe: an unknown session gets a conventional gamepad,
+never simultaneous Steam and Desktop mappings. The state is visible at
+`/run/hearth/input-state.json`.
 
-## Installation
+## Controller contract
 
-Only install an image candidate whose immutable OCI digest is recorded in the
-active [evidence record](docs/evidence/VS-001.md). Do not rebase to `latest`.
-Once a candidate exists, the form of the command is:
+`Hearth Desktop v2` is image-owned and documented in
+[docs/controller-layout.md](docs/controller-layout.md). Its essential actions
+are directional focus, accept/back, focus-group traversal, pointer/click,
+scroll, Home, niri overview, and the Hearth on-screen keyboard. Guide remains
+Steam-owned and is never intercepted by Hearth.
+
+Hearth Shell also supports `h/j/k/l`, `g/G`, and page navigation outside text
+entry fields. Emergency keyboard bindings remain available:
+
+- `Ctrl+Alt+Enter` — open Konsole;
+- `Ctrl+Alt+D` — restart Hearth Shell through `dms.service`;
+- `Ctrl+Alt+Shift+E` — exit niri.
+
+Session recovery commands are:
+
+```bash
+ujust hearth-return-gaming
+ujust hearth-recovery-kde
+```
+
+## Installation and rollback
+
+Install only an immutable signed OCI digest recorded in the active evidence
+record. Do not rebase to a moving tag.
 
 ```bash
 sudo rpm-ostree rebase \
@@ -70,80 +91,33 @@ sudo rpm-ostree rebase \
 systemctl reboot
 ```
 
-The digest is intentionally not filled with a moving tag. Keep the prior atomic
-deployment until the owner audit is complete.
+Keep the previous deployment until the owner audit is complete. Hearth Desktop,
+the controller profiles, and session switching require no network after the
+image is installed.
 
-## Controller setup
+## Configuration ownership and failure behavior
 
-Steam owns the initial desktop mapping. In Steam's controller settings, create
-or select **Hearth Desktop v1** and configure the semantic mapping in
-[docs/controller-layout.md](docs/controller-layout.md). hearthOS does not write
-undocumented per-account Steam files.
+Versioned defaults are installed for new users without overwriting owner-edited
+niri or DMS-compatible configuration. Hearth Shell retains `/usr/bin/dms`,
+`dms.service`, existing IPC names, and configuration paths during the fork
+transition.
 
-From Gaming Mode, use **Power → Switch to Desktop**. The system-wide
-`steamos-manager` configuration selects `Hearth Desktop`; the adapter validates
-the installed `steamosctl` interface before any transition request.
-
-The launcher contains **Return to Gaming Mode**. Recovery commands are also
-available from a terminal:
-
-```bash
-ujust hearth-return-gaming
-ujust hearth-recovery-kde
-```
-
-Emergency keyboard bindings in Hearth Desktop are:
-
-- `Ctrl+Alt+Enter` — open Konsole;
-- `Ctrl+Alt+D` — restart DMS;
-- `Ctrl+Alt+Shift+E` — exit niri.
-
-## Defaults and user ownership
-
-On first Hearth Desktop start, Hearth installs its minimal niri baseline, warm
-theme, and controller bindings only where settings are absent. An existing niri
-configuration is backed up once and extended with one optional Hearth include;
-existing DMS settings are never overwritten. The interactive and potentially
-privileged `dms setup` command is never run automatically.
-
-Hearth also applies a living-room display policy when niri starts. A large 4K
-television uses 2× compositor scaling instead of niri's physical-DPI
-default, which is too small at couch distance; other displays retain niri's
-automatic scale. Any explicit `scale` in the owner or DMS niri configuration
-takes precedence. Create `~/.config/hearth/disable-display-policy` to opt out
-without editing image-owned files.
-
-The warm profile uses charcoal-plum surfaces, cream text, dusty-rose accents,
-amber warnings, sage supporting accents, and soft-red failures.
-
-## Offline and failure behavior
-
-No network is required to start Hearth Desktop, use installed applications, or
-switch sessions after the image and Steam layout are installed. Tailscale keeps
-the existing Bazzite service policy but is not a Desktop dependency.
-
-If DMS fails, niri continues running and the emergency terminal/logout bindings
-remain available. KDE's Xwayland Video Bridge is restricted to KDE so it cannot
-cover the niri shell. Display-policy failures leave niri's existing scale
-unchanged. If the installed Bazzite session interface is absent or no longer
-advertises the requested session, the adapter exits without touching SDDM state
-or guessing at upstream internals. KDE, TTY access, and the previous atomic
-deployment remain recovery paths.
-
-## Scope
-
-VS-001 does not install Decky Loader, Framegen, Hearth Shell, Tauri applications,
-or InputPlumber desktop mappings. It does not remove KDE. Those changes have
-separate future slices so each can be tested and reversed independently.
+If Hearth Shell fails, niri and its emergency bindings remain available. If
+InputPlumber is unavailable or Bazzite's session interface changes, the adapter
+blocks the transition instead of guessing. KDE, TTY, Tailscale, the current
+Gaming session, and the previous atomic deployment remain recovery paths.
 
 ## Development
 
-Run the repository-local contracts with:
+The source repository contains image policy and integration; Hearth Shell is
+released independently from `akippnn/starlight-hearth-shell` and installed by
+an exact RPM URL plus SHA-256, never `latest`.
+
+Run local contracts with:
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-The GitHub workflow runs these contracts before BlueBuild. A complete image
-build and the living-room PC audit are still required before the slice can be
-accepted.
+Linux x86_64 is the only build target. Authoritative package and integration
+checks run through CI and `ssh aki@bazzite`.

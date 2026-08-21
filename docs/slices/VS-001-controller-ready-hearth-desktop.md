@@ -1,11 +1,15 @@
-# VS-001 — Controller-Ready Hearth Desktop
+# VS-001 — Hearth Desktop Foundation
 
-**Status:** active
+**Status:** superseded; owner audit failed the controller-ready outcome; not accepted
 **Owner:** @akippnn
 **Repository:** `akippnn/starlight-hearth`
 **Target:** x86_64 AMD/Intel living-room Hearth PC
 
 ## Observable outcome
+
+Historical outcome only: the signed image booted niri and DMS on the target
+television with scaling and recovery. The controller-ready outcome below was
+not achieved. VS-002 replaces its Steam-Input-only ownership model.
 
 The owner boots a signed hearthOS image into Steam Gaming Mode, switches through
 Steam's Power menu to a warm niri+DMS Hearth Desktop, completes the essential

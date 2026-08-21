@@ -1,37 +1,41 @@
-# Hearth Desktop v1 controller layout
+# Hearth Desktop v2 controller contract
 
-Steam Input is the sole desktop mapping owner in VS-001. Configure this layout
-through Steam's controller UI; hearthOS intentionally does not inject
-account-specific Steam files. InputPlumber must not emit a second desktop map.
+InputPlumber normalizes the physical controller in both sessions.
 
-The machine-readable contract is
-[`tests/fixtures/controller-layout-v1.json`](../tests/fixtures/controller-layout-v1.json).
+- **Gaming Mode:** identity gamepad only; Steam Input owns game semantics.
+- **Hearth Desktop:** Hearth keyboard/mouse profile only; Steam receives no
+  desktop-mappable gamepad.
+- **Unknown state:** gamepad-only fail-safe; Desktop mappings are never emitted.
 
-| Controller input | Steam Input output | Meaning |
+The machine-readable fixture is
+[`tests/fixtures/controller-layout-v2.json`](../tests/fixtures/controller-layout-v2.json).
+
+| Controller input | Desktop output | Meaning |
 |---|---|---|
 | D-pad | Arrow keys | Directional focus |
-| A | Enter | Accept |
-| B | Escape | Back/cancel |
-| LB / RB | Shift+Tab / Tab | Previous/next focus |
-| Right stick | Mouse | Pointer |
-| RT / LT | Left/right mouse button | Primary/secondary click |
-| Left stick | Mouse wheel | Scrolling |
-| X | Space | Toggle or activate focused control |
-| Y | Steam “Show Keyboard” action | On-screen keyboard |
-| Menu | F10 | DMS launcher/Home |
+| A / B | Enter / Escape | Accept / back |
+| LB / RB | Shift+Tab / Tab | Previous / next focus group |
+| Right stick | Mouse motion | Pointer |
+| RT / LT | Left / right mouse button | Primary / secondary click |
+| Left stick | Wheel up/down | Scrolling |
+| X | Space | Toggle focused control |
+| Y | F12 | Hearth on-screen keyboard |
+| Menu | F10 | Hearth Home |
 | View | F9 | niri overview |
-| Guide | Steam-owned Guide action | Steam overlay; never intercepted by Hearth |
+| Guide | Unmapped | Reserved for Steam; never intercepted by Hearth |
 
-F11 is reserved as a keyboard-level diagnostic shortcut for DMS Control Center;
-it is not required by the canonical controller layout.
+Hearth Shell also accepts `h/j/k/l`, `g/G`, Page Up/Page Down, Tab, and
+Shift+Tab outside text-entry fields. Opening a modal establishes one visible
+focus target; closing and reopening restores a deterministic target rather than
+leaving focus on an invisible control.
 
 ## Compatibility grades
 
 - **A — native:** purpose-built semantic controller focus and actions.
 - **B — focus:** complete through keyboard-style focus navigation.
-- **C — pointer-assisted:** complete through pointer emulation and on-screen keyboard.
-- **D — unsupported:** a physical keyboard is required or the primary workflow cannot complete.
+- **C — pointer-assisted:** complete through pointer emulation and Hearth OSK.
+- **D — unsupported:** requires a physical keyboard or cannot complete its
+  primary workflow.
 
-Core shell, settings, power, session-switching, and recovery workflows must be A
-or B. Every default application must have an observed A–C path. Pending is not a
-grade and cannot satisfy the acceptance gate.
+VS-002 core shell, OSK, power, and session transitions must be A or B. The
+default-application matrix moves to VS-004.

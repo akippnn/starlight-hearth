@@ -1,21 +1,19 @@
-# hearthOS controller desktop and shell roadmap
+# hearthOS controller desktop roadmap
 
-The roadmap uses vertical slices: each checkpoint must produce one reversible,
-owner-observable outcome with its own frozen contract and evidence. Details are
-not silently inherited between slices.
+Each checkpoint delivers one reversible, owner-observable outcome with a fresh
+contract and evidence record. Details are not silently inherited.
 
 | Slice | User-visible outcome | Principal gate |
 |---|---|---|
-| **VS-001 — Controller-Ready Hearth Desktop** | Gaming Mode switches to a warm niri+DMS Desktop that can run its essential workflows with a controller and recover through KDE. | Complete signed image, A–C application matrix, repeated session transitions, and owner hardware audit. |
-| **VS-002 — Hearth Gaming Integration** | A controller-friendly setup surface explicitly installs, repairs, or removes tested Decky Loader, CSS Loader, and a Hearth Gaming Mode theme. | Pinned artifact manifest, explicit consent, transactional rollback, and unchanged Gaming Mode when declined. |
-| **VS-003 — Framegen Pilot** | The owner installs pinned Decky-Framegen and completes one named OptiScaler workflow on one named game/hardware combination. | Exact source/artifact digest, per-game consent, and restoration of original game files. |
-| **VS-004 — Hearth Home** | A controller-native Hearth Home launches and focuses applications and returns to Gaming Mode while DMS remains available. | Independent Quickshell/Rust tests, versioned `org.starlight.Hearth.Session1` D-Bus contract, and working DMS fallback. |
-| **VS-005 — Hearth Controls and Settings** | Hearth Shell manages common audio, brightness, network, Bluetooth, display, and power settings without DMS panels. | Real service adapters, degraded-state behavior, controller-only audit, and no privileged shell calls from Quickshell. |
-| **VS-006 — Desktop Shell Parity** | Hearth Shell owns Home, launcher, bar, overview, OSDs, notifications, clipboard access, and session actions. | Explicit parity/failure test for every displaced DMS responsibility; DMS remains selectable. |
-| **VS-007 — Secure Session Lifecycle** | Hearth supplies audited idle, lock, authentication-agent, suspend, logout, and shutdown behavior. | Lock-bypass, crash-recovery, secret-handling, polkit exclusivity, and physical security audits. |
-| **VS-008 — DMS Retirement** | Normal Hearth Desktop starts without DMS while KDE remains recovery. | A DMS-free image passes every prior owner audit and preserves rollback. |
-| **VS-009 — KDE Retirement** | KDE is removed only after Hearth Shell has accepted parity for ordinary and recovery workflows. | Previously accepted DMS-free deployment plus TTY, Tailscale, prior-deployment, and Gaming Mode recovery. |
+| **VS-001 — Hearth Desktop Foundation** | Historical signed niri+DMS image boots on the television with recovery available. Superseded after its controller audit failed. | Preserve evidence and owner findings; never accepted. |
+| **VS-002 — Controller Handoff and Hearth Home** | Gaming Mode switches to a responsive Hearth Desktop where the controller reconnects, opens Home, operates essential controls, enters text, performs session actions, and returns to Gaming Mode. | Deterministic InputPlumber/Steam ownership, pinned Hearth Shell RPM, A/B core surfaces, five transitions, offline and recovery audits. |
+| **VS-003 — Hearth Shell Controller Coverage** | Settings, notifications, clipboard, launcher results, overview, lock surface, polkit prompts, and retained DMS surfaces are controller/keyboard navigable. | Complete focus graph, no focus traps, responsive TV layouts, visible focus, controller-only audit. |
+| **VS-004 — Controller-Friendly Applications** | Every default GUI application has an A–C workflow through focus, pointer assistance, and Hearth OSK. | Firefox, Dolphin, Jellyfin, mpv, LocalSend, Warehouse, Mission Center, and recovery tools contain no D result. |
+| **VS-005 — Hearth Gaming Integration** | A controller-friendly setup surface installs, repairs, or removes pinned Decky Loader, CSS Loader, and the Hearth Gaming theme. | Exact manifest/digests, explicit consent, rollback, and unchanged Gaming Mode when declined. |
+| **VS-006 — Upstream Framegen Pilot** | The owner installs pinned upstream Decky-Framegen v0.17 and patches/unpatches Cyberpunk 2077 without copying commands. | Commit `96eb17b…`, ZIP SHA-256 `3300b617e3d979b483d03f995c75c829d6d54beaa4ac8dfae300c2560e4fc60f`, external preflight backup, restored files/options, owner verdict. |
+| **VS-007 — Hearth Framegen Hardening** | Conditional transactional, hash-verified patch recovery and optional Steam Properties integration. | Created only if VS-006 safety or UX is rejected; then fork v0.17 as `akippnn/decky-framegen`. |
+| **VS-008 — Secure Session Lifecycle** | Locking, idle handling, authentication, suspend, logout, and shutdown are controller-safe and security-audited. | Lock bypass, crash recovery, secret handling, polkit exclusivity, physical audit. |
+| **VS-009 — KDE Retirement** | KDE is removed only after Hearth Shell and every recovery path are owner-accepted. | TTY, Tailscale, previous deployment, Gaming Mode, and shell recovery remain proven. |
 
-Tauri remains deferred until a conventional windowed Hearth application has a
-specific need for a second UI stack. Ember, NVIDIA images, telemetry, cloud
-APIs, and automatic self-update are outside this roadmap.
+There is no DMS-retirement slice: Hearth Shell is the maintained DMS-derived
+product. Ember and NVIDIA remain independent future work.

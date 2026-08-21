@@ -1,8 +1,8 @@
-# VS-001 controller compatibility matrix
+# VS-004 application compatibility matrix
 
-Status: owner hardware evidence pending
+Status: deferred; not an acceptance gate for VS-002
 
-Record grades only after exercising the exact candidate image with the owner's
+Record grades only when VS-004 is active and after exercising its exact candidate with the owner's
 2.4 GHz receiver and Xbox-style logical mapping. A row needs a grade, observed
 workflow, candidate digest, and notes before it counts as evidence.
 

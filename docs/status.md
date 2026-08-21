@@ -6,51 +6,48 @@ This is the single current-status source for `starlight-hearth`.
 
 ## Active slice
 
-**VS-001 — Controller-Ready Hearth Desktop** is **active**.
+**VS-002 — Controller Handoff and Hearth Home** is **in implementation**.
 
-Implemented at signed image-content revision
-`65dc24dadca7e41fba76769c0df61f9b89aaaf7b` and signed contract-suite revision
-`9af32118976b64287484c3e525e26f38ac95cfbd`, with the signed image-build
-repair at `08d2a461e2d5f3baff7eb476566e666837ac5ac1`. The successful candidate
-predates the signing rewrite; its original build revision and signed
-tree-equivalent are recorded in the evidence file.
+VS-001 is **superseded and not accepted**. It proved signed image boot, niri,
+upstream DMS, television scaling, hearthOS identity, KDE/TTY/atomic recovery,
+and repeated build signing. Its owner audit disproved the claimed
+controller-ready outcome: navigation depended on Steam's partial desktop map,
+DMS was primarily pointer-oriented, and controller reconnection did not restore
+deterministic Desktop ownership. The original evidence remains in
+[`evidence/VS-001.md`](evidence/VS-001.md).
 
-Owner-audit repairs are implemented at signed runtime revision
-`8ec8260b2093b983bd506a4a3dc9200562af30ff` and built from signed revision
-`1394df153aa0992720d7e2ec32aaadb4c27fa2bf`.
+VS-002 replaces the failed ownership model with:
 
-- hearthOS `os-release` identity while preserving the Bazzite/Fedora compatibility fields;
-- niri and DMS installation through Fedora/COPR packaging;
-- `Hearth Desktop`, DMS user-service integration, warm defaults, and frozen controller actions;
-- fail-closed `steamosctl` session switching and KDE/Gaming Mode recovery entrypoints;
-- removal of the stale `starlight` stub and replacement of the broken justfiles state;
-- local adapter, bootstrap, image-contract, and controller-fixture tests;
-- a final in-image verifier for identity, packages, session wiring, Tailscale policy, and stale-stub absence.
+- Hearth Shell, an upstream-tracking DMS fork released as the exact
+  `starlight-hearth-shell` RPM while retaining compatibility interfaces;
+- InputPlumber-owned session profiles for the Pro 3 receiver `2dc8:310b`;
+- a fail-safe adapter that prevents Steam Input and Desktop mappings from being
+  active simultaneously and records state under `/run/hearth`;
+- controller-native Home, power, on-screen keyboard, TV layouts, focus rings,
+  vim navigation, and top-right notifications;
+- complete visible hearthOS identity while preserving Bazzite/Fedora
+  compatibility and provenance fields.
 
 ## Verification state
 
 | Gate | State | Evidence |
 |---|---|---|
-| Repository contract tests | Pass | 22 tests on macOS and x86_64 Bazzite on 2026-08-22 |
-| BlueBuild schema expansion | Pass | BlueBuild 0.9.37 on x86_64; corrected Containerfile SHA-256 `6337f4afccb96e42f6b855189a0f67cff1ec17a62637684be64ef58091ebbfe6` |
-| Complete OCI image build | Pass | Run `32495095478` at `16664ab9e824a50afdb80bd530b39f7c8997d0d0`; candidate `sha256:fa97f83ee9daddf9f3dd11302d3510e750aecec1ed31a2b88981ac791fa2eb01` |
-| Built-image package/session inspection | Pass at build time | Final verifier completed; niri `26.04-1.fc44`, DMS `1.5.3-1.fc44`, Xwayland Satellite `0.8.2-1.fc44`; candidate signature verified from x86_64 Bazzite |
-| Initial living-room boot | Blocked candidate | Signed image booted and identity/packages/rollback were verified, but default Desktop selection, a full-screen KDE Video Bridge, and unreadable 1× TV scaling require a replacement image |
-| Corrected OCI image | Pass | Run `32504546454`; signed index `sha256:255c3c2f34b572f8056911c01019efe39d9d30e4986e82619e57a9517153791c`, amd64 manifest `sha256:125baf0c64f1a706adc1150999c303db9cb5c6de9c791140ae92d650a9dd7c3c` |
-| Owner audit | In progress | Automatic 2× policy passed against the live LG 4K TV; replacement boot and controller proof remain required |
-| Owner acceptance | Pending | Owner-only verdict |
+| Frozen DMS fork baseline | Pass | Upstream `20aafebd87f0340c24b585180ab36339d6b154ad`; submodule `fbbdddc47b5564dcf67aa05bd7bf1d3af8f5aad5` |
+| Shell Go and Hearth tests | Pass locally | Fedora 44 x86_64 on `aki@bazzite` |
+| Nested niri/Quickshell smoke | Pass locally | Shell remained alive for the bounded run; one discovered QML import defect was repaired |
+| Shell RPM build/install | Pass locally | Fedora 44 x86_64 package replacement, ownership, embedded QML, and non-root version checks |
+| InputPlumber schema validation | Pass locally | Installed Bazzite 0.78.0 schemas validate composite and both profiles |
+| hearthOS repository contracts | Pass locally | x86_64 Bazzite; current count recorded in VS-002 evidence |
+| Public shell repository/release | Pending | Requires one confirmed GitHub web creation, then plain Git |
+| Pinned shell RPM in image | Pending | Waiting for published asset URL and digest; `latest` is forbidden |
+| Complete signed OCI build | Pending | Required before audit-ready |
+| Owner controller audit | Pending | Owner-only hardware proof and verdict |
 
-The slice is not `audit-ready` and is not `accepted`. The next blocking evidence
-is the owner rebase to the immutable replacement and confirmation that its
-first-boot selector, living-room scale policy, and KDE Video Bridge exclusion
-work without intervention. The audit then continues with controller
-compatibility grades and repeated Gaming↔Desktop transitions.
+No agent may mark VS-002 accepted. The highest agent-controlled state is
+`audit-ready` after every non-owner gate and a signed candidate are complete.
 
-## Known limitations
+## Scope boundaries
 
-- Steam Input layout creation remains an explicit owner step in Steam's UI.
-- Controller grades are intentionally unassigned until tested on the target receiver/controller.
-- The first candidate is superseded for audit purposes by three owner-visible Desktop defects; it remains valid rollback evidence, not an acceptable VS-001 candidate.
-- The exact DMS/niri NEVRAs and initial candidate OCI digest are recorded; controller grades remain unproven.
-- DMS is a bridge; there is no Hearth Shell runtime yet.
-- Decky Loader and Framegen are not part of this slice.
+Decky, CSS Loader, Framegen, general application coverage, secure lock/session
+lifecycle, Ember, NVIDIA support, telemetry, cloud services, Tauri, CLI
+diagnostics, and KDE removal are outside VS-002.
