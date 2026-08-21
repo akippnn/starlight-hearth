@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+config_home="${XDG_CONFIG_HOME:-${HOME:?HOME is required}/.config}"
+runtime_dir="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+niri="${HEARTH_NIRI:-/usr/bin/niri}"
+jq_bin="${HEARTH_JQ:-/usr/bin/jq}"
+
+warn() {
+  echo "hearthOS display policy: $*" >&2
+}
+
+# Explicit owner or DMS output scales always win over Hearth defaults.
+for config in \
+  "$config_home/niri/config.kdl" \
+  "$config_home/niri/dms/outputs.kdl"; do
+  if [[ -r "$config" ]] && grep -Eq '^[[:space:]]*scale([[:space:]]|$)' "$config"; then
+    exit 0
+  fi
+done
+
+if [[ -e "$config_home/hearth/disable-display-policy" ]]; then
+  exit 0
+fi
+
+if [[ ! -x "$niri" || ! -x "$jq_bin" ]]; then
+  warn "niri or jq is unavailable; leaving compositor scaling unchanged"
+  exit 0
+fi
+
+if [[ -z "${NIRI_SOCKET:-}" ]]; then
+  shopt -s nullglob
+  sockets=("$runtime_dir"/niri.*.sock)
+  shopt -u nullglob
+  if (( ${#sockets[@]} != 1 )); then
+    warn "expected one niri IPC socket, found ${#sockets[@]}; leaving scaling unchanged"
+    exit 0
+  fi
+  export NIRI_SOCKET="${sockets[0]}"
+fi
+
+if ! outputs="$($niri msg -j outputs 2>/dev/null)"; then
+  warn "cannot query niri outputs; leaving scaling unchanged"
+  exit 0
+fi
+
+if ! rows="$($jq_bin -r '
+  to_entries[]
+  | . as $entry
+  | $entry.value.modes[$entry.value.current_mode] as $mode
+  | [
+      $entry.key,
+      ($mode.width // 0),
+      ($mode.height // 0),
+      ($entry.value.physical_size[0] // 0)
+    ]
+  | @tsv
+' <<<"$outputs" 2>/dev/null)"; then
+  warn "cannot parse niri outputs; leaving scaling unchanged"
+  exit 0
+fi
+
+while IFS=$'\t' read -r output width height physical_width; do
+  [[ -n "$output" ]] || continue
+
+  # Start with niri's DPI-based choice. Large 4K televisions need a Hearth
+  # living-room override because their low physical DPI otherwise selects 1x,
+  # which is unreadable at couch distance.
+  scale="auto"
+  if (( width >= 3840 && height >= 2160 && physical_width >= 1000 )); then
+    scale="2"
+  fi
+
+  if ! "$niri" msg output "$output" scale "$scale" >/dev/null; then
+    warn "could not apply scale $scale to $output"
+  fi
+done <<<"$rows"

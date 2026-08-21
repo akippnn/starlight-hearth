@@ -16,6 +16,11 @@ required_files=(
   /usr/libexec/hearth-session
   /usr/libexec/hearth-session-bootstrap
   /usr/libexec/hearth-session-mode
+  /usr/libexec/hearth-default-desktop-bootstrap
+  /usr/libexec/hearth-display-policy
+  /usr/lib/systemd/user/hearth-default-desktop.service
+  /usr/lib/systemd/user/hearth-display-policy.service
+  /etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
   /usr/share/applications/hearth-return-gaming.desktop
   /usr/share/hearth/dms/settings.json
   /usr/share/hearth/niri/config.kdl
@@ -35,7 +40,9 @@ done
 for path in \
   /usr/libexec/hearth-session \
   /usr/libexec/hearth-session-bootstrap \
-  /usr/libexec/hearth-session-mode; do
+  /usr/libexec/hearth-session-mode \
+  /usr/libexec/hearth-default-desktop-bootstrap \
+  /usr/libexec/hearth-display-policy; do
   [[ -x "$path" ]] || {
     echo "hearthOS final image contract is not executable: $path" >&2
     exit 1
@@ -43,6 +50,9 @@ for path in \
 done
 
 [[ "$(readlink /usr/lib/systemd/user/niri.service.wants/dms.service)" == "../dms.service" ]]
+[[ "$(readlink /usr/lib/systemd/user/niri.service.wants/hearth-display-policy.service)" == "../hearth-display-policy.service" ]]
+[[ "$(readlink /usr/lib/systemd/user/default.target.wants/hearth-default-desktop.service)" == "../hearth-default-desktop.service" ]]
+grep -Fqx 'OnlyShowIn=KDE;' /etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
 grep -Fqx 'desktop = "hearth.desktop"' /usr/share/steamos-manager/user.d/config.toml
 grep -Fqx 'Name=Hearth Desktop' /usr/share/wayland-sessions/hearth.desktop
 [[ ! -e /usr/bin/starlight ]]

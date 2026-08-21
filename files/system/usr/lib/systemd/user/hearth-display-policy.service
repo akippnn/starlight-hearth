@@ -1,0 +1,9 @@
+[Unit]
+Description=Hearth living-room display scaling policy
+After=niri.service
+PartOf=niri.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/hearth-display-policy
+RemainAfterExit=yes

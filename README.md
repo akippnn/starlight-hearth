@@ -106,6 +106,13 @@ configuration is backed up once and extended with one optional Hearth include;
 existing DMS settings are never overwritten. The interactive and potentially
 privileged `dms setup` command is never run automatically.
 
+Hearth also applies a living-room display policy when niri starts. A large 4K
+television uses 2× compositor scaling instead of niri's physical-DPI
+default, which is too small at couch distance; other displays retain niri's
+automatic scale. Any explicit `scale` in the owner or DMS niri configuration
+takes precedence. Create `~/.config/hearth/disable-display-policy` to opt out
+without editing image-owned files.
+
 The warm profile uses charcoal-plum surfaces, cream text, dusty-rose accents,
 amber warnings, sage supporting accents, and soft-red failures.
 
@@ -116,10 +123,12 @@ switch sessions after the image and Steam layout are installed. Tailscale keeps
 the existing Bazzite service policy but is not a Desktop dependency.
 
 If DMS fails, niri continues running and the emergency terminal/logout bindings
-remain available. If the installed Bazzite session interface is absent or no
-longer advertises the requested session, the adapter exits without touching
-SDDM state or guessing at upstream internals. KDE, TTY access, and the previous
-atomic deployment remain recovery paths.
+remain available. KDE's Xwayland Video Bridge is restricted to KDE so it cannot
+cover the niri shell. Display-policy failures leave niri's existing scale
+unchanged. If the installed Bazzite session interface is absent or no longer
+advertises the requested session, the adapter exits without touching SDDM state
+or guessing at upstream internals. KDE, TTY access, and the previous atomic
+deployment remain recovery paths.
 
 ## Scope
 

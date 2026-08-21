@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+state_home="${XDG_STATE_HOME:-${HOME:?HOME is required}/.local/state}"
+session_mode="${HEARTH_SESSION_MODE:-/usr/libexec/hearth-session-mode}"
+marker="$state_home/hearth/default-desktop-v1"
+
+if [[ -f "$marker" ]]; then
+  exit 0
+fi
+
+"$session_mode" set-default-desktop
+install -d -m 0700 "$state_home/hearth"
+touch "$marker"
+chmod 0600 "$marker"

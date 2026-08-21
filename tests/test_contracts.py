@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SYSTEM = ROOT / "files/system"
 ADAPTER = SYSTEM / "usr/libexec/hearth-session-mode"
 BOOTSTRAP = SYSTEM / "usr/libexec/hearth-session-bootstrap"
+DEFAULT_DESKTOP = SYSTEM / "usr/libexec/hearth-default-desktop-bootstrap"
+DISPLAY_POLICY = SYSTEM / "usr/libexec/hearth-display-policy"
 
 
 def run(command, *, env=None):
@@ -221,6 +223,148 @@ class BootstrapTests(unittest.TestCase):
         self.assertIn("/usr/share/hearth/niri/hearth.kdl", niri.read_text(encoding="utf-8"))
 
 
+class DefaultDesktopBootstrapTests(unittest.TestCase):
+    def setUp(self):
+        self.tempdir = tempfile.TemporaryDirectory()
+        self.root = Path(self.tempdir.name)
+        self.state = self.root / "state"
+        self.log = self.root / "calls.log"
+        self.mode = self.root / "hearth-session-mode"
+        self.mode.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env bash
+                set -euo pipefail
+                if [[ "${HEARTH_STUB_FAIL:-0}" == "1" ]]; then
+                  exit 2
+                fi
+                printf '%s\n' "$*" >> "${HEARTH_STUB_LOG:?}"
+                """
+            ),
+            encoding="utf-8",
+        )
+        self.mode.chmod(0o755)
+        self.env = os.environ.copy()
+        self.env.update(
+            {
+                "HOME": str(self.root),
+                "XDG_STATE_HOME": str(self.state),
+                "HEARTH_SESSION_MODE": str(self.mode),
+                "HEARTH_STUB_LOG": str(self.log),
+            }
+        )
+
+    def tearDown(self):
+        self.tempdir.cleanup()
+
+    def test_selects_hearth_once_and_records_marker(self):
+        first = run([str(DEFAULT_DESKTOP)], env=self.env)
+        second = run([str(DEFAULT_DESKTOP)], env=self.env)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertEqual(self.log.read_text(encoding="utf-8").splitlines(), ["set-default-desktop"])
+        marker = self.state / "hearth/default-desktop-v1"
+        self.assertTrue(marker.is_file())
+        self.assertEqual(stat.S_IMODE(marker.stat().st_mode), 0o600)
+
+    def test_failure_does_not_record_success(self):
+        self.env["HEARTH_STUB_FAIL"] = "1"
+        result = run([str(DEFAULT_DESKTOP)], env=self.env)
+        self.assertEqual(result.returncode, 2)
+        self.assertFalse((self.state / "hearth/default-desktop-v1").exists())
+
+
+class DisplayPolicyTests(unittest.TestCase):
+    def setUp(self):
+        self.tempdir = tempfile.TemporaryDirectory()
+        self.root = Path(self.tempdir.name)
+        self.config = self.root / "config"
+        self.runtime = self.root / "runtime"
+        self.config.mkdir()
+        self.runtime.mkdir()
+        self.outputs = self.root / "outputs.json"
+        self.log = self.root / "calls.log"
+        self.niri = self.root / "niri"
+        self.niri.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env bash
+                set -euo pipefail
+                if [[ "$*" == "msg -j outputs" ]]; then
+                  cat "${HEARTH_OUTPUTS:?}"
+                elif [[ "${1:-}" == "msg" && "${2:-}" == "output" ]]; then
+                  printf '%s\n' "$*" >> "${HEARTH_STUB_LOG:?}"
+                else
+                  exit 2
+                fi
+                """
+            ),
+            encoding="utf-8",
+        )
+        self.niri.chmod(0o755)
+        self.env = os.environ.copy()
+        self.env.update(
+            {
+                "HOME": str(self.root),
+                "XDG_CONFIG_HOME": str(self.config),
+                "XDG_RUNTIME_DIR": str(self.runtime),
+                "NIRI_SOCKET": str(self.runtime / "niri.test.sock"),
+                "HEARTH_NIRI": str(self.niri),
+                "HEARTH_JQ": "/usr/bin/jq",
+                "HEARTH_OUTPUTS": str(self.outputs),
+                "HEARTH_STUB_LOG": str(self.log),
+            }
+        )
+
+    def tearDown(self):
+        self.tempdir.cleanup()
+
+    def write_outputs(self, *, width, height, physical_width):
+        self.outputs.write_text(
+            json.dumps(
+                {
+                    "HDMI-A-1": {
+                        "physical_size": [physical_width, 900],
+                        "modes": [{"width": width, "height": height}],
+                        "current_mode": 0,
+                    }
+                }
+            ),
+            encoding="utf-8",
+        )
+
+    def calls(self):
+        return self.log.read_text(encoding="utf-8").splitlines() if self.log.exists() else []
+
+    def test_large_4k_tv_uses_living_room_scale(self):
+        self.write_outputs(width=3840, height=2160, physical_width=1600)
+        result = run([str(DISPLAY_POLICY)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.calls(), ["msg output HDMI-A-1 scale 2"])
+
+    def test_non_tv_output_delegates_to_niri_auto(self):
+        self.write_outputs(width=3840, height=2160, physical_width=600)
+        result = run([str(DISPLAY_POLICY)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.calls(), ["msg output HDMI-A-1 scale auto"])
+
+    def test_explicit_owner_scale_disables_policy(self):
+        niri_config = self.config / "niri/config.kdl"
+        niri_config.parent.mkdir()
+        niri_config.write_text('output "HDMI-A-1" {\n    scale 1.5\n}\n', encoding="utf-8")
+        self.write_outputs(width=3840, height=2160, physical_width=1600)
+        result = run([str(DISPLAY_POLICY)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.calls(), [])
+
+    def test_malformed_output_is_degraded_not_fatal(self):
+        self.outputs.write_text("not json\n", encoding="utf-8")
+        result = run([str(DISPLAY_POLICY)], env=self.env)
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("cannot parse niri outputs", result.stderr)
+        self.assertEqual(self.calls(), [])
+
+
 class ImageContractTests(unittest.TestCase):
     def test_recipe_keeps_compatibility_and_signing_order(self):
         recipe = (ROOT / "recipes/recipe.yml").read_text(encoding="utf-8")
@@ -279,6 +423,8 @@ class ImageContractTests(unittest.TestCase):
         scripts = [
             ROOT / "files/scripts/configure-hearth-session.sh",
             ROOT / "files/scripts/verify-hearth-image.sh",
+            DEFAULT_DESKTOP,
+            DISPLAY_POLICY,
             SYSTEM / "usr/libexec/hearth-session",
             BOOTSTRAP,
             ADAPTER,
@@ -295,6 +441,19 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("/usr/bin/niri validate", image_setup)
         self.assertIn("rpm -q dms", image_setup)
         self.assertNotIn("/usr/bin/dms version", image_setup)
+        self.assertIn("hearth-display-policy.service", image_setup)
+        self.assertIn("hearth-default-desktop.service", image_setup)
+
+        bridge = (SYSTEM / "etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("OnlyShowIn=KDE;", bridge)
+
+        display_unit = (SYSTEM / "usr/lib/systemd/user/hearth-display-policy.service").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("After=niri.service", display_unit)
+        self.assertIn("ExecStart=/usr/libexec/hearth-display-policy", display_unit)
 
         final_check = (ROOT / "files/scripts/verify-hearth-image.sh").read_text(encoding="utf-8")
         self.assertIn('[[ "${NAME:-}" == "hearthOS" ]]', final_check)

@@ -1,0 +1,7 @@
+[Unit]
+Description=Select Hearth Desktop for the first desktop-mode transition
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/hearth-default-desktop-bootstrap
+RemainAfterExit=yes

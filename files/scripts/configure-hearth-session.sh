@@ -6,7 +6,11 @@ required=(
   /usr/bin/niri
   /usr/bin/niri-session
   /usr/lib/systemd/user/dms.service
+  /usr/lib/systemd/user/hearth-default-desktop.service
+  /usr/lib/systemd/user/hearth-display-policy.service
   /usr/lib/systemd/user/niri.service
+  /usr/libexec/hearth-default-desktop-bootstrap
+  /usr/libexec/hearth-display-policy
   /usr/libexec/hearth-session
   /usr/libexec/hearth-session-bootstrap
   /usr/libexec/hearth-session-mode
@@ -22,8 +26,16 @@ done
 
 install -d -m 0755 /usr/lib/systemd/user/niri.service.wants
 ln -sfn ../dms.service /usr/lib/systemd/user/niri.service.wants/dms.service
+ln -sfn ../hearth-display-policy.service \
+  /usr/lib/systemd/user/niri.service.wants/hearth-display-policy.service
+
+install -d -m 0755 /usr/lib/systemd/user/default.target.wants
+ln -sfn ../hearth-default-desktop.service \
+  /usr/lib/systemd/user/default.target.wants/hearth-default-desktop.service
 
 chmod 0755 \
+  /usr/libexec/hearth-default-desktop-bootstrap \
+  /usr/libexec/hearth-display-policy \
   /usr/libexec/hearth-session \
   /usr/libexec/hearth-session-bootstrap \
   /usr/libexec/hearth-session-mode
