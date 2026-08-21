@@ -2,17 +2,40 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 name: starlight-hearth
-description: starlightOS Hearth - Bazzite-based living-room gaming and remote workstation
+description: hearthOS - controller-first living-room gaming and desktop operating system
 
 base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
+platforms:
+  - linux/amd64
+# BlueBuild appends `-installer` when it templates the CLI copy stage.
+blue-build-tag: v0.9.37
 
 modules:
-  # Starlight-owned files. Keep this first and keep the directory small.
+  # DMS's official Fedora packaging path supplies the initial shell. niri stays
+  # an unmodified Fedora package and xwayland-satellite covers legacy X11 apps.
+  - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - avengemedia/dms
+    install:
+      packages:
+        - dms
+        - niri
+        - xwayland-satellite
+
+  # Starlight-owned session contracts and defaults.
   - type: files
     files:
       - source: system
         destination: /
+
+  # Create package-owned integration links and fail the image build if its
+  # required executables or session files are absent.
+  - type: script
+    scripts:
+      - configure-hearth-session.sh
 
   # Default GUI applications. Flathub is used when no repo is specified.
   - type: default-flatpaks
@@ -40,6 +63,21 @@ modules:
   # Native Starlight maintenance commands become part of Bazzite's `ujust`.
   - type: justfiles
     validate: true
+
+  # Keep Bazzite/Fedora ID, ID_LIKE, and VERSION_ID for compatibility.
+  - type: os-release
+    properties:
+      NAME: hearthOS
+      PRETTY_NAME: hearthOS
+      VARIANT: Hearth
+      VARIANT_ID: hearth
+
+  # Verify the final filesystem after identity customization. This emits exact
+  # package versions into the build log and turns missing recovery contracts
+  # into a build failure rather than a hardware-audit surprise.
+  - type: script
+    scripts:
+      - verify-hearth-image.sh
 
   # Keep signing last.
   - type: signing

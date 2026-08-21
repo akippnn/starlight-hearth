@@ -1,0 +1,5 @@
+# steamos-manager's packaged user-session configuration drop-in. Keep login
+# mode owned by Bazzite; this selects the Desktop session launched by Steam's
+# Power menu.
+[session]
+desktop = "hearth.desktop"

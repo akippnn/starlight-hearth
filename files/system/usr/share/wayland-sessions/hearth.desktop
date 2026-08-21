@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Hearth Desktop
+Comment=Controller-ready hearthOS desktop
+Exec=/usr/libexec/hearth-session
+Type=Application
+DesktopNames=niri;hearth

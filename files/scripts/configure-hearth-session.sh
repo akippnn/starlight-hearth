@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+required=(
+  /usr/bin/dms
+  /usr/bin/niri
+  /usr/bin/niri-session
+  /usr/lib/systemd/user/dms.service
+  /usr/lib/systemd/user/niri.service
+  /usr/libexec/hearth-session
+  /usr/libexec/hearth-session-bootstrap
+  /usr/libexec/hearth-session-mode
+  /usr/share/wayland-sessions/hearth.desktop
+)
+
+for path in "${required[@]}"; do
+  if [[ ! -e "$path" ]]; then
+    echo "hearthOS image contract missing: $path" >&2
+    exit 1
+  fi
+done
+
+install -d -m 0755 /usr/lib/systemd/user/niri.service.wants
+ln -sfn ../dms.service /usr/lib/systemd/user/niri.service.wants/dms.service
+
+chmod 0755 \
+  /usr/libexec/hearth-session \
+  /usr/libexec/hearth-session-bootstrap \
+  /usr/libexec/hearth-session-mode
+
+validation_root="$(mktemp -d /tmp/hearth-niri-validate.XXXXXX)"
+trap 'rm -rf "$validation_root"' EXIT
+install -d -m 0700 "$validation_root/niri"
+install -m 0600 /usr/share/hearth/niri/config.kdl "$validation_root/niri/config.kdl"
+XDG_CONFIG_HOME="$validation_root" /usr/bin/niri validate
+
+/usr/bin/dms version

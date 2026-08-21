@@ -1,0 +1,23 @@
+// Hearth Desktop v1 semantic keys. Steam Input maps controller actions to
+// these keys without writing account-specific Steam configuration files.
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+binds {
+    F9 repeat=false hotkey-overlay-title="Controller: Overview" { toggle-overview; }
+    F10 repeat=false hotkey-overlay-title="Controller: Home" {
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
+    }
+    F11 repeat=false hotkey-overlay-title="Controller: Control Center" {
+        spawn "dms" "ipc" "call" "control-center" "toggle";
+    }
+
+    // Emergency keyboard paths remain available when DMS is unhealthy.
+    Ctrl+Alt+Return hotkey-overlay-title="Emergency Terminal" { spawn "konsole"; }
+    Ctrl+Alt+D hotkey-overlay-title="Restart DMS" {
+        spawn "systemctl" "--user" "restart" "dms.service";
+    }
+    Ctrl+Alt+Shift+E hotkey-overlay-title="Exit Hearth Desktop" { quit; }
+}

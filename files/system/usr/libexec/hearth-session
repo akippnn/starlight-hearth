@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+/usr/libexec/hearth-session-bootstrap
+exec /usr/bin/niri-session

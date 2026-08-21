@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ctl="${HEARTH_STEAMOSCTL:-/usr/bin/steamosctl}"
+sessions_dir="${HEARTH_WAYLAND_SESSIONS_DIR:-/usr/share/wayland-sessions}"
+
+fail_contract() {
+  echo "hearthOS session adapter: $*" >&2
+  exit 2
+}
+
+require_commands() {
+  [[ -x "$ctl" ]] || fail_contract "steamosctl is unavailable at $ctl"
+
+  local help
+  if ! help="$($ctl --help 2>&1)"; then
+    fail_contract "steamosctl help failed; refusing to alter session state"
+  fi
+
+  local command
+  for command in "$@"; do
+    grep -Fq "$command" <<<"$help" || \
+      fail_contract "unsupported steamosctl contract (missing $command)"
+  done
+}
+
+require_session() {
+  local session="$1"
+  [[ -r "$sessions_dir/$session" ]] || \
+    fail_contract "session file is unavailable: $session"
+
+  local valid
+  if ! valid="$($ctl get-valid-desktop-sessions 2>&1)"; then
+    fail_contract "cannot query valid desktop sessions"
+  fi
+  grep -Eq "(^|[[:space:]])${session//./\\.}($|[[:space:]])" <<<"$valid" || \
+    fail_contract "steamos-manager does not advertise $session"
+}
+
+restore_hearth_desktop_if_available() {
+  local session="hearth.desktop"
+  if [[ ! -r "$sessions_dir/$session" ]]; then
+    echo "hearthOS session adapter: warning: cannot restore missing $session; continuing to Gaming Mode" >&2
+    return 0
+  fi
+
+  local valid
+  if ! valid="$($ctl get-valid-desktop-sessions 2>&1)"; then
+    echo "hearthOS session adapter: warning: cannot query Desktop sessions; continuing to Gaming Mode" >&2
+    return 0
+  fi
+  if ! grep -Eq "(^|[[:space:]])${session//./\\.}($|[[:space:]])" <<<"$valid"; then
+    echo "hearthOS session adapter: warning: $session is not advertised; continuing to Gaming Mode" >&2
+    return 0
+  fi
+  if ! "$ctl" set-default-desktop-session "$session"; then
+    echo "hearthOS session adapter: warning: could not restore $session; continuing to Gaming Mode" >&2
+  fi
+}
+
+mode="${1:-}"
+case "$mode" in
+  desktop)
+    require_commands get-valid-desktop-sessions set-default-desktop-session switch-to-desktop-mode
+    require_session hearth.desktop
+    "$ctl" set-default-desktop-session hearth.desktop
+    "$ctl" switch-to-desktop-mode
+    ;;
+  gaming)
+    require_commands get-valid-desktop-sessions set-default-desktop-session set-default-login-mode switch-to-game-mode
+    restore_hearth_desktop_if_available
+    "$ctl" set-default-login-mode game
+    "$ctl" switch-to-game-mode
+    ;;
+  recovery-kde)
+    require_commands get-valid-desktop-sessions set-default-desktop-session switch-to-desktop-mode
+    require_session plasma.desktop
+    "$ctl" set-default-desktop-session plasma.desktop
+    "$ctl" switch-to-desktop-mode
+    ;;
+  set-default-desktop)
+    require_commands get-valid-desktop-sessions set-default-desktop-session
+    require_session hearth.desktop
+    "$ctl" set-default-desktop-session hearth.desktop
+    ;;
+  *)
+    echo "usage: hearth-session-mode {desktop|gaming|recovery-kde|set-default-desktop}" >&2
+    exit 2
+    ;;
+esac

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Return to Gaming Mode
+Comment=Leave Hearth Desktop and return to Steam Gaming Mode
+Exec=/usr/libexec/hearth-session-mode gaming
+Icon=steam
+Terminal=false
+Type=Application
+Categories=System;
+Keywords=Steam;Gaming;Session;

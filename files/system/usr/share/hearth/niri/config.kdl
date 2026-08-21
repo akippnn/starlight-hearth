@@ -1,0 +1,47 @@
+// hearthOS minimal niri baseline. DMS runs as the session shell service while
+// this file keeps compositor startup deterministic and non-interactive.
+config-notification {
+    disable-failed
+}
+
+input {
+    keyboard {
+        xkb {}
+        numlock
+    }
+}
+
+layout {
+    gaps 12
+    background-color "#171117"
+    center-focused-column "on-overflow"
+    default-column-width { proportion 0.67; }
+    border {
+        width 3
+        active-color "#D59AA9"
+        inactive-color "#5C4651"
+        urgent-color "#E58A8A"
+    }
+}
+
+environment {
+    XDG_CURRENT_DESKTOP "niri"
+    QT_QPA_PLATFORM "wayland;xcb"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+include optional=true "dms/colors.kdl"
+include optional=true "dms/layout.kdl"
+include optional=true "dms/alttab.kdl"
+include optional=true "dms/binds.kdl"
+include optional=true "dms/outputs.kdl"
+include optional=true "dms/cursor.kdl"
+include optional=true "dms/input.kdl"
+include optional=true "/usr/share/hearth/niri/hearth.kdl"
