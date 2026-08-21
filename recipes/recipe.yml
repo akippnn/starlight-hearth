@@ -12,8 +12,9 @@ platforms:
 blue-build-tag: v0.9.37
 
 modules:
-  # DMS's official Fedora packaging path supplies the initial shell. niri stays
-  # an unmodified Fedora package and xwayland-satellite covers legacy X11 apps.
+  # Hearth Shell retains DMS's Fedora repository for its Quickshell and dgop
+  # runtime dependencies. The shell itself is installed from the immutable,
+  # checksum-pinned Hearth release below.
   - type: dnf
     repos:
       cleanup: true
@@ -21,9 +22,14 @@ modules:
         - avengemedia/dms
     install:
       packages:
-        - dms
+        - quickshell
+        - dgop
         - niri
         - xwayland-satellite
+
+  - type: script
+    scripts:
+      - install-hearth-shell.sh
 
   # Starlight-owned session contracts and defaults.
   - type: files

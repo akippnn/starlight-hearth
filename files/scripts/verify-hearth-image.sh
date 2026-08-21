@@ -81,4 +81,5 @@ systemctl is-enabled tailscaled.service
 systemctl is-enabled hearth-identity.service
 systemctl is-enabled hearth-input-adapter.service
 rpm -q --qf '%{NAME}-%{EPOCHNUM}:%{VERSION}-%{RELEASE}.%{ARCH}\n' \
-  dms niri xwayland-satellite
+  starlight-hearth-shell niri xwayland-satellite
+rpm -q --whatprovides dms

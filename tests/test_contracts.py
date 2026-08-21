@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -18,6 +19,7 @@ DISPLAY_POLICY = SYSTEM / "usr/libexec/hearth-display-policy"
 INPUT_ADAPTER = SYSTEM / "usr/libexec/hearth-input-adapter"
 INPUT_REQUEST = SYSTEM / "usr/libexec/hearth-input-request"
 IDENTITY_BOOTSTRAP = SYSTEM / "usr/libexec/hearth-identity-bootstrap"
+SHELL_INSTALLER = ROOT / "files/scripts/install-hearth-shell.sh"
 
 
 def run(command, *, env=None):
@@ -30,6 +32,94 @@ def run(command, *, env=None):
         stderr=subprocess.PIPE,
         check=False,
     )
+
+
+class ShellInstallerTests(unittest.TestCase):
+    def setUp(self):
+        self.tempdir = tempfile.TemporaryDirectory()
+        self.root = Path(self.tempdir.name)
+        self.payload = self.root / "shell.rpm"
+        self.payload.write_bytes(b"bounded Hearth Shell installer fixture\n")
+        self.calls = self.root / "calls.log"
+
+        self.curl = self.root / "curl"
+        self.curl.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env bash
+                set -euo pipefail
+                output=""
+                while (( $# )); do
+                  if [[ "$1" == "--output" ]]; then
+                    output="$2"
+                    shift 2
+                  else
+                    shift
+                  fi
+                done
+                cp "${HEARTH_TEST_PAYLOAD:?}" "$output"
+                """
+            ),
+            encoding="utf-8",
+        )
+        self.dnf5 = self.root / "dnf5"
+        self.dnf5.write_text(
+            '#!/usr/bin/env bash\nprintf "dnf5 %s\\n" "$*" >> "${HEARTH_TEST_CALLS:?}"\n',
+            encoding="utf-8",
+        )
+        self.rpm = self.root / "rpm"
+        self.rpm.write_text(
+            '#!/usr/bin/env bash\nprintf "rpm %s\\n" "$*" >> "${HEARTH_TEST_CALLS:?}"\n',
+            encoding="utf-8",
+        )
+        self.sha256sum = self.root / "sha256sum"
+        self.sha256sum.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env python3
+                import hashlib
+                from pathlib import Path
+                import sys
+
+                expected, filename = sys.stdin.read().strip().split(maxsplit=1)
+                actual = hashlib.sha256(Path(filename).read_bytes()).hexdigest()
+                raise SystemExit(0 if actual == expected else 1)
+                """
+            ),
+            encoding="utf-8",
+        )
+        for executable in (self.curl, self.dnf5, self.rpm, self.sha256sum):
+            executable.chmod(0o755)
+
+        self.env = os.environ.copy()
+        self.env.update(
+            {
+                "HEARTH_CURL": str(self.curl),
+                "HEARTH_DNF5": str(self.dnf5),
+                "HEARTH_RPM": str(self.rpm),
+                "HEARTH_SHA256SUM": str(self.sha256sum),
+                "HEARTH_TEST_PAYLOAD": str(self.payload),
+                "HEARTH_TEST_CALLS": str(self.calls),
+            }
+        )
+
+    def tearDown(self):
+        self.tempdir.cleanup()
+
+    def test_checksum_failure_never_invokes_dnf(self):
+        self.env["HEARTH_SHELL_SHA256"] = "0" * 64
+        result = run([str(SHELL_INSTALLER)], env=self.env)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertFalse(self.calls.exists())
+
+    def test_verified_payload_is_installed_and_compatibility_is_checked(self):
+        self.env["HEARTH_SHELL_SHA256"] = hashlib.sha256(self.payload.read_bytes()).hexdigest()
+        result = run([str(SHELL_INSTALLER)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        calls = self.calls.read_text(encoding="utf-8")
+        self.assertIn("dnf5 install -y", calls)
+        self.assertIn("rpm -q starlight-hearth-shell", calls)
+        self.assertIn("rpm -q --whatprovides dms", calls)
 
 
 class SessionAdapterTests(unittest.TestCase):
@@ -531,7 +621,9 @@ class ImageContractTests(unittest.TestCase):
         self.assertNotIn("blue-build-tag: v0.9.37-installer", recipe)
         self.assertIn("- linux/amd64", recipe)
         self.assertIn("- avengemedia/dms", recipe)
-        self.assertIn("- dms", recipe)
+        self.assertIn("- quickshell", recipe)
+        self.assertIn("- dgop", recipe)
+        self.assertIn("install-hearth-shell.sh", recipe)
         self.assertIn("- niri", recipe)
         self.assertIn("NAME: hearthOS", recipe)
         self.assertIn("VARIANT_ID: hearth", recipe)
@@ -550,6 +642,12 @@ class ImageContractTests(unittest.TestCase):
         ):
             self.assertIn(flatpak, recipe)
         self.assertIn("tailscaled.service", recipe)
+
+        installer = SHELL_INSTALLER.read_text(encoding="utf-8")
+        self.assertIn("releases/download/hearth-v0.1.0-7/", installer)
+        self.assertIn("22f38a85e78928fb00fbe7b59467b2a0c0794ae887687f34fc87c55c02d72603", installer)
+        self.assertIn('dnf5_bin="${HEARTH_DNF5:-/usr/bin/dnf5}"', installer)
+        self.assertNotIn("/latest/", installer)
 
     def test_public_session_and_recovery_contracts_exist(self):
         session = (SYSTEM / "usr/share/wayland-sessions/hearth.desktop").read_text(encoding="utf-8")
@@ -580,6 +678,7 @@ class ImageContractTests(unittest.TestCase):
     def test_scripts_are_syntactically_valid_and_executable(self):
         scripts = [
             ROOT / "files/scripts/configure-hearth-session.sh",
+            SHELL_INSTALLER,
             ROOT / "files/scripts/verify-hearth-image.sh",
             DEFAULT_DESKTOP,
             DISPLAY_POLICY,
@@ -599,7 +698,8 @@ class ImageContractTests(unittest.TestCase):
         self.assertNotIn("usermod", bootstrap)
         image_setup = (ROOT / "files/scripts/configure-hearth-session.sh").read_text(encoding="utf-8")
         self.assertIn("/usr/bin/niri validate", image_setup)
-        self.assertIn("rpm -q dms", image_setup)
+        self.assertIn("rpm -q starlight-hearth-shell", image_setup)
+        self.assertIn("rpm -q --whatprovides dms", image_setup)
         self.assertNotIn("/usr/bin/dms version", image_setup)
         self.assertIn("hearth-display-policy.service", image_setup)
         self.assertIn("hearth-default-desktop.service", image_setup)

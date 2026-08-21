@@ -56,4 +56,5 @@ XDG_CONFIG_HOME="$validation_root" /usr/bin/niri validate
 
 # DMS refuses to start as root, including for its version subcommand. Image
 # modules run as root, so verify the installed RPM without executing DMS.
-rpm -q dms >/dev/null
+rpm -q starlight-hearth-shell >/dev/null
+rpm -q --whatprovides dms >/dev/null
