@@ -59,6 +59,8 @@ modules:
     system:
       enabled:
         - tailscaled.service
+        - hearth-identity.service
+        - hearth-input-adapter.service
 
   # Native Starlight maintenance commands become part of Bazzite's `ujust`.
   - type: justfiles
@@ -71,6 +73,14 @@ modules:
       PRETTY_NAME: hearthOS
       VARIANT: Hearth
       VARIANT_ID: hearth
+      LOGO: hearth-logo
+      DEFAULT_HOSTNAME: hearth
+      HOME_URL: https://github.com/akippnn/starlight-hearth
+      DOCUMENTATION_URL: https://github.com/akippnn/starlight-hearth#readme
+      SUPPORT_URL: https://github.com/akippnn/starlight-hearth/issues
+      BUG_REPORT_URL: https://github.com/akippnn/starlight-hearth/issues
+      BOOTLOADER_NAME: hearthOS
+      IMAGE_ID: starlight-hearth
 
   # Verify the final filesystem after identity customization. This emits exact
   # package versions into the build log and turns missing recovery contracts

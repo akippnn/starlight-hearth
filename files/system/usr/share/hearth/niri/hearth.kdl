@@ -1,5 +1,5 @@
-// Hearth Desktop v1 semantic keys. Steam Input maps controller actions to
-// these keys without writing account-specific Steam configuration files.
+// Hearth Desktop v2 semantic keys. InputPlumber owns the Desktop mapping;
+// Steam receives no desktop-mappable gamepad in this session.
 layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
@@ -12,6 +12,9 @@ binds {
     }
     F11 repeat=false hotkey-overlay-title="Controller: Control Center" {
         spawn "dms" "ipc" "call" "control-center" "toggle";
+    }
+    F12 repeat=false hotkey-overlay-title="Controller: On-screen Keyboard" {
+        spawn "dms" "ipc" "call" "hearth-osk" "toggle";
     }
 
     // Emergency keyboard paths remain available when DMS is unhealthy.

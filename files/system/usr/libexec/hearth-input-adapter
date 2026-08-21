@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+busctl_bin="${HEARTH_BUSCTL:-/usr/bin/busctl}"
+loginctl_bin="${HEARTH_LOGINCTL:-/usr/bin/loginctl}"
+runtime_root="${HEARTH_RUNTIME_ROOT:-/run}"
+state_dir="$runtime_root/hearth"
+state_file="$state_dir/input-state.json"
+desktop_profile="${HEARTH_DESKTOP_PROFILE:-/usr/share/hearth/input/hearth-desktop-v2.yaml}"
+gaming_profile="${HEARTH_GAMING_PROFILE:-/usr/share/hearth/input/hearth-gaming-v2.yaml}"
+destination="org.shadowblip.InputPlumber"
+interface="org.shadowblip.Input.CompositeDevice"
+last_mode=""
+last_path=""
+
+install -d -m 0755 "$state_dir"
+
+write_state() {
+  local mode="$1" status="$2" profile="$3" path="$4" error="${5:-}"
+  local tmp="$state_file.$$"
+  printf '{"schema":1,"mode":"%s","status":"%s","profile":"%s","composite":"%s","error":"%s","updated":%(%s)T}\n' \
+    "$mode" "$status" "$profile" "$path" "$error" -1 >"$tmp"
+  chmod 0644 "$tmp"
+  mv -f "$tmp" "$state_file"
+}
+
+requested_mode() {
+  local request="" candidate
+  for candidate in "$runtime_root"/user/*/hearth/requested-input-mode; do
+    [[ -f "$candidate" ]] || continue
+    request="$candidate"
+    break
+  done
+  if [[ -n "$request" ]]; then
+    case "$(<"$request")" in
+      desktop|gaming|safe) printf '%s\n' "$(<"$request")"; return 0 ;;
+    esac
+  fi
+
+  local session desktop
+  while read -r session _; do
+    [[ -n "$session" ]] || continue
+    desktop="$($loginctl_bin show-session "$session" --property=Desktop --value 2>/dev/null || true)"
+    case "${desktop,,}" in
+      *hearth*) printf 'desktop\n'; return 0 ;;
+      *gamescope*|*steam*) printf 'gaming\n'; return 0 ;;
+    esac
+  done < <("$loginctl_bin" list-sessions --no-legend 2>/dev/null || true)
+
+  printf 'safe\n'
+}
+
+composite_path() {
+  "$busctl_bin" tree "$destination" 2>/dev/null | sed -n 's@.*\(/org/shadowblip/InputPlumber/CompositeDevice[0-9][0-9]*\).*@\1@p' | head -n1
+}
+
+apply_once() {
+  local mode profile expected path current
+  mode="$(requested_mode)"
+  case "$mode" in
+    desktop) profile="$desktop_profile"; expected="Hearth Desktop v2" ;;
+    gaming|safe) profile="$gaming_profile"; expected="Hearth Gaming Identity v2" ;;
+    *) write_state safe error "$gaming_profile" "" "invalid requested mode"; return 1 ;;
+  esac
+
+  if ! "$busctl_bin" tree "$destination" >/dev/null 2>&1; then
+    write_state "$mode" error "$profile" "" "InputPlumber unavailable"
+    return 1
+  fi
+
+  path="$(composite_path)"
+  if [[ -z "$path" ]]; then
+    last_path=""
+    last_mode="$mode"
+    write_state "$mode" waiting "$profile" "" "controller unavailable"
+    return 0
+  fi
+
+  current="$($busctl_bin get-property "$destination" "$path" "$interface" ProfileName 2>/dev/null || true)"
+  if [[ "$path" != "$last_path" || "$mode" != "$last_mode" || "$current" != *\"$expected\"* ]]; then
+    if ! "$busctl_bin" call "$destination" "$path" "$interface" LoadProfilePath s "$profile" >/dev/null; then
+      write_state "$mode" error "$profile" "$path" "profile load failed"
+      return 1
+    fi
+    last_path="$path"
+    last_mode="$mode"
+  fi
+
+  write_state "$mode" ready "$profile" "$path"
+}
+
+while true; do
+  apply_once || true
+  [[ "${HEARTH_INPUT_ONCE:-0}" == 1 ]] && exit 0
+  sleep 1
+done

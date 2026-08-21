@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-labelledby="title">
+  <title id="title">hearthOS</title>
+  <rect width="640" height="180" rx="32" fill="#211820"/>
+  <circle cx="82" cy="90" r="48" fill="#5c3544"/>
+  <path d="M82 42c22 24 34 43 34 65a34 34 0 1 1-68 0c0-15 8-30 22-47 0 20 8 29 12 32 7-13 9-28 0-50z" fill="#d59aa9"/>
+  <text x="150" y="112" fill="#f4e7d7" font-family="sans-serif" font-size="72" font-weight="600" letter-spacing="-2">hearthOS</text>
+</svg>

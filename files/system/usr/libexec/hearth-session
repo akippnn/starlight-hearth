@@ -2,4 +2,5 @@
 set -euo pipefail
 
 /usr/libexec/hearth-session-bootstrap
+/usr/libexec/hearth-input-request desktop
 exec /usr/bin/niri-session

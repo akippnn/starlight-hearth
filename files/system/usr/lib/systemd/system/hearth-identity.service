@@ -1,0 +1,11 @@
+[Unit]
+Description=Apply hearthOS identity defaults
+After=systemd-hostnamed.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/hearth-identity-bootstrap
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

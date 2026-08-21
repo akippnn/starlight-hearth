@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mode="${1:-}"
+case "$mode" in desktop|gaming|safe) ;; *) echo "usage: hearth-input-request {desktop|gaming|safe}" >&2; exit 2 ;; esac
+
+runtime_dir="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+request_dir="$runtime_dir/hearth"
+state_file="${HEARTH_INPUT_STATE:-/run/hearth/input-state.json}"
+timeout="${HEARTH_INPUT_TIMEOUT:-5}"
+
+install -d -m 0700 "$request_dir"
+printf '%s\n' "$mode" >"$request_dir/requested-input-mode"
+chmod 0600 "$request_dir/requested-input-mode"
+
+deadline=$((SECONDS + timeout))
+while (( SECONDS <= deadline )); do
+  if [[ -r "$state_file" ]]; then
+    state_mode="$(jq -r '.mode // ""' "$state_file" 2>/dev/null || true)"
+    status="$(jq -r '.status // ""' "$state_file" 2>/dev/null || true)"
+    if [[ "$state_mode" == "$mode" && ( "$status" == ready || "$status" == waiting ) ]]; then
+      exit 0
+    fi
+    if [[ "$state_mode" == "$mode" && "$status" == error ]]; then
+      jq -r '.error // "input handoff failed"' "$state_file" >&2 || true
+      exit 2
+    fi
+  fi
+  sleep 0.1
+done
+
+echo "hearthOS input adapter did not acknowledge $mode mode" >&2
+exit 2

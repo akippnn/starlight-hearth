@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=/usr/share/inputplumber/schema/device_profile_v1.json
+version: 1
+kind: DeviceProfile
+name: Hearth Gaming Identity v2
+description: Gamepad-only fail-safe; Steam Input owns game semantics
+target_devices:
+  - xb360
+mapping: []

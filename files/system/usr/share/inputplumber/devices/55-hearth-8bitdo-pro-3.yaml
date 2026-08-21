@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=/usr/share/inputplumber/schema/composite_device_v1.json
+version: 1
+kind: CompositeDevice
+name: Hearth 8BitDo Pro 3
+
+matches: []
+maximum_sources: 1
+options:
+  auto_manage: true
+  persist: true
+
+source_devices:
+  - group: gamepad
+    evdev:
+      name: "{8BitDo Ultimate 2 Wireless Controller,8BitDo Pro 3 Controller}"
+      vendor_id: "2dc8"
+      product_id: "310b"
+      handler: event*
+
+# Fail-safe default: expose only a conventional gamepad until the session
+# adapter proves whether Gaming Mode or Hearth Desktop owns semantics.
+target_devices:
+  - xb360

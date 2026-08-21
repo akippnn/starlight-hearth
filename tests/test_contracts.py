@@ -15,6 +15,9 @@ ADAPTER = SYSTEM / "usr/libexec/hearth-session-mode"
 BOOTSTRAP = SYSTEM / "usr/libexec/hearth-session-bootstrap"
 DEFAULT_DESKTOP = SYSTEM / "usr/libexec/hearth-default-desktop-bootstrap"
 DISPLAY_POLICY = SYSTEM / "usr/libexec/hearth-display-policy"
+INPUT_ADAPTER = SYSTEM / "usr/libexec/hearth-input-adapter"
+INPUT_REQUEST = SYSTEM / "usr/libexec/hearth-input-request"
+IDENTITY_BOOTSTRAP = SYSTEM / "usr/libexec/hearth-identity-bootstrap"
 
 
 def run(command, *, env=None):
@@ -38,6 +41,7 @@ class SessionAdapterTests(unittest.TestCase):
         for name in ("hearth.desktop", "plasma.desktop"):
             (self.sessions / name).write_text("[Desktop Entry]\n", encoding="utf-8")
         self.log = self.root / "calls.log"
+        self.input_log = self.root / "input-calls.log"
         self.ctl = self.root / "steamosctl"
         self.ctl.write_text(
             textwrap.dedent(
@@ -72,12 +76,29 @@ class SessionAdapterTests(unittest.TestCase):
             encoding="utf-8",
         )
         self.ctl.chmod(0o755)
+        self.input_request = self.root / "hearth-input-request"
+        self.input_request.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env bash
+                set -euo pipefail
+                if [[ "${HEARTH_STUB_INPUT_FAIL:-0}" == "1" ]]; then
+                  exit 2
+                fi
+                printf '%s\n' "$1" >> "${HEARTH_STUB_INPUT_LOG:?}"
+                """
+            ),
+            encoding="utf-8",
+        )
+        self.input_request.chmod(0o755)
         self.env = os.environ.copy()
         self.env.update(
             {
                 "HEARTH_STEAMOSCTL": str(self.ctl),
                 "HEARTH_WAYLAND_SESSIONS_DIR": str(self.sessions),
                 "HEARTH_STUB_LOG": str(self.log),
+                "HEARTH_INPUT_REQUEST": str(self.input_request),
+                "HEARTH_STUB_INPUT_LOG": str(self.input_log),
             }
         )
 
@@ -87,6 +108,9 @@ class SessionAdapterTests(unittest.TestCase):
     def calls(self):
         return self.log.read_text(encoding="utf-8").splitlines() if self.log.exists() else []
 
+    def input_calls(self):
+        return self.input_log.read_text(encoding="utf-8").splitlines() if self.input_log.exists() else []
+
     def test_desktop_switch_uses_supported_contract(self):
         result = run([str(ADAPTER), "desktop"], env=self.env)
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -94,6 +118,7 @@ class SessionAdapterTests(unittest.TestCase):
             self.calls(),
             ["set-default-desktop-session hearth.desktop", "switch-to-desktop-mode"],
         )
+        self.assertEqual(self.input_calls(), ["desktop"])
 
     def test_gaming_switch_preserves_steam_ownership(self):
         result = run([str(ADAPTER), "gaming"], env=self.env)
@@ -106,6 +131,7 @@ class SessionAdapterTests(unittest.TestCase):
                 "switch-to-game-mode",
             ],
         )
+        self.assertEqual(self.input_calls(), ["gaming"])
 
     def test_gaming_return_survives_missing_hearth_session(self):
         self.env["HEARTH_STUB_MODE"] = "missing-session"
@@ -124,6 +150,14 @@ class SessionAdapterTests(unittest.TestCase):
             self.calls(),
             ["set-default-desktop-session plasma.desktop", "switch-to-desktop-mode"],
         )
+        self.assertEqual(self.input_calls(), ["safe"])
+
+    def test_input_handoff_failure_blocks_session_mutation(self):
+        self.env["HEARTH_STUB_INPUT_FAIL"] = "1"
+        result = run([str(ADAPTER), "desktop"], env=self.env)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("input adapter rejected", result.stderr)
+        self.assertEqual(self.calls(), [])
 
     def test_unknown_upstream_contract_fails_before_mutation(self):
         self.env["HEARTH_STUB_MODE"] = "missing-command"
@@ -158,6 +192,130 @@ class SessionAdapterTests(unittest.TestCase):
         result = run([str(ADAPTER), "unknown"], env=self.env)
         self.assertEqual(result.returncode, 2)
 
+
+class InputAdapterTests(unittest.TestCase):
+    def setUp(self):
+        self.tempdir = tempfile.TemporaryDirectory()
+        self.root = Path(self.tempdir.name)
+        self.runtime = self.root / "run"
+        self.request = self.runtime / "user/1000/hearth/requested-input-mode"
+        self.request.parent.mkdir(parents=True)
+        self.log = self.root / "busctl.log"
+        self.busctl = self.root / "busctl"
+        self.busctl.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env bash
+                set -euo pipefail
+                printf '%s\n' "$*" >> "${HEARTH_STUB_LOG:?}"
+                case "${1:-}" in
+                  tree)
+                    case "${HEARTH_STUB_BUS_MODE:-ready}" in
+                      unavailable) exit 1 ;;
+                      waiting) printf '└─ /org/shadowblip/InputPlumber\n' ;;
+                      *) printf '└─ /org/shadowblip/InputPlumber/CompositeDevice0\n' ;;
+                    esac
+                    ;;
+                  get-property) printf 's "Default"\n' ;;
+                  call) ;;
+                  *) exit 2 ;;
+                esac
+                """
+            ),
+            encoding="utf-8",
+        )
+        self.busctl.chmod(0o755)
+        self.loginctl = self.root / "loginctl"
+        self.loginctl.write_text("#!/usr/bin/env bash\nexit 0\n", encoding="utf-8")
+        self.loginctl.chmod(0o755)
+        self.env = os.environ.copy()
+        self.env.update(
+            {
+                "HEARTH_BUSCTL": str(self.busctl),
+                "HEARTH_LOGINCTL": str(self.loginctl),
+                "HEARTH_RUNTIME_ROOT": str(self.runtime),
+                "HEARTH_INPUT_ONCE": "1",
+                "HEARTH_STUB_LOG": str(self.log),
+                "HEARTH_DESKTOP_PROFILE": str(SYSTEM / "usr/share/hearth/input/hearth-desktop-v2.yaml"),
+                "HEARTH_GAMING_PROFILE": str(SYSTEM / "usr/share/hearth/input/hearth-gaming-v2.yaml"),
+            }
+        )
+
+    def tearDown(self):
+        self.tempdir.cleanup()
+
+    def state(self):
+        return json.loads((self.runtime / "hearth/input-state.json").read_text(encoding="utf-8"))
+
+    def test_desktop_profile_is_applied_to_managed_controller(self):
+        self.request.write_text("desktop\n", encoding="utf-8")
+        result = run([str(INPUT_ADAPTER)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.state()["status"], "ready")
+        self.assertEqual(self.state()["mode"], "desktop")
+        calls = self.log.read_text(encoding="utf-8")
+        self.assertIn("LoadProfilePath", calls)
+        self.assertIn("hearth-desktop-v2.yaml", calls)
+
+    def test_missing_controller_is_visible_waiting_state(self):
+        self.request.write_text("gaming\n", encoding="utf-8")
+        self.env["HEARTH_STUB_BUS_MODE"] = "waiting"
+        result = run([str(INPUT_ADAPTER)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.state()["status"], "waiting")
+        self.assertEqual(self.state()["mode"], "gaming")
+
+    def test_missing_inputplumber_is_visible_error_state(self):
+        self.request.write_text("desktop\n", encoding="utf-8")
+        self.env["HEARTH_STUB_BUS_MODE"] = "unavailable"
+        result = run([str(INPUT_ADAPTER)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.state()["status"], "error")
+        self.assertEqual(self.state()["error"], "InputPlumber unavailable")
+
+
+class IdentityBootstrapTests(unittest.TestCase):
+    def setUp(self):
+        self.tempdir = tempfile.TemporaryDirectory()
+        self.root = Path(self.tempdir.name)
+        self.log = self.root / "hostname.log"
+        self.hostnamectl = self.root / "hostnamectl"
+        self.hostnamectl.write_text(
+            textwrap.dedent(
+                """\
+                #!/usr/bin/env bash
+                set -euo pipefail
+                if [[ "${1:-}" == "--static" ]]; then
+                  printf '%s\n' "${HEARTH_STUB_HOSTNAME:-bazzite}"
+                else
+                  printf '%s\n' "$*" >> "${HEARTH_STUB_LOG:?}"
+                fi
+                """
+            ),
+            encoding="utf-8",
+        )
+        self.hostnamectl.chmod(0o755)
+        self.env = os.environ.copy()
+        self.env.update(
+            {
+                "HEARTH_HOSTNAMECTL": str(self.hostnamectl),
+                "HEARTH_STUB_LOG": str(self.log),
+            }
+        )
+
+    def tearDown(self):
+        self.tempdir.cleanup()
+
+    def test_default_bazzite_hostname_becomes_hearth(self):
+        result = run([str(IDENTITY_BOOTSTRAP)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(self.log.read_text(encoding="utf-8"), "set-hostname hearth\n")
+
+    def test_owner_hostname_is_preserved(self):
+        self.env["HEARTH_STUB_HOSTNAME"] = "living-room"
+        result = run([str(IDENTITY_BOOTSTRAP)], env=self.env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertFalse(self.log.exists())
 
 class BootstrapTests(unittest.TestCase):
     def setUp(self):
@@ -402,7 +560,7 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("hearth-return-gaming:", justfile)
         self.assertFalse((SYSTEM / "usr/bin/starlight").exists())
 
-    def test_static_data_is_parseable_and_locked_to_v1(self):
+    def test_static_data_is_parseable_and_locked_to_v2(self):
         theme = json.loads((SYSTEM / "usr/share/hearth/themes/hearth.json").read_text(encoding="utf-8"))
         self.assertEqual(theme["dark"]["background"], "#171117")
         self.assertEqual(theme["dark"]["warning"], "#D9A35F")
@@ -411,13 +569,13 @@ class ImageContractTests(unittest.TestCase):
         self.assertFalse((SYSTEM / "etc/steamos-manager/config.toml").exists())
         manager = tomllib.loads(manager_path.read_text(encoding="utf-8"))
         self.assertEqual(manager["session"]["desktop"], "hearth.desktop")
-        layout = json.loads((ROOT / "tests/fixtures/controller-layout-v1.json").read_text(encoding="utf-8"))
-        self.assertEqual(layout["name"], "Hearth Desktop v1")
-        self.assertEqual(layout["input_owner"], "steam-input")
+        layout = json.loads((ROOT / "tests/fixtures/controller-layout-v2.json").read_text(encoding="utf-8"))
+        self.assertEqual(layout["name"], "Hearth Desktop v2")
+        self.assertEqual(layout["input_owner"], "inputplumber")
         actions = {item["control"]: item for item in layout["actions"]}
         self.assertEqual(actions["menu"]["emits"], "F10")
         self.assertEqual(actions["view"]["emits"], "F9")
-        self.assertTrue(actions["guide"]["emits"].startswith("Steam:"))
+        self.assertEqual(actions["guide"]["emits"], None)
 
     def test_scripts_are_syntactically_valid_and_executable(self):
         scripts = [
@@ -425,6 +583,8 @@ class ImageContractTests(unittest.TestCase):
             ROOT / "files/scripts/verify-hearth-image.sh",
             DEFAULT_DESKTOP,
             DISPLAY_POLICY,
+            INPUT_ADAPTER,
+            INPUT_REQUEST,
             SYSTEM / "usr/libexec/hearth-session",
             BOOTSTRAP,
             ADAPTER,
@@ -459,6 +619,7 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn('[[ "${NAME:-}" == "hearthOS" ]]', final_check)
         self.assertIn("rpm -q --qf", final_check)
         self.assertIn("systemctl is-enabled tailscaled.service", final_check)
+        self.assertIn("systemctl is-enabled hearth-input-adapter.service", final_check)
         self.assertIn("[[ ! -e /usr/bin/starlight ]]", final_check)
 
     def test_no_mutable_latest_artifact_or_retired_name(self):

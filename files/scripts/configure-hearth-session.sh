@@ -9,8 +9,13 @@ required=(
   /usr/lib/systemd/user/hearth-default-desktop.service
   /usr/lib/systemd/user/hearth-display-policy.service
   /usr/lib/systemd/user/niri.service
+  /usr/lib/systemd/system/hearth-input-adapter.service
+  /usr/lib/systemd/system/hearth-identity.service
   /usr/libexec/hearth-default-desktop-bootstrap
   /usr/libexec/hearth-display-policy
+  /usr/libexec/hearth-input-adapter
+  /usr/libexec/hearth-input-request
+  /usr/libexec/hearth-identity-bootstrap
   /usr/libexec/hearth-session
   /usr/libexec/hearth-session-bootstrap
   /usr/libexec/hearth-session-mode
@@ -36,6 +41,9 @@ ln -sfn ../hearth-default-desktop.service \
 chmod 0755 \
   /usr/libexec/hearth-default-desktop-bootstrap \
   /usr/libexec/hearth-display-policy \
+  /usr/libexec/hearth-input-adapter \
+  /usr/libexec/hearth-input-request \
+  /usr/libexec/hearth-identity-bootstrap \
   /usr/libexec/hearth-session \
   /usr/libexec/hearth-session-bootstrap \
   /usr/libexec/hearth-session-mode

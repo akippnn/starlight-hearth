@@ -1,0 +1,23 @@
+{
+  "schema": 2,
+  "name": "Hearth Desktop v2",
+  "hardware": "8BitDo Pro 3 receiver 2dc8:310b",
+  "input_owner": "inputplumber",
+  "gaming_owner": "steam-input",
+  "actions": [
+    {"control": "dpad", "semantic": "directional focus", "emits": "arrow keys"},
+    {"control": "a", "semantic": "accept", "emits": "Enter"},
+    {"control": "b", "semantic": "back", "emits": "Escape"},
+    {"control": "lb", "semantic": "previous focus group", "emits": "Shift+Tab"},
+    {"control": "rb", "semantic": "next focus group", "emits": "Tab"},
+    {"control": "right-stick", "semantic": "pointer", "emits": "mouse motion"},
+    {"control": "rt", "semantic": "primary click", "emits": "mouse left"},
+    {"control": "lt", "semantic": "secondary click", "emits": "mouse right"},
+    {"control": "left-stick", "semantic": "scrolling", "emits": "mouse wheel"},
+    {"control": "x", "semantic": "toggle", "emits": "Space"},
+    {"control": "y", "semantic": "Hearth on-screen keyboard", "emits": "F12"},
+    {"control": "menu", "semantic": "Hearth Home", "emits": "F10"},
+    {"control": "view", "semantic": "niri overview", "emits": "F9"},
+    {"control": "guide", "semantic": "reserved", "emits": null}
+  ]
+}

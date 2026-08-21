@@ -3,10 +3,26 @@ set -euo pipefail
 
 ctl="${HEARTH_STEAMOSCTL:-/usr/bin/steamosctl}"
 sessions_dir="${HEARTH_WAYLAND_SESSIONS_DIR:-/usr/share/wayland-sessions}"
+input_request="${HEARTH_INPUT_REQUEST:-/usr/libexec/hearth-input-request}"
 
 fail_contract() {
   echo "hearthOS session adapter: $*" >&2
   exit 2
+}
+
+request_input_mode() {
+  local requested="$1"
+  [[ -x "$input_request" ]] || fail_contract "input adapter is unavailable at $input_request"
+  "$input_request" "$requested" || fail_contract "input adapter rejected $requested ownership"
+}
+
+run_ctl() {
+  local fallback="$1"
+  shift
+  if ! "$ctl" "$@"; then
+    "$input_request" "$fallback" >/dev/null 2>&1 || true
+    fail_contract "steamosctl failed: $*"
+  fi
 }
 
 require_commands() {
@@ -63,20 +79,23 @@ case "$mode" in
   desktop)
     require_commands get-valid-desktop-sessions set-default-desktop-session switch-to-desktop-mode
     require_session hearth.desktop
-    "$ctl" set-default-desktop-session hearth.desktop
-    "$ctl" switch-to-desktop-mode
+    request_input_mode desktop
+    run_ctl safe set-default-desktop-session hearth.desktop
+    run_ctl safe switch-to-desktop-mode
     ;;
   gaming)
     require_commands get-valid-desktop-sessions set-default-desktop-session set-default-login-mode switch-to-game-mode
+    request_input_mode gaming
     restore_hearth_desktop_if_available
-    "$ctl" set-default-login-mode game
-    "$ctl" switch-to-game-mode
+    run_ctl safe set-default-login-mode game
+    run_ctl safe switch-to-game-mode
     ;;
   recovery-kde)
     require_commands get-valid-desktop-sessions set-default-desktop-session switch-to-desktop-mode
     require_session plasma.desktop
-    "$ctl" set-default-desktop-session plasma.desktop
-    "$ctl" switch-to-desktop-mode
+    request_input_mode safe
+    run_ctl safe set-default-desktop-session plasma.desktop
+    run_ctl safe switch-to-desktop-mode
     ;;
   set-default-desktop)
     require_commands get-valid-desktop-sessions set-default-desktop-session

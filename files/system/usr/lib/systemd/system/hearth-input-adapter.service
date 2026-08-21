@@ -1,0 +1,15 @@
+[Unit]
+Description=hearthOS controller session ownership adapter
+After=inputplumber.service
+Requires=inputplumber.service
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/hearth-input-adapter
+Restart=on-failure
+RestartSec=1
+RuntimeDirectory=hearth
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target

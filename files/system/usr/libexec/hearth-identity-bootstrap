@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+hostnamectl_bin="${HEARTH_HOSTNAMECTL:-/usr/bin/hostnamectl}"
+current="$($hostnamectl_bin --static 2>/dev/null || true)"
+
+case "$current" in
+  ""|localhost|localhost.localdomain|bazzite)
+    "$hostnamectl_bin" set-hostname hearth
+    ;;
+esac
