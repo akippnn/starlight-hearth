@@ -39,6 +39,8 @@ Out of scope:
 ## Public contracts
 
 - Steam Power → Switch to Desktop selects `Hearth Desktop`.
+- A large 4K television receives readable living-room scaling automatically;
+  explicit owner/DMS scale configuration always wins.
 - The launcher contains **Return to Gaming Mode**.
 - `ujust hearth-return-gaming` returns to Steam Gaming Mode.
 - `ujust hearth-recovery-kde` switches to KDE Plasma recovery.
@@ -52,6 +54,8 @@ Out of scope:
 - Missing Steam Input falls back to keyboard/mouse and is recorded as unsupported controller state.
 - Missing or changed `steamosctl` commands leave the current session and SDDM state untouched.
 - Offline operation remains available after image and Steam layout installation.
+- Display-policy failure leaves niri's existing output scale unchanged.
+- KDE's Xwayland Video Bridge never autostarts in Hearth Desktop.
 - The prior atomic deployment is retained until the audit is complete.
 
 ## Automated gates
@@ -61,10 +65,13 @@ Out of scope:
 - [x] Stable controller-action fixture and image content contracts.
 - [x] Shell syntax and executable-mode checks.
 - [x] BlueBuild schema expansion.
-- [ ] Complete image build.
-- [ ] Built-image checks for `os-release`, package versions, session files, DMS/niri services, justfiles, and stale-stub absence.
-- [ ] niri validation and live DMS startup/IPC check inside the candidate.
-- [ ] Signed OCI, base digest, package versions, revision, and artifact digest recorded.
+- [x] Complete initial image build.
+- [x] Initial built-image checks for `os-release`, package versions, session files, DMS/niri services, justfiles, and stale-stub absence.
+- [x] niri validation and live DMS startup inside the initial candidate.
+- [x] Initial signed OCI, base digest, package versions, revision, and artifact digest recorded.
+- [x] Regression fixtures for first-user Desktop selection, 4K-TV scaling,
+  owner scale precedence, malformed output data, and KDE-only Video Bridge.
+- [ ] Complete and verify the corrected candidate containing the owner-audit fixes.
 
 ## Owner audit
 
