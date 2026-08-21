@@ -1,5 +1,19 @@
 # hearthOS
 
+> [!WARNING]
+> **Pre-alpha — owner testing only.**
+>
+> hearthOS is not ready for general installation. The VS-001 foundation is
+> proven, but its original controller-ready claim was rejected; VS-002 replaces
+> that ownership model and is now audit-ready with all automated/build gates
+> passing. Final physical hardware acceptance remains owner-only.
+>
+> The public GHCR package is a development artifact; package download counts do
+> not imply a supported release. Do not rebase to `latest` or another moving
+> tag. During development, use only an immutable digest recorded in the active
+> evidence record.
+
+
 hearthOS is the controller-first living-room PC operating system in the
 Starlight family. Steam Gaming Mode remains the console experience. **Hearth
 Desktop** combines the upstream niri compositor with **Hearth Shell**, the
@@ -25,6 +39,8 @@ Arcturus may share Ember hardware, but it is independent of Starlight. This
 repository contains no Ember or Arcturus placeholder interfaces or data.
 
 ## Delivery state
+
+**Overall state: pre-alpha; implementation is complete through VS-002, with owner hardware acceptance still pending.**
 
 VS-001 proved the signed niri/DMS image, TV scaling, and recovery foundation,
 but its owner audit disproved the controller-ready claim. It is preserved as
