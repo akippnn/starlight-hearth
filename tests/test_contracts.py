@@ -293,7 +293,8 @@ class ImageContractTests(unittest.TestCase):
         self.assertNotIn("usermod", bootstrap)
         image_setup = (ROOT / "files/scripts/configure-hearth-session.sh").read_text(encoding="utf-8")
         self.assertIn("/usr/bin/niri validate", image_setup)
-        self.assertIn("/usr/bin/dms version", image_setup)
+        self.assertIn("rpm -q dms", image_setup)
+        self.assertNotIn("/usr/bin/dms version", image_setup)
 
         final_check = (ROOT / "files/scripts/verify-hearth-image.sh").read_text(encoding="utf-8")
         self.assertIn('[[ "${NAME:-}" == "hearthOS" ]]', final_check)

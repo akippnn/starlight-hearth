@@ -34,4 +34,6 @@ install -d -m 0700 "$validation_root/niri"
 install -m 0600 /usr/share/hearth/niri/config.kdl "$validation_root/niri/config.kdl"
 XDG_CONFIG_HOME="$validation_root" /usr/bin/niri validate
 
-/usr/bin/dms version
+# DMS refuses to start as root, including for its version subcommand. Image
+# modules run as root, so verify the installed RPM without executing DMS.
+rpm -q dms >/dev/null
