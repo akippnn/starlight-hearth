@@ -3,9 +3,9 @@
 > [!WARNING]
 > **Pre-alpha — owner testing only.**
 >
-> hearthOS is not ready for general installation. HSN-001 is frozen and awaits
-> its exact external revision record before implementation activates. It is not
-> audit-ready or owner-accepted.
+> hearthOS is not ready for general installation. HSN-001 is ready for
+> implementation at an exact frozen contract revision. It is not audit-ready
+> or owner-accepted.
 >
 > Existing GHCR images are historical development artifacts; download counts
 > do not imply a supported release. Do not rebase to `latest` or infer current
@@ -23,7 +23,7 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**HSN-001 contract freeze; no active implementation evidence yet.**
+**HSN-001 ready/pending; no implementation evidence yet.**
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation

@@ -1,7 +1,7 @@
 # Current status
 
 **Last updated:** 2026-08-25
-**Current phase:** HSN-001 contract freeze
+**Current phase:** HSN-001 ready for implementation
 **Active implementation slice:** none
 **New owner verdict:** pending
 
@@ -9,13 +9,13 @@ This is the single mutable delivery-status authority for `starlight-hearth`.
 
 ## Current work
 
-The documentation foundation is clean at local commit `6b544e0` (recorded in
-full in the next status revision). The owner approved
-`HSN-001 — Hearth-native Launcher Nucleus`; its frozen contract and initial
-evidence stub are being committed now. Its exact contract revision must be
-recorded by a following status commit before implementation evidence counts.
+The documentation foundation is clean at
+`6b544e02c3c9a70985b886672482e92c135032f3`. The owner approved
+`HSN-001 — Hearth-native Launcher Nucleus`; its frozen contract revision is
+`17fedae8776ff38b53c07d4098d8ee8b13852253`.
 
-Delivery state remains `proposed`; owner verdict remains `pending`.
+Delivery state is `ready`; owner verdict remains `pending`. Implementation may
+now begin, but no provider, consumer, package, image, or target proof exists.
 
 ## Superseded phase statement
 
@@ -81,6 +81,6 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Record the exact clean HSN-001 contract revision here, then activate the slice
-and begin implementation on exact clean shell and image inputs. No target or
-artifact proof exists yet.
+Archive and verify the historical shell repository, create the clean orphan
+HSN-001 branch, and begin implementation against the exact contract above. No
+target or artifact proof exists yet.
