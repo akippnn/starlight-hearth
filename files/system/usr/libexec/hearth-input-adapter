@@ -6,7 +6,7 @@ loginctl_bin="${HEARTH_LOGINCTL:-/usr/bin/loginctl}"
 runtime_root="${HEARTH_RUNTIME_ROOT:-/run}"
 state_dir="$runtime_root/hearth"
 state_file="$state_dir/input-state.json"
-desktop_profile="${HEARTH_DESKTOP_PROFILE:-/usr/share/hearth/input/hearth-desktop-v2.yaml}"
+desktop_profile="${HEARTH_DESKTOP_PROFILE:-/usr/share/hearth/input/hearth-desktop-v4.yaml}"
 gaming_profile="${HEARTH_GAMING_PROFILE:-/usr/share/hearth/input/hearth-gaming-v2.yaml}"
 destination="org.shadowblip.InputPlumber"
 interface="org.shadowblip.Input.CompositeDevice"
@@ -58,7 +58,7 @@ apply_once() {
   local mode profile expected path current
   mode="$(requested_mode)"
   case "$mode" in
-    desktop) profile="$desktop_profile"; expected="Hearth Desktop v2" ;;
+    desktop) profile="$desktop_profile"; expected="Hearth Desktop v4" ;;
     gaming|safe) profile="$gaming_profile"; expected="Hearth Gaming Identity v2" ;;
     *) write_state safe error "$gaming_profile" "" "invalid requested mode"; return 1 ;;
   esac

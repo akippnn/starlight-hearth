@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "profileName": "Hearth Desktop v4",
+  "events": {
+    "ui_up": "navigate-north",
+    "ui_down": "navigate-south",
+    "ui_left": "navigate-west",
+    "ui_right": "navigate-east",
+    "ui_accept": "activate",
+    "ui_back": "launcher-close",
+    "ui_action": "alternate",
+    "ui_option": "launcher-toggle"
+  },
+  "directOutputs": {
+    "LeftStick": "scroll-vertical",
+    "RightStick": "pointer-motion",
+    "LeftBumper": "pointer-primary",
+    "RightBumper": "pointer-secondary"
+  }
+}

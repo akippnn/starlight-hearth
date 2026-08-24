@@ -10,10 +10,7 @@ warn() {
   echo "hearthOS display policy: $*" >&2
 }
 
-# Explicit owner or DMS output scales always win over Hearth defaults.
-for config in \
-  "$config_home/niri/config.kdl" \
-  "$config_home/niri/dms/outputs.kdl"; do
+for config in "$config_home/niri/config.kdl"; do
   if [[ -r "$config" ]] && grep -Eq '^[[:space:]]*scale([[:space:]]|$)' "$config"; then
     exit 0
   fi

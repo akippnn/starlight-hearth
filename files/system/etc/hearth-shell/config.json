@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "appearance": { "motion": "full" },
+  "launcher": {
+    "viewMode": "grid",
+    "favorites": [
+      { "kind": "action", "id": "return-gaming", "name": "Return to Gaming Mode", "icon": "sports_esports" },
+      { "kind": "desktop", "id": "steam.desktop", "name": "Steam", "icon": "sports_esports" },
+      { "kind": "desktop", "id": "org.mozilla.firefox.desktop", "name": "Firefox", "icon": "public" },
+      { "kind": "desktop", "id": "org.kde.dolphin.desktop", "name": "Dolphin", "icon": "folder" },
+      { "kind": "desktop", "id": "com.mitchellh.ghostty.desktop", "name": "Ghostty", "icon": "terminal" }
+    ]
+  }
+}

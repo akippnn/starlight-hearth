@@ -1,4 +1,5 @@
-// Hearth Desktop v2 semantic keys. InputPlumber owns the Desktop mapping;
+// HSN-001 global keyboard entrypoint and recovery. InputPlumber v4 owns
+// controller semantics;
 // Steam receives no desktop-mappable gamepad in this session.
 layer-rule {
     match namespace="^quickshell$"
@@ -6,21 +7,14 @@ layer-rule {
 }
 
 binds {
-    F9 repeat=false hotkey-overlay-title="Controller: Overview" { toggle-overview; }
-    F10 repeat=false hotkey-overlay-title="Controller: Home" {
-        spawn "dms" "ipc" "call" "spotlight" "toggle";
-    }
-    F11 repeat=false hotkey-overlay-title="Controller: Control Center" {
-        spawn "dms" "ipc" "call" "control-center" "toggle";
-    }
-    F12 repeat=false hotkey-overlay-title="Controller: On-screen Keyboard" {
-        spawn "dms" "ipc" "call" "hearth-osk" "toggle";
+    Super+A repeat=false hotkey-overlay-title="Hearth Launcher" {
+        spawn "busctl" "--user" "call" "org.starlight.HearthShell" "/Launcher" "org.starlight.HearthShell.Launcher1" "Toggle";
     }
 
-    // Emergency keyboard paths remain available when DMS is unhealthy.
+    // Emergency keyboard paths remain available when Hearth Shell is unhealthy.
     Ctrl+Alt+Return hotkey-overlay-title="Emergency Terminal" { spawn "konsole"; }
-    Ctrl+Alt+D hotkey-overlay-title="Restart DMS" {
-        spawn "systemctl" "--user" "restart" "dms.service";
+    Ctrl+Alt+D hotkey-overlay-title="Restart Hearth Shell" {
+        spawn "systemctl" "--user" "restart" "hearth-shell.service" "hearth-shell-ui.service";
     }
     Ctrl+Alt+Shift+E hotkey-overlay-title="Exit Hearth Desktop" { quit; }
 }

@@ -4,17 +4,16 @@ set -euo pipefail
 config_home="${XDG_CONFIG_HOME:-${HOME:?HOME is required}/.config}"
 state_home="${XDG_STATE_HOME:-${HOME:?HOME is required}/.local/state}"
 share_dir="${HEARTH_SHARE_DIR:-/usr/share/hearth}"
-marker="$state_home/hearth/session-bootstrap-v1"
+marker="$state_home/hearth/session-bootstrap-v2"
 niri_config="$config_home/niri/config.kdl"
-dms_settings="$config_home/DankMaterialShell/settings.json"
 hearth_include='include optional=true "/usr/share/hearth/niri/hearth.kdl"'
-hearth_backup="$niri_config.pre-hearth-v1"
+hearth_backup="$niri_config.pre-hearth-v2"
 
 if [[ -f "$marker" ]]; then
   exit 0
 fi
 
-install -d -m 0700 "$state_home/hearth" "$config_home/niri" "$config_home/DankMaterialShell"
+install -d -m 0700 "$state_home/hearth" "$config_home/niri" "$config_home/hearth-shell"
 
 if [[ ! -s "$niri_config" ]]; then
   install -m 0600 "$share_dir/niri/config.kdl" "$niri_config"
@@ -23,12 +22,6 @@ elif ! grep -Fqx "$hearth_include" "$niri_config"; then
     cp -a "$niri_config" "$hearth_backup"
   fi
   printf '\n%s\n' "$hearth_include" >> "$niri_config"
-fi
-
-# Apply the Hearth visual profile only for users without DMS settings. Existing
-# settings are deliberately left untouched.
-if [[ ! -s "$dms_settings" ]]; then
-  install -m 0600 "$share_dir/dms/settings.json" "$dms_settings"
 fi
 
 touch "$marker"

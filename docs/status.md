@@ -1,8 +1,8 @@
 # Current status
 
 **Last updated:** 2026-08-25
-**Current phase:** HSN-001 ready for implementation
-**Active implementation slice:** none
+**Current phase:** HSN-001 implementation
+**Active implementation slice:** HSN-001
 **New owner verdict:** pending
 
 This is the single mutable delivery-status authority for `starlight-hearth`.
@@ -14,8 +14,11 @@ The documentation foundation is clean at
 `HSN-001 — Hearth-native Launcher Nucleus`; its frozen contract revision is
 `17fedae8776ff38b53c07d4098d8ee8b13852253`.
 
-Delivery state is `ready`; owner verdict remains `pending`. Implementation may
-now begin, but no provider, consumer, package, image, or target proof exists.
+Delivery state is `active`; owner verdict remains `pending`. The clean shell
+orphan branch is implemented through
+`ebfec63ace99430dae487b34c3e20f7219ebdc8d`. Local provider and static consumer
+checks pass. Fedora package, real user-bus, Quickshell, image, and target proof
+remain pending.
 
 ## Superseded phase statement
 
@@ -81,6 +84,6 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Archive and verify the historical shell repository, create the clean orphan
-HSN-001 branch, and begin implementation against the exact contract above. No
-target or artifact proof exists yet.
+Produce and verify the Fedora 44 x86_64 RPM, record its immutable candidate URL
+and SHA-256, and then unblock the image build. No signed HSN-001 image or target
+proof exists yet.

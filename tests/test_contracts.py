@@ -100,6 +100,7 @@ class ShellInstallerTests(unittest.TestCase):
                 "HEARTH_SHA256SUM": str(self.sha256sum),
                 "HEARTH_TEST_PAYLOAD": str(self.payload),
                 "HEARTH_TEST_CALLS": str(self.calls),
+                "HEARTH_SHELL_URL": "https://github.com/akippnn/starlight-hearth-shell/releases/download/hearth-v0.3.0-rc.1/hearth-shell-0.3.0-0.1.rc1.fc44.x86_64.rpm",
             }
         )
 
@@ -118,8 +119,7 @@ class ShellInstallerTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         calls = self.calls.read_text(encoding="utf-8")
         self.assertIn("dnf5 install -y", calls)
-        self.assertIn("rpm -q starlight-hearth-shell", calls)
-        self.assertIn("rpm -q --whatprovides dms", calls)
+        self.assertIn("rpm -q hearth-shell", calls)
 
 
 class SessionAdapterTests(unittest.TestCase):
@@ -430,20 +430,15 @@ class BootstrapTests(unittest.TestCase):
         result = run([str(BOOTSTRAP)], env=self.env)
         self.assertEqual(result.returncode, 0, result.stderr)
         niri = self.config / "niri/config.kdl"
-        settings = self.config / "DankMaterialShell/settings.json"
-        marker = self.state / "hearth/session-bootstrap-v1"
+        marker = self.state / "hearth/session-bootstrap-v2"
         self.assertIn("/usr/share/hearth/niri/hearth.kdl", niri.read_text(encoding="utf-8"))
-        self.assertEqual(json.loads(settings.read_text(encoding="utf-8"))["currentThemeName"], "custom")
         self.assertTrue(marker.is_file())
-        self.assertEqual(stat.S_IMODE(settings.stat().st_mode), 0o600)
+        self.assertTrue((self.config / "hearth-shell").is_dir())
 
     def test_existing_configuration_is_backed_up_and_not_overwritten(self):
         niri = self.config / "niri/config.kdl"
-        settings = self.config / "DankMaterialShell/settings.json"
         niri.parent.mkdir(parents=True)
-        settings.parent.mkdir(parents=True)
         niri.write_text("// owner setting\n", encoding="utf-8")
-        settings.write_text('{"currentThemeName":"owner"}\n', encoding="utf-8")
 
         first = run([str(BOOTSTRAP)], env=self.env)
         second = run([str(BOOTSTRAP)], env=self.env)
@@ -453,14 +448,13 @@ class BootstrapTests(unittest.TestCase):
         self.assertTrue(content.startswith("// owner setting"))
         self.assertEqual(content.count("/usr/share/hearth/niri/hearth.kdl"), 1)
         self.assertEqual(
-            (self.config / "niri/config.kdl.pre-hearth-v1").read_text(encoding="utf-8"),
+            (self.config / "niri/config.kdl.pre-hearth-v2").read_text(encoding="utf-8"),
             "// owner setting\n",
         )
-        self.assertEqual(json.loads(settings.read_text(encoding="utf-8"))["currentThemeName"], "owner")
 
     def test_existing_backup_is_never_overwritten(self):
         niri = self.config / "niri/config.kdl"
-        backup = self.config / "niri/config.kdl.pre-hearth-v1"
+        backup = self.config / "niri/config.kdl.pre-hearth-v2"
         niri.parent.mkdir(parents=True)
         niri.write_text("// current owner setting\n", encoding="utf-8")
         backup.write_text("// earlier owner backup\n", encoding="utf-8")
@@ -622,7 +616,6 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("- linux/amd64", recipe)
         self.assertIn("- avengemedia/dms", recipe)
         self.assertIn("- quickshell", recipe)
-        self.assertIn("- dgop", recipe)
         self.assertIn("install-hearth-shell.sh", recipe)
         self.assertIn("- niri", recipe)
         self.assertIn("NAME: hearthOS", recipe)
@@ -644,8 +637,9 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("tailscaled.service", recipe)
 
         installer = SHELL_INSTALLER.read_text(encoding="utf-8")
-        self.assertIn("releases/download/hearth-v0.1.0-7/", installer)
-        self.assertIn("22f38a85e78928fb00fbe7b59467b2a0c0794ae887687f34fc87c55c02d72603", installer)
+        self.assertIn("hearth-v0\\.3\\.0-rc", installer)
+        self.assertIn('readonly default_url=""', installer)
+        self.assertIn('readonly default_sha256=""', installer)
         self.assertIn('dnf5_bin="${HEARTH_DNF5:-/usr/bin/dnf5}"', installer)
         self.assertNotIn("/latest/", installer)
 
@@ -658,7 +652,7 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("hearth-return-gaming:", justfile)
         self.assertFalse((SYSTEM / "usr/bin/starlight").exists())
 
-    def test_static_data_is_parseable_and_locked_to_v2(self):
+    def test_static_data_is_parseable_and_locked_to_v4(self):
         theme = json.loads((SYSTEM / "usr/share/hearth/themes/hearth.json").read_text(encoding="utf-8"))
         self.assertEqual(theme["dark"]["background"], "#171117")
         self.assertEqual(theme["dark"]["warning"], "#D9A35F")
@@ -667,13 +661,16 @@ class ImageContractTests(unittest.TestCase):
         self.assertFalse((SYSTEM / "etc/steamos-manager/config.toml").exists())
         manager = tomllib.loads(manager_path.read_text(encoding="utf-8"))
         self.assertEqual(manager["session"]["desktop"], "hearth.desktop")
-        layout = json.loads((ROOT / "tests/fixtures/controller-layout-v2.json").read_text(encoding="utf-8"))
-        self.assertEqual(layout["name"], "Hearth Desktop v2")
-        self.assertEqual(layout["input_owner"], "inputplumber")
-        actions = {item["control"]: item for item in layout["actions"]}
-        self.assertEqual(actions["menu"]["emits"], "F10")
-        self.assertEqual(actions["view"]["emits"], "F9")
-        self.assertEqual(actions["guide"]["emits"], None)
+        profile = (SYSTEM / "usr/share/hearth/input/hearth-desktop-v4.yaml").read_text(encoding="utf-8")
+        self.assertIn("name: Hearth Desktop v4", profile)
+        self.assertIn("target_events: [{dbus: ui_option}]", profile)
+        self.assertIn("target_events: [{mouse: {button: Left}}]", profile)
+        self.assertNotIn("keyboard:", profile)
+        self.assertIn("Guide, View, North, L3/R3, LT/RT remain deliberately unbound", profile)
+        contract = json.loads((SYSTEM / "usr/share/hearth/input/inputplumber-v4.json").read_text(encoding="utf-8"))
+        self.assertEqual(contract["profileName"], "Hearth Desktop v4")
+        for event in contract["events"]:
+            self.assertIn(f"dbus: {event}", profile)
 
     def test_scripts_are_syntactically_valid_and_executable(self):
         scripts = [
@@ -698,9 +695,9 @@ class ImageContractTests(unittest.TestCase):
         self.assertNotIn("usermod", bootstrap)
         image_setup = (ROOT / "files/scripts/configure-hearth-session.sh").read_text(encoding="utf-8")
         self.assertIn("/usr/bin/niri validate", image_setup)
-        self.assertIn("rpm -q starlight-hearth-shell", image_setup)
-        self.assertIn("rpm -q --whatprovides dms", image_setup)
-        self.assertNotIn("/usr/bin/dms version", image_setup)
+        self.assertIn("rpm -q hearth-shell", image_setup)
+        self.assertNotIn("dms.service", image_setup)
+        self.assertIn("hearth-shell-ui.service", image_setup)
         self.assertIn("hearth-display-policy.service", image_setup)
         self.assertIn("hearth-default-desktop.service", image_setup)
 

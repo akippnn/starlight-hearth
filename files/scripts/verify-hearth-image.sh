@@ -31,10 +31,11 @@ required_files=(
   /usr/lib/systemd/user/hearth-display-policy.service
   /etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
   /usr/share/applications/hearth-return-gaming.desktop
-  /usr/share/hearth/dms/settings.json
+  /etc/hearth-shell/config.json
   /usr/share/hearth/niri/config.kdl
   /usr/share/hearth/niri/hearth.kdl
-  /usr/share/hearth/input/hearth-desktop-v2.yaml
+  /usr/share/hearth/input/hearth-desktop-v4.yaml
+  /usr/share/hearth/input/inputplumber-v4.json
   /usr/share/hearth/input/hearth-gaming-v2.yaml
   /usr/share/hearth/themes/hearth.json
   /usr/share/steamos-manager/user.d/config.toml
@@ -69,7 +70,8 @@ for path in /usr/libexec/hearth-input-adapter /usr/libexec/hearth-input-request 
   }
 done
 
-[[ "$(readlink /usr/lib/systemd/user/niri.service.wants/dms.service)" == "../dms.service" ]]
+[[ "$(readlink /usr/lib/systemd/user/niri.service.wants/hearth-shell.service)" == "../hearth-shell.service" ]]
+[[ "$(readlink /usr/lib/systemd/user/niri.service.wants/hearth-shell-ui.service)" == "../hearth-shell-ui.service" ]]
 [[ "$(readlink /usr/lib/systemd/user/niri.service.wants/hearth-display-policy.service)" == "../hearth-display-policy.service" ]]
 [[ "$(readlink /usr/lib/systemd/user/default.target.wants/hearth-default-desktop.service)" == "../hearth-default-desktop.service" ]]
 grep -Fqx 'OnlyShowIn=KDE;' /etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
@@ -81,5 +83,4 @@ systemctl is-enabled tailscaled.service
 systemctl is-enabled hearth-identity.service
 systemctl is-enabled hearth-input-adapter.service
 rpm -q --qf '%{NAME}-%{EPOCHNUM}:%{VERSION}-%{RELEASE}.%{ARCH}\n' \
-  starlight-hearth-shell niri xwayland-satellite
-rpm -q --whatprovides dms
+  hearth-shell niri xwayland-satellite

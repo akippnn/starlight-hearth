@@ -60,16 +60,36 @@ later Hearth Portal/apps proposal and must not be reused.
 
 The deployed host was not changed by this documentation work.
 
-## Deferred reconciliation
+## HSN-001 shell archive result
+
+The owner-authorized archive operation completed before HSN-001 shell work:
+
+- private remote: `akippnn/starlight-hearth-shell-dms-archive`;
+- verified all-refs bundle: `starlight-hearth-shell-all-refs.bundle`, SHA-256
+  `b874ff99e9ee25fd8f5ab638c5744923b67137488299065603f293ddaf59ed15`;
+- dirty worktree snapshot: `starlight-hearth-shell-dirty-worktree.tar.gz`,
+  SHA-256
+  `9233da1d728ef2e0867e68b3aa622e4715e7feed2c7f06d962a0f168fe40c924`;
+- bundle verification: complete history, 133 refs including symbolic remote
+  HEAD; remote verification: 132 concrete refs with sampled main, HS-003,
+  release-tag, and remote-tracking identities matching;
+- recovery directory:
+  `/Users/akippnn/Projects/10 Projects/hearth-recovery-snapshots/2026-08-25-hsn-001-shell-archive/`;
+- clean orphan worktree:
+  `/Users/akippnn/Projects/10 Projects/starlight-hearth-shell-hsn001`, branch
+  `codex/hsn-001-launcher-nucleus`.
+
+The existing public `main`, historical tags, and original dirty worktree were
+not changed.
+
+## Remaining reconciliation
 
 The future shell repository operation must separately:
 
-1. reconfirm and archive every ref and dirty input;
-2. choose the private archive repository name;
-3. establish clean Hearth-native canonical history;
-4. selectively import only reviewed implementation and tests;
-5. record every donor revision/license;
-6. perform the hard runtime rename through a frozen product slice; and
-7. leave recovery available throughout.
+1. build and inspect the clean Hearth-native candidate package;
+2. record every final donor file/license and installed notice;
+3. prove the hard runtime rename in the built image;
+4. leave recovery available throughout; and
+5. cut over public `main` only after owner acceptance and separate authorization.
 
 This record authorizes none of those steps.

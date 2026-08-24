@@ -23,7 +23,7 @@ class PublicWarningContracts(unittest.TestCase):
             "description: PRE-ALPHA / OWNER TESTING ONLY - DO NOT INSTALL FOR GENERAL USE.",
             recipe,
         )
-        self.assertIn("VS-002 is audit-ready and awaits owner hardware acceptance.", recipe)
+        self.assertIn("HSN-001 is active with owner verdict pending; no audit-ready candidate exists.", recipe)
         self.assertIn(
             "org.opencontainers.image.source: https://github.com/akippnn/starlight-hearth",
             recipe,
@@ -33,4 +33,3 @@ class PublicWarningContracts(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

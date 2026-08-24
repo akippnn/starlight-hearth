@@ -2,10 +2,11 @@
 set -euo pipefail
 
 required=(
-  /usr/bin/dms
+  /usr/bin/hearth-shell-service
   /usr/bin/niri
   /usr/bin/niri-session
-  /usr/lib/systemd/user/dms.service
+  /usr/lib/systemd/user/hearth-shell.service
+  /usr/lib/systemd/user/hearth-shell-ui.service
   /usr/lib/systemd/user/hearth-default-desktop.service
   /usr/lib/systemd/user/hearth-display-policy.service
   /usr/lib/systemd/user/niri.service
@@ -30,7 +31,8 @@ for path in "${required[@]}"; do
 done
 
 install -d -m 0755 /usr/lib/systemd/user/niri.service.wants
-ln -sfn ../dms.service /usr/lib/systemd/user/niri.service.wants/dms.service
+ln -sfn ../hearth-shell.service /usr/lib/systemd/user/niri.service.wants/hearth-shell.service
+ln -sfn ../hearth-shell-ui.service /usr/lib/systemd/user/niri.service.wants/hearth-shell-ui.service
 ln -sfn ../hearth-display-policy.service \
   /usr/lib/systemd/user/niri.service.wants/hearth-display-policy.service
 
@@ -54,7 +56,4 @@ install -d -m 0700 "$validation_root/niri"
 install -m 0600 /usr/share/hearth/niri/config.kdl "$validation_root/niri/config.kdl"
 XDG_CONFIG_HOME="$validation_root" /usr/bin/niri validate
 
-# DMS refuses to start as root, including for its version subcommand. Image
-# modules run as root, so verify the installed RPM without executing DMS.
-rpm -q starlight-hearth-shell >/dev/null
-rpm -q --whatprovides dms >/dev/null
+rpm -q hearth-shell >/dev/null

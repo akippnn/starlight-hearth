@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 name: starlight-hearth
-description: PRE-ALPHA / OWNER TESTING ONLY - DO NOT INSTALL FOR GENERAL USE. VS-001 foundation is proven; VS-002 is audit-ready and awaits owner hardware acceptance.
+description: PRE-ALPHA / OWNER TESTING ONLY - DO NOT INSTALL FOR GENERAL USE. HSN-001 is active with owner verdict pending; no audit-ready candidate exists.
 
 base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: stable
@@ -14,9 +14,8 @@ labels:
 blue-build-tag: v0.9.37
 
 modules:
-  # Hearth Shell retains DMS's Fedora repository for its Quickshell and dgop
-  # runtime dependencies. The shell itself is installed from the immutable,
-  # checksum-pinned Hearth release below.
+  # Quickshell comes from its Fedora COPR. Hearth Shell itself is installed from
+  # the immutable, checksum-pinned HSN release below.
   - type: dnf
     repos:
       cleanup: true
@@ -25,7 +24,6 @@ modules:
     install:
       packages:
         - quickshell
-        - dgop
         - niri
         - xwayland-satellite
 
