@@ -1,27 +1,38 @@
-# VS-004 application compatibility matrix
+# Controller compatibility planning register
 
-Status: deferred; not an acceptance gate for VS-002
+**State:** no active candidate and no current compatibility verdict
 
-Record grades only when VS-004 is active and after exercising its exact candidate with the owner's
-2.4 GHz receiver and Xbox-style logical mapping. A row needs a grade, observed
-workflow, candidate digest, and notes before it counts as evidence.
+Record compatibility only against an exact application/package/image revision
+and a declared owner workflow. A source test or generic reputation does not
+establish an application grade.
 
-| Surface/application | Required workflow | Target | Observed grade | Evidence/notes |
-|---|---|---:|---:|---|
-| Gaming → Hearth Desktop | Steam Power menu, session starts, controller remains active | A/B | Pending | Candidate required |
-| DMS launcher | Open, move focus, launch, close | A/B | Pending | Candidate required |
-| DMS Control Center | Volume, brightness, network, Bluetooth | A/B | Pending | Candidate required |
-| Return to Gaming Mode | Launch action and regain Steam UI | A/B | Pending | Candidate required |
-| KDE recovery | Run `ujust hearth-recovery-kde`, navigate, return | A/B | Pending | Candidate required |
-| Polkit prompt | Focus identity/password, use OSK, authorize/cancel | A/B | Pending | Candidate required |
-| Steam on-screen keyboard | Open, enter text, close, restore focus | A/B | Pending | Candidate required |
-| Firefox | Browse, focus controls, enter URL/text, download | A–C | Pending | Candidate required |
-| Dolphin | Browse locations, open/copy/move one file, close | A–C | Pending | Candidate required |
-| Jellyfin Desktop | Browse, search with OSK, play/pause/seek, exit | A–C | Pending | Candidate required |
-| mpv | Open media, play/pause/seek, fullscreen, exit | A–C | Pending | Candidate required |
-| LocalSend | Select device/file, send/receive, acknowledge result | A–C | Pending | Candidate required |
-| Warehouse | Inspect an app and a non-destructive setting | A–C | Pending | Candidate required |
-| Mission Center | Navigate views, inspect a process, close | A–C | Pending | Candidate required |
+## Grades
 
-A D result in any row blocks audit-readiness unless the application is removed
-from the default set in a separately reviewed change.
+- **A — native semantic:** purpose-built focus/actions with correct hints.
+- **B — native application/focus:** complete through the application's reliable
+  gamepad or keyboard focus behavior.
+- **C — pointer/profile assisted:** complete with explicit Hearth profile,
+  pointer, and supported OSK behavior.
+- **D — unsupported:** requires an undeclared physical-keyboard workaround or
+  cannot complete the required workflow.
+
+## Future evaluation inventory
+
+| Surface/application | Required workflow | Target | Current evidence |
+| --- | --- | --- | --- |
+| Hearth session transition | Gaming → Desktop → Gaming, reconnect, recovery | A/B | Historical partial evidence only |
+| App Menu | Open, focus, search, change Grid/List, launch, context action, close | A | No Hearth-native candidate |
+| Hearth Bar | Reveal, focus, open/close owned panel, restore focus | A | No Hearth-native candidate |
+| OSK | Open, type, change layer/layout, dock, secure field, close | A | No wvkbd-derived candidate |
+| Hearth Settings | Navigate and apply/recover one setting | A | Proposed |
+| Hearth Portal | Inspect and execute one typed safe action | A | Proposed |
+| KDE recovery | Enter recovery, perform essential workflow, return | A–C | Historical recovery evidence; remains required |
+| Firefox | Browse, URL/text entry, download | A–C | Candidate-specific audit required |
+| Dolphin | Browse, open, copy/move/rename/delete/recover | A–C | Default retained; contingency gate requires evidence |
+| Nautilus | Same file workflow if evaluated as fallback | A–C | Not yet evaluated |
+| Other default applications | Workflow from the accepted application catalog | A–C | Exact candidate required |
+
+A future default-application outcome must define how D grades are handled; it
+cannot silently publish unsupported applications as controller-friendly.
+The file-manager activation rule is in
+`docs/contracts/file-manager-contingency.md`.

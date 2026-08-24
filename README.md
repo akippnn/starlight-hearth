@@ -3,137 +3,102 @@
 > [!WARNING]
 > **Pre-alpha — owner testing only.**
 >
-> hearthOS is not ready for general installation. The VS-001 foundation is
-> proven, but its original controller-ready claim was rejected; VS-002 replaces
-> that ownership model and is now audit-ready with all automated/build gates
-> passing. Final physical hardware acceptance remains owner-only.
+> hearthOS is not ready for general installation. No implementation slice is
+> currently active, frozen, audit-ready, or owner-accepted. The project is in a
+> documentation and planning reconciliation phase.
 >
-> The public GHCR package is a development artifact; package download counts do
-> not imply a supported release. Do not rebase to `latest` or another moving
-> tag. During development, use only an immutable digest recorded in the active
-> evidence record.
+> Existing GHCR images are historical development artifacts; download counts
+> do not imply a supported release. Do not rebase to `latest` or infer current
+> support from an older candidate.
 
+hearthOS is a living-room gaming operating system in the Starlight family.
+Steam Gaming Mode remains the console experience. Hearth Desktop is intended
+to become a controller-, keyboard-, and pointer-native alternative that is
+usable locally without requiring another computer over SSH.
 
-hearthOS is the controller-first living-room PC operating system in the
-Starlight family. Steam Gaming Mode remains the console experience. **Hearth
-Desktop** combines the upstream niri compositor with **Hearth Shell**, the
-Starlight-maintained DMS fork built for televisions, controllers, and keyboard
-navigation.
+The target Hearth Shell is a Hearth-owned Quickshell/QML shell on unmodified
+niri. DMS remains useful as a reference and selective source, but it is no
+longer the product architecture. The target is not a web, Electron, React,
+WebView, or localhost shell.
 
-The repository and OCI image remain `starlight-hearth` and
-`ghcr.io/akippnn/starlight-hearth`. Bazzite and Fedora remain the compatible
-base platform; they are not the visible product identity. The discontinued
-`starlightOS` name is retained only in historical material.
+## Current phase
 
-## Starlight family
+**Documentation foundation reconciliation; no active product slice.**
 
-```text
-Starlight
-├── hearthOS
-│   └── Living-room gaming and controller-first desktop operating system
-└── Ember
-    └── Future independent always-on hardware-management service
-```
+Historical VS/HS work, including HS-003, is retained as implementation and
+audit evidence without being promoted to current support. No documentation
+decision by itself authorizes shell code, packaging, configuration, image,
+deployment, or owner-audit work.
 
-Arcturus may share Ember hardware, but it is independent of Starlight. This
-repository contains no Ember or Arcturus placeholder interfaces or data.
+Current authority:
 
-## Delivery state
+- [Product direction](docs/product-direction.md)
+- [Architecture foundation](docs/architecture.md)
+- [Repository reconciliation record](docs/repository-reconciliation.md)
+- [Requirements register](docs/requirements.md)
+- [Open decisions](docs/open-questions.md)
+- [Planning behavior contracts](docs/contracts/README.md)
+- [Roadmap](docs/roadmap.md)
+- [Current status](docs/status.md)
+- [Reuse/licensing ledger](docs/reuse-ledger.md)
+- [Handoff coverage matrix](docs/coverage-matrix.md)
+- [Immutable 2026-08-24 handoff](docs/handoffs/2026-08-24/INDEX.md)
 
-**Overall state: pre-alpha; implementation is complete through VS-002, with owner hardware acceptance still pending.**
-
-VS-001 proved the signed niri/DMS image, TV scaling, and recovery foundation,
-but its owner audit disproved the controller-ready claim. It is preserved as
-**superseded and not accepted**.
-
-[VS-002 — Controller Handoff and Hearth Home](docs/slices/VS-002-controller-handoff-and-hearth-home.md)
-is active. The current source of truth is [docs/status.md](docs/status.md), with
-the remaining slices in [docs/roadmap.md](docs/roadmap.md).
-
-## Architecture
+## Architecture direction
 
 ```text
-Steam Gaming Mode
-├── Steam Input owns game semantics
-└── InputPlumber exposes an identity gamepad
-        │
-        ▼
-Bazzite steamos-manager / steamosctl
-        │
-        ▼
-Hearth Desktop
-├── niri (unmodified upstream compositor)
-├── Hearth Shell (`starlight-hearth-shell` RPM)
-└── InputPlumber exposes only Hearth keyboard/mouse semantics
-
-KDE Plasma
-└── Recovery desktop retained until a later accepted retirement slice
+InputPlumber / niri / Wayland
+              │
+              ▼
+Rust hearth-shell companion
+├── lifecycle and semantic controller routing
+├── safe application launch and diagnostics
+├── configuration validation/migration
+└── supervised wvkbd-derived OSK child
+              │
+              ▼
+Quickshell/QML Hearth surfaces
 ```
 
-Input ownership is fail-safe: an unknown session gets a conventional gamepad,
-never simultaneous Steam and Desktop mappings. The state is visible at
-`/run/hearth/input-state.json`.
+Applications launch outside the shell's lifecycle in transient user-systemd
+units/scopes. Configuration is one versioned JSON model layered from packaged
+defaults through `/etc` policy to XDG user overrides. Exact wire/schema details
+remain open until a future contract is frozen.
 
-## Controller contract
+Hearth Shell's accepted license direction is `GPL-3.0-only`, enabling deliberate
+license-compatible reuse from Clavis, Caelestia, DMS, M3Shapes, wvkbd, and
+other audited donors. Every import requires exact revision and per-file
+attribution records.
 
-`Hearth Desktop v2` is image-owned and documented in
-[docs/controller-layout.md](docs/controller-layout.md). Its essential actions
-are directional focus, accept/back, focus-group traversal, pointer/click,
-scroll, Home, niri overview, and the Hearth on-screen keyboard. Guide remains
-Steam-owned and is never intercepted by Hearth.
+## Historical delivery and recovery
 
-Hearth Shell also supports `h/j/k/l`, `g/G`, and page navigation outside text
-entry fields. Emergency keyboard bindings remain available:
+- VS-001/HS-001 proved signed boot, niri/DMS startup, TV scaling, and recovery,
+  but its controller-ready claim was rejected.
+- VS-002/HS-002 proved useful session/input-handoff behavior but did not produce
+  an accepted controller-native desktop.
+- HS-003 contains reusable semantic-routing and UI test evidence but was never
+  owner-accepted and is now superseded by the Hearth-native direction.
 
-- `Ctrl+Alt+Enter` — open Konsole;
-- `Ctrl+Alt+D` — restart Hearth Shell through `dms.service`;
-- `Ctrl+Alt+Shift+E` — exit niri.
+Historical identifiers are mapped in
+[docs/identifier-migration.md](docs/identifier-migration.md). Historical files
+retain their original wording and must be read through current status.
 
-Session recovery commands are:
-
-```bash
-ujust hearth-return-gaming
-ujust hearth-recovery-kde
-```
-
-## Installation and rollback
-
-Install only an immutable signed OCI digest recorded in the active evidence
-record. Do not rebase to a moving tag.
-
-```bash
-sudo rpm-ostree rebase \
-  ostree-image-signed:docker://ghcr.io/akippnn/starlight-hearth@sha256:<recorded-digest>
-systemctl reboot
-```
-
-Keep the previous deployment until the owner audit is complete. Hearth Desktop,
-the controller profiles, and session switching require no network after the
-image is installed.
-
-## Configuration ownership and failure behavior
-
-Versioned defaults are installed for new users without overwriting owner-edited
-niri or DMS-compatible configuration. Hearth Shell retains `/usr/bin/dms`,
-`dms.service`, existing IPC names, and configuration paths during the fork
-transition.
-
-If Hearth Shell fails, niri and its emergency bindings remain available. If
-InputPlumber is unavailable or Bazzite's session interface changes, the adapter
-blocks the transition instead of guessing. KDE, TTY, Tailscale, the current
-Gaming session, and the previous atomic deployment remain recovery paths.
+KDE Plasma, TTY, Tailscale, Gaming Mode, and previous atomic deployments remain
+recovery paths. KDE retirement requires a later dedicated owner-accepted
+outcome; it is not authorized by the shell direction change.
 
 ## Development
 
-The source repository contains image policy and integration; Hearth Shell is
-released independently from `akippnn/starlight-hearth-shell` and installed by
-an exact RPM URL plus SHA-256, never `latest`.
+This repository owns image policy, integration, recovery, cross-repository
+contracts, and delivery truth. `starlight-hearth-shell` remains a separate
+release boundary and is intentionally untouched by the current documentation
+phase.
 
-Run local contracts with:
+Existing repository checks can be run with:
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-Linux x86_64 is the only build target. Authoritative package and integration
-checks run through CI and `ssh aki@bazzite`.
+Linux x86_64 remains the existing build target. No new build or deployment is
+produced by the documentation reconciliation.

@@ -1,41 +1,44 @@
-# Hearth Desktop v2 controller contract
+# Controller layout planning summary
 
-InputPlumber normalizes the physical controller in both sessions.
+**State:** accepted defaults with unresolved global actions; not frozen
+**Canonical detail:** `docs/contracts/input-navigation.md` and `docs/contracts/osk.md`
 
-- **Gaming Mode:** identity gamepad only; Steam Input owns game semantics.
-- **Hearth Desktop:** Hearth keyboard/mouse profile only; Steam receives no
-  desktop-mappable gamepad.
-- **Unknown state:** gamepad-only fail-safe; Desktop mappings are never emitted.
+The historical Hearth Desktop v2/v3 manifests and InputPlumber profiles are
+implementation evidence, not the current mapping authority. Future manifests
+must be data-driven and generated or validated against the frozen contract for
+their slice.
 
-The machine-readable fixture is
-[`tests/fixtures/controller-layout-v2.json`](../tests/fixtures/controller-layout-v2.json).
+## Accepted Desktop defaults
 
-| Controller input | Desktop output | Meaning |
-|---|---|---|
-| D-pad | Arrow keys | Directional focus |
-| A / B | Enter / Escape | Accept / back |
-| LB / RB | Shift+Tab / Tab | Previous / next focus group |
-| Right stick | Mouse motion | Pointer |
-| RT / LT | Left / right mouse button | Primary / secondary click |
-| Left stick | Wheel up/down | Scrolling |
-| X | Space | Toggle focused control |
-| Y | F12 | Hearth on-screen keyboard |
-| Menu | F10 | Hearth Home |
-| View | F9 | niri overview |
-| Guide | Unmapped | Reserved for Steam; never intercepted by Hearth |
+| Physical control | Default behavior outside the OSK |
+| --- | --- |
+| D-pad | Semantic focus |
+| Left stick | Scroll/paging |
+| Right stick | Pointer |
+| South | Accept |
+| East | Back |
+| West | Contextual alternate action; Grid/List toggle in App Menu |
+| North | Open OSK immediately at active text target or primary search |
+| RT / LT | Next/previous App Menu tab |
+| RB / LB | Primary/secondary pointer click |
+| Menu/Start | Open App Menu; selected-app actions while inside it |
 
-Hearth Shell also accepts `h/j/k/l`, `g/G`, Page Up/Page Down, Tab, and
-Shift+Tab outside text-entry fields. Opening a modal establishes one visible
-focus target; closing and reopening restores a deterministic target rather than
-leaving focus on an invisible control.
+West is the physical west position: Xbox X, PlayStation Square, Nintendo Y.
+Guide, View, L3/R3, global media/window/workspace chords, and pointer tuning
+remain open.
 
-## Compatibility grades
+## Accepted keyboard defaults
 
-- **A — native:** purpose-built semantic controller focus and actions.
-- **B — focus:** complete through keyboard-style focus navigation.
-- **C — pointer-assisted:** complete through pointer emulation and Hearth OSK.
-- **D — unsupported:** requires a physical keyboard or cannot complete its
-  primary workflow.
+| Action | Keys |
+| --- | --- |
+| Open App Menu | `Super+A` |
+| Navigate | Arrows, `HJKL`, `WASD` |
+| Search | `i`, `/`, `Ctrl+F` |
+| App Menu tabs | `Ctrl+Tab`, `Ctrl+Shift+Tab` |
+| Grid/List | `Ctrl+1`, `Ctrl+2` |
+| Context/options | Menu key, `Shift+F10` |
+| Manual OSK | `Super+I`, `F12` |
 
-VS-002 core shell, OSK, power, and session transitions must be A or B. The
-default-application matrix moves to VS-004.
+The old fake-keyboard v2 mapping, F10 launcher, trigger clicks, bumper group
+navigation, and north-button hold behavior are superseded defaults. Historical
+artifacts retain them for provenance.

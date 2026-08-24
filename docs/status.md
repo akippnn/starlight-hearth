@@ -1,55 +1,76 @@
 # Current status
 
-Last updated: 2026-08-22
+**Last updated:** 2026-08-25
+**Current phase:** documentation foundation reconciliation
+**Active implementation slice:** none
+**New owner verdict:** none
 
-This is the single current-status source for `starlight-hearth`.
+This is the single mutable delivery-status authority for `starlight-hearth`.
 
-## Active slice
+## Current work
 
-**VS-002 — Controller Handoff and Hearth Home** is **audit-ready**. Automated
-and build-time gates pass; owner hardware acceptance is pending.
+The complete 2026-08-24 handoff and later planning decisions are being
+reconciled into canonical product, architecture, requirement, decision,
+behavior, roadmap, and open-question documents. This work changes
+documentation only.
 
-VS-001 is **superseded and not accepted**. It proved signed image boot, niri,
-upstream DMS, television scaling, hearthOS identity, KDE/TTY/atomic recovery,
-and repeated build signing. Its owner audit disproved the claimed
-controller-ready outcome: navigation depended on Steam's partial desktop map,
-DMS was primarily pointer-oriented, and controller reconnection did not restore
-deterministic Desktop ownership. The original evidence remains in
-[`evidence/VS-001.md`](evidence/VS-001.md).
+It does **not**:
 
-VS-002 replaces the failed ownership model with:
+- freeze or activate a product slice;
+- implement Hearth Shell, App Menu, Bar, OSK, Settings, Portal, wallpaper, or
+  Gaming Mode behavior;
+- change the OCI image, packages, configuration, InputPlumber, niri, deployed
+  host, or `starlight-hearth-shell` repository;
+- create an audit target;
+- claim audit-readiness or owner acceptance.
 
-- Hearth Shell, an upstream-tracking DMS fork released as the exact
-  `starlight-hearth-shell` RPM while retaining compatibility interfaces;
-- InputPlumber-owned session profiles for the Pro 3 receiver `2dc8:310b`;
-- a fail-safe adapter that prevents Steam Input and Desktop mappings from being
-  active simultaneously and records state under `/run/hearth`;
-- controller-native Home, power, on-screen keyboard, TV layouts, focus rings,
-  vim navigation, and top-right notifications;
-- complete visible hearthOS identity while preserving Bazzite/Fedora
-  compatibility and provenance fields.
+## Historical status
 
-## Verification state
+| Record | Delivery state | Owner verdict | Current interpretation |
+| --- | --- | --- | --- |
+| VS-001 / HS-001 | Superseded | Rejected for controller-ready outcome | Boot, identity, TV-scale, niri/DMS startup, and recovery evidence remain historical facts. |
+| VS-002 / HS-002 | Superseded | Not accepted | Input/session handoff and packaging evidence remain useful; it did not establish an accepted controller-native desktop. |
+| HS-003 | Superseded | Pending/no owner verdict | Feature-branch implementation evidence exists; no owner-visible Hearth-native result is claimed. |
 
-| Gate | State | Evidence |
-|---|---|---|
-| Frozen DMS fork baseline | Pass | Upstream `20aafebd87f0340c24b585180ab36339d6b154ad`; submodule `fbbdddc47b5564dcf67aa05bd7bf1d3af8f5aad5` |
-| Shell Go and Hearth tests | Pass locally | Fedora 44 x86_64 on `aki@bazzite` |
-| Nested niri/Quickshell smoke | Pass locally | Shell remained alive for the bounded run; one discovered QML import defect was repaired |
-| Shell RPM build/install | Pass | Published Fedora 44 x86_64 RPM; package replacement, ownership, embedded QML, and non-root version checks pass on `aki@bazzite` |
-| InputPlumber schema validation | Pass locally | Installed Bazzite 0.78.0 schemas validate composite and both profiles |
-| hearthOS repository contracts | Pass locally | 30 tests on x86_64 Bazzite; current count recorded in VS-002 evidence |
-| Public shell repository/release | Pass | Signed `hearth-v0.1.0-7` at `49456632b17ba962755c2dd18376d9a859eaf11a`; release workflow run `32517193618` passed |
-| Pinned shell RPM in image | Pass | Exact release URL and SHA-256 `22f38a85e78928fb00fbe7b59467b2a0c0794ae887687f34fc87c55c02d72603`; checksum failure blocks installation |
-| Complete signed OCI build | Pass | Workflow `32519243312`; amd64 OCI index `sha256:a27e4847061b71026eba98d39de96f9db3c3b5b029282ae1601aaabe27c01296` |
-| Built-image contract | Pass | Final image verifier ran after identity customization and proved package replacement, session files, services, profiles, recovery, and stale-stub absence |
-| Owner controller audit | Pending | Owner-only hardware proof and verdict |
+The old DMS-derived-product decision is superseded by ADR-0006. The semantic
+controller architecture remains reusable under ADR-0007. Historical ADRs,
+contracts, and evidence retain their original wording and must be interpreted
+through these newer authorities.
 
-No agent may mark VS-002 accepted. The signed candidate has reached the highest
-agent-controlled state, `audit-ready`; acceptance remains owner-only.
+## Accepted planning decisions
 
-## Scope boundaries
+- Hearth-owned Quickshell/QML shell on unmodified niri.
+- DMS as selective reference/donor, not maintained product.
+- `GPL-3.0-only` shell governance with an exact import ledger.
+- Rust companion plus QML UI, transient application launches, and layered JSON
+  configuration.
+- Explicit Navigation/Text modes and current semantic input defaults.
+- Right-drawer App Menu with exactly Grid/List modes.
+- wvkbd-derived OSK architecture and privacy/geometry/input behavior.
+- Hearth Bar visible for hover, focus, or any owned open panel.
+- Dolphin retained with a dormant Index/MauiKit file-manager contingency.
+- Explicit decision lifecycle and owner-only product acceptance.
 
-Decky, CSS Loader, Framegen, general application coverage, secure lock/session
-lifecycle, Ember, NVIDIA support, telemetry, cloud services, Tauri, CLI
-diagnostics, and KDE removal are outside VS-002.
+These are accepted and reopenable planning decisions. None is
+`Frozen-for-slice`.
+
+## Repository and deployment state
+
+The documentation work began from `starlight-hearth` `main` at
+`aec9dc874da5c4c698ca74073fc087f449454e74`. The former dirty HS-003 worktree
+was preserved in its branch, a named Git stash, and an external verified
+archive before switching to `main`.
+
+`starlight-hearth-shell`, its DMS ancestry, runtime code, and the deployed host
+remain unchanged. The eventual shell-history reset and hard runtime rename are
+future separately authorized operations.
+
+Existing image/build metadata may still project historical VS-002 state. No
+new image may be built or presented as current until a later non-documentation
+change reconciles those non-document public projections against this status.
+
+## Next gate
+
+The owner reviews the canonical documentation and corrects any drift. A future
+turn may then plan one candidate outcome. Implementation begins only after its
+contract is explicitly frozen at an exact revision.

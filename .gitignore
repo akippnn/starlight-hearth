@@ -3,3 +3,6 @@ cosign.private
 /Containerfile
 *.iso
 *.iso-CHECKSUM
+.DS_Store
+__pycache__/
+*.py[cod]
