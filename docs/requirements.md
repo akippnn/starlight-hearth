@@ -2,7 +2,8 @@
 
 **Authority:** canonical product requirements
 **Last reconciled:** 2026-08-25
-**Freeze state:** none of these requirements is frozen for implementation
+**Freeze state:** the HSN-001 subset is frozen by its exact slice contract;
+remaining requirements retain their row states
 
 The archived handoff is source evidence. This register records its continuing
 requirements together with later explicit owner decisions. Detailed accepted

@@ -1,8 +1,8 @@
 # Historical slice identifier record
 
 This record preserves aliases used by signed commits, branches, evidence, and
-the superseded 2026-08-23 multi-track roadmap. It does not reserve identifiers
-for future implementation.
+the superseded 2026-08-23 multi-track roadmap, and registers the new
+collision-free Hearth-native track.
 
 | Original identifier | Later alias | Historical meaning |
 | --- | --- | --- |
@@ -21,5 +21,10 @@ be reused. Replacement IDs will be reserved only when the future roadmap and
 individual contracts are approved.
 
 Historical files keep their original identifiers. Current planning uses
-requirement IDs and unnumbered candidate outcomes until a new registry is
-explicitly accepted.
+requirement IDs and the following registry:
+
+| Prefix | Meaning | First reservation |
+| --- | --- | --- |
+| `HSN` | Hearth-native Shell owner-visible outcomes | `HSN-001` — Hearth-native Launcher Nucleus |
+
+The HSN prefix does not reinterpret or reuse any historical VS/HS identifier.

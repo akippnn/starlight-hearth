@@ -1,6 +1,6 @@
 # hearthOS planning roadmap
 
-**Roadmap state:** documentation reconciliation; no active implementation slice
+**Roadmap state:** HSN-001 frozen; exact contract revision pending status record
 **Last updated:** 2026-08-25
 
 Future identifiers are intentionally unassigned. They will be reserved only
@@ -22,7 +22,7 @@ Historical contracts and evidence remain under `docs/slices/` and
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| Hearth-native shell and launcher minimum | Approved foundation plus exact donor/import plan | From a real Desktop session, controller/keyboard/pointer can open App Menu, navigate, launch a separate application, and retain recovery | Proposed; exact first contract open |
+| **HSN-001 — Hearth-native Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Frozen; activation revision record pending |
 | Hearth Bar minimum | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, multi-input behavior, and owner-visible reachability | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
 | Hearth Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
@@ -59,6 +59,6 @@ their individual contracts are approved.
 
 ## Current gate
 
-Review and correct the foundation documentation. Only afterward may the owner
-select and freeze one candidate outcome at an exact contract revision. This
-roadmap does not activate any candidate.
+Record the exact HSN-001 contract commit in a following status commit, then
+implement only its provider, consumer, package, and image responsibilities.
+Owner acceptance remains separate.

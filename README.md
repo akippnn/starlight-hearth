@@ -3,9 +3,9 @@
 > [!WARNING]
 > **Pre-alpha — owner testing only.**
 >
-> hearthOS is not ready for general installation. No implementation slice is
-> currently active, frozen, audit-ready, or owner-accepted. The project is in a
-> documentation and planning reconciliation phase.
+> hearthOS is not ready for general installation. HSN-001 is frozen and awaits
+> its exact external revision record before implementation activates. It is not
+> audit-ready or owner-accepted.
 >
 > Existing GHCR images are historical development artifacts; download counts
 > do not imply a supported release. Do not rebase to `latest` or infer current
@@ -23,7 +23,7 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**Documentation foundation reconciliation; no active product slice.**
+**HSN-001 contract freeze; no active implementation evidence yet.**
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation
@@ -62,8 +62,8 @@ Quickshell/QML Hearth surfaces
 
 Applications launch outside the shell's lifecycle in transient user-systemd
 units/scopes. Configuration is one versioned JSON model layered from packaged
-defaults through `/etc` policy to XDG user overrides. Exact wire/schema details
-remain open until a future contract is frozen.
+defaults through `/etc` policy to XDG user overrides. HSN-001 freezes the v1
+launcher subset and public typed service boundary.
 
 Hearth Shell's accepted license direction is `GPL-3.0-only`, enabling deliberate
 license-compatible reuse from Clavis, Caelestia, DMS, M3Shapes, wvkbd, and
@@ -91,8 +91,8 @@ outcome; it is not authorized by the shell direction change.
 
 This repository owns image policy, integration, recovery, cross-repository
 contracts, and delivery truth. `starlight-hearth-shell` remains a separate
-release boundary and is intentionally untouched by the current documentation
-phase.
+release boundary and will be reconciled only against the exact HSN-001
+contract revision.
 
 Existing repository checks can be run with:
 
@@ -100,5 +100,5 @@ Existing repository checks can be run with:
 python3 -m unittest discover -s tests -v
 ```
 
-Linux x86_64 remains the existing build target. No new build or deployment is
-produced by the documentation reconciliation.
+Linux x86_64 remains the build target. No new build or deployment counts until
+HSN-001 evidence records its exact source, artifact, and target identities.

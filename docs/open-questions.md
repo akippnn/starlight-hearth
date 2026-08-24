@@ -5,17 +5,29 @@
 
 These questions are deliberately not delegated to a future implementer. They
 remain open until research resolves a discoverable fact or the owner explicitly
-accepts a product tradeoff. None blocks the current documentation phase.
+accepts a product tradeoff. HSN-001 resolved only the rows listed below; other
+questions remain outside that slice.
+
+## Resolved for HSN-001
+
+| ID | Resolution |
+| --- | --- |
+| `OQ-001` | Private archive `starlight-hearth-shell-dms-archive`; verified mirror/bundle; clean orphan `codex/hsn-001-launcher-nucleus`; public cutover only after owner acceptance. |
+| `OQ-002` | New typed `Input1`, `Launcher1`, and `Config1` contracts on `org.starlight.HearthShell`; no `Controller1` compatibility import. |
+| `OQ-003` | JSON schema v1, recursive object merge/array replace, unknown-key preservation with warnings, whole-layer rejection for invalid known values, atomic writes, and hot reload. |
+| `OQ-005` | Use Caelestia-pinned M3Shapes `bdc327b…` behind Hearth card wrappers with Apache-2.0 notices. |
+| `OQ-020` | HSN-001 has Favorites only and opens the first available favorite; later tab policy remains out of scope. |
+| `OQ-022` | HSN-001 requires responsive Grid/List at 1280x720 and logical 1920x1080; unavailable favorites hide and focus reflows. Later catalog density/wrapping policy remains open. |
+| `OQ-023` | Validate desktop IDs, hide missing entries, retain focus/drawer and show inline diagnostics on launch failure. Broader catalog policy remains open. |
+| `OQ-060` | `HSN-001` — Hearth-native Launcher Nucleus, frozen in its slice contract. |
+| `OQ-061` | `HSN` prefix registers new Hearth-native shell outcomes without colliding with historical VS/HS/GM IDs. |
+| `OQ-062` | HSN-001 freezes only launcher-nucleus input, config, launch, visual, package, image, and recovery behavior; tabs/search/OSK/Bar and adjacent contracts remain separate. |
 
 ## Shell, repository, and configuration
 
 | ID | Decision still needed |
 | --- | --- |
-| `OQ-001` | Exact private archive repository name, shell-history reset procedure, and cutover revision. |
-| `OQ-002` | Public D-Bus/API successor strategy for `org.starlight.HearthShell.Controller1`. |
-| `OQ-003` | Exact JSON schema/version format, unknown-key behavior, atomic writes, migration rollback, validation UX, and hot-reload semantics. |
 | `OQ-004` | Exact Clavis, Caelestia, DMS, M3Shapes, and other per-file imports after packaging/performance/license audits. |
-| `OQ-005` | Whether and how M3Shapes becomes a packaged foundational dependency and which Hearth wrapper API contains it. |
 
 ## Controller and global navigation
 
@@ -32,10 +44,7 @@ accepts a product tradeoff. None blocks the current documentation phase.
 
 | ID | Decision still needed |
 | --- | --- |
-| `OQ-020` | Whether App Menu always opens Favorites, remembers the last tab, or uses another explicit policy. |
 | `OQ-021` | Search scope, searchable fields, ranking, empty query behavior, and focus restoration after leaving search. |
-| `OQ-022` | Grid density, responsive breakpoints, row/column wrapping, List/Grid card content, and empty group treatment. |
-| `OQ-023` | Launch failure presentation and handling of `Hidden`, `NoDisplay`, `TryExec`, duplicate desktop IDs, and terminal applications. |
 | `OQ-024` | Per-output App Menu placement, remembered state, and behavior when focus/output changes. |
 | `OQ-025` | Clear All Recents, category-editing workflow, and whether later manual application additions remain `.desktop` based. |
 | `OQ-026` | Final Bar left/center/right layout, merged control-center/notification placement, initial focus item, and multi-output visibility. |
@@ -70,11 +79,3 @@ accepts a product tradeoff. None blocks the current documentation phase.
 | `OQ-053` | Hearth Portal's exact adapter/override format, Bazzite catalog pinning/update policy, privilege boundary, and restart contract. |
 | `OQ-054` | Portal's eventual game-management scope and whether Decky-Framegen UI or ProtonPlus can be retired; ProtonTricks is not presumed replaceable. |
 | `OQ-055` | Gaming Mode roadmap order, new collision-free IDs, latency/shader investigation order, and timing of Hearth apps and the Hearth Decky plugin. |
-
-## Delivery planning
-
-| ID | Decision still needed |
-| --- | --- |
-| `OQ-060` | Exact identity, owner-visible outcome, contract, and acceptance gates of the first new Hearth-native shell slice. |
-| `OQ-061` | Future track/ID registry after the historical VS/HS aliases and conflicting GM-001 records. |
-| `OQ-062` | Which behavior contracts become frozen together versus remain separate dependencies. |
