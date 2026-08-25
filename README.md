@@ -3,9 +3,9 @@
 > [!WARNING]
 > **Pre-alpha — owner testing only.**
 >
-> hearthOS is not ready for general installation. HSN-001 is ready for
-> implementation at an exact frozen contract revision. It is not audit-ready
-> or owner-accepted.
+> hearthOS is not ready for general installation. HSN-001 is active at an
+> exact frozen contract revision with an immutable RC.1 shell package. It is
+> not audit-ready or owner-accepted.
 >
 > Existing GHCR images are historical development artifacts; download counts
 > do not imply a supported release. Do not rebase to `latest` or infer current
@@ -23,7 +23,7 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**HSN-001 ready/pending; no implementation evidence yet.**
+**HSN-001 active/pending; RC.1 is packaged and image integration is underway.**
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation
@@ -100,5 +100,5 @@ Existing repository checks can be run with:
 python3 -m unittest discover -s tests -v
 ```
 
-Linux x86_64 remains the build target. No new build or deployment counts until
-HSN-001 evidence records its exact source, artifact, and target identities.
+Linux x86_64 remains the build target. Only exact source, artifact, image, and
+target identities recorded in HSN-001 evidence count toward this candidate.

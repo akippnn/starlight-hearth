@@ -15,10 +15,12 @@ The documentation foundation is clean at
 `17fedae8776ff38b53c07d4098d8ee8b13852253`.
 
 Delivery state is `active`; owner verdict remains `pending`. The clean shell
-orphan branch is implemented through
-`ebfec63ace99430dae487b34c3e20f7219ebdc8d`. Local provider and static consumer
-checks pass. Fedora package, real user-bus, Quickshell, image, and target proof
-remain pending.
+orphan branch is released at signed tag `hearth-v0.3.0-rc.1`, source revision
+`a3503dc734cab9111b065691609bc339918bd779`. Fedora package, real user-bus,
+native QtDBus/M3Shapes, and source/static checks pass. Product integration
+revision `87faf5525fc8de4b39e7a1241eca04b05bb05823` pins its immutable RPM URL and
+SHA-256. Signed image, Quickshell runtime, physical input, motion, recovery,
+and owner proof remain pending.
 
 ## Superseded phase statement
 
@@ -74,9 +76,10 @@ The documentation work began from `starlight-hearth` `main` at
 was preserved in its branch, a named Git stash, and an external verified
 archive before switching to `main`.
 
-`starlight-hearth-shell`, its DMS ancestry, runtime code, and the deployed host
-remain unchanged. The eventual shell-history reset and hard runtime rename are
-future separately authorized operations.
+The historical DMS refs and dirty state remain preserved in the private archive
+recorded by repository reconciliation. Public shell and product `main` branches
+remain unchanged; HSN-001 work lives on dedicated feature branches and the
+signed RC.1 tag. The deployed host has not yet been rebased to HSN-001.
 
 Existing image/build metadata may still project historical VS-002 state. No
 new image may be built or presented as current until a later non-documentation
@@ -84,6 +87,6 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Produce and verify the Fedora 44 x86_64 RPM, record its immutable candidate URL
-and SHA-256, and then unblock the image build. No signed HSN-001 image or target
-proof exists yet.
+Build the clean feature-branch image, record and verify its signed OCI digest,
+then run the HSN-001 physical-target and recovery gates on `aki@hearth`. No
+signed HSN-001 image or target proof exists yet.

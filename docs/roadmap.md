@@ -1,6 +1,6 @@
 # hearthOS planning roadmap
 
-**Roadmap state:** HSN-001 ready/pending at exact frozen contract revision
+**Roadmap state:** HSN-001 active/pending at exact frozen contract revision
 **Last updated:** 2026-08-25
 
 Future identifiers are intentionally unassigned. They will be reserved only
@@ -22,7 +22,7 @@ Historical contracts and evidence remain under `docs/slices/` and
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| **HSN-001 — Hearth-native Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Ready/pending at `17fedae8776ff38b53c07d4098d8ee8b13852253` |
+| **HSN-001 — Hearth-native Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; RC.1 shell packaged, signed image and target proof pending |
 | Hearth Bar minimum | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, multi-input behavior, and owner-visible reachability | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
 | Hearth Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
@@ -59,6 +59,6 @@ their individual contracts are approved.
 
 ## Current gate
 
-Implement only HSN-001's provider, consumer, package, and image
-responsibilities against its recorded contract revision. Owner acceptance
-remains separate.
+Integrate the exact RC.1 shell package into a signed HSN-001 image, then run
+the physical-target and recovery gates against the recorded contract revision.
+Owner acceptance remains separate.

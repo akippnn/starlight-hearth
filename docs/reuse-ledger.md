@@ -1,7 +1,7 @@
 # Reuse, licensing, and provenance ledger
 
 **License direction:** Hearth Shell `GPL-3.0-only`
-**Ledger state:** HSN-001 selections frozen; imports remain pending shell implementation
+**Ledger state:** HSN-001 imports packaged in RC.1; target verification pending
 **Last reconciled:** 2026-08-25
 
 Design inspiration is not source reuse. Before copying source, assets, shaders,
@@ -52,8 +52,8 @@ third-party code import. Its checksums live in
 | --- | --- | --- | --- | --- |
 | Caelestia Shell | `1d0e5a588c61f1d905eba5fe8446ec222d37f50c` | animation/CAnim, state layer, button, variable Material icon, typography/font builder, motion/rounding tokens | Hyprland services, Caelestia product shell, Blob engine | GPL-3.0 source attribution and adaptation ledger |
 | M3Shapes | `bdc327b29f95394a732baf3c9b19658ba23755b6` | native shape dependency behind Hearth wrappers | direct QML product API and unrelated examples | Apache-2.0 LICENSE/NOTICE preservation |
-| Google Sans Flex | Exact asset digest must be recorded before packaging | pinned typeface asset | mutable font download | OFL-1.1 text and reserved-name compliance |
-| Material Symbols Rounded | repository `e083cc60a0828fdd3b404cea0cb8a5b900e9c23e`; exact asset digest pending | pinned variable icon font | mutable font download | Apache-2.0 license/notice |
+| Google Sans Flex | Caelestia `1d0e5a588c61f1d905eba5fe8446ec222d37f50c`; asset SHA-256 `2510a8b7a24beb1fe8163e9a49813ccfe96b5453444b9443d42665ca4fa320c9` | pinned typeface asset | mutable font download | OFL-1.1 text and reserved-name compliance |
+| Material Symbols Rounded | npm `material-symbols@0.46.0`; archive SHA-256 `f8511ad410460f345c7f9dbb2467da9dae982d949c77dca8ef3508f54bad6017` | pinned Rounded variable icon font | mutable font download | Apache-2.0 license/notice |
 | Hearth controller glyphs | original HSN-001 QML | face/control glyphs | donor product glyph set | GPL-3.0-only project source |
 
 Historical candidate `e7745a672edc868f693826cf3c1f9cd5f7128deb` may supply only
