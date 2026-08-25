@@ -19,8 +19,11 @@ orphan branch is released at signed tag `hearth-v0.3.0-rc.1`, source revision
 `a3503dc734cab9111b065691609bc339918bd779`. Fedora package, real user-bus,
 native QtDBus/M3Shapes, and source/static checks pass. Product integration
 revision `87faf5525fc8de4b39e7a1241eca04b05bb05823` pins its immutable RPM URL and
-SHA-256. Signed image, Quickshell runtime, physical input, motion, recovery,
-and owner proof remain pending.
+SHA-256. BlueBuild run `32813973301` passed at clean build head
+`ae04d4fe93ce8c65cb928b30229099c1f6766f99`, producing signed OCI index
+`sha256:e1791f4ba537c0d052b704d4aaff2f168244b63f3d013f372952c8fd90765372`.
+Independent Cosign verification passed on `aki@hearth`. Quickshell runtime,
+physical input, motion, recovery, and owner proof remain pending.
 
 ## Superseded phase statement
 
@@ -79,7 +82,9 @@ archive before switching to `main`.
 The historical DMS refs and dirty state remain preserved in the private archive
 recorded by repository reconciliation. Public shell and product `main` branches
 remain unchanged; HSN-001 work lives on dedicated feature branches and the
-signed RC.1 tag. The deployed host has not yet been rebased to HSN-001.
+signed RC.1 tag. Preflight is recorded, but the deployed host has not been
+rebased to HSN-001 because remote rpm-ostree authorization is unavailable; its
+booted and rollback deployments remain unchanged.
 
 Existing image/build metadata may still project historical VS-002 state. No
 new image may be built or presented as current until a later non-documentation
@@ -87,6 +92,6 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Build the clean feature-branch image, record and verify its signed OCI digest,
-then run the HSN-001 physical-target and recovery gates on `aki@hearth`. No
-signed HSN-001 image or target proof exists yet.
+Authorize and inspect the exact candidate rebase locally, reboot it, then run
+the HSN-001 physical-target and recovery gates on `aki@hearth`. The signed
+image exists and verifies, but no booted-candidate target proof exists yet.
