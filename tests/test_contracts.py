@@ -638,8 +638,16 @@ class ImageContractTests(unittest.TestCase):
 
         installer = SHELL_INSTALLER.read_text(encoding="utf-8")
         self.assertIn("hearth-v0\\.3\\.0-rc", installer)
-        self.assertIn('readonly default_url=""', installer)
-        self.assertIn('readonly default_sha256=""', installer)
+        self.assertIn(
+            'readonly default_url="https://github.com/akippnn/starlight-hearth-shell/'
+            'releases/download/hearth-v0.3.0-rc.1/'
+            'hearth-shell-0.3.0-0.1.rc1.fc44.x86_64.rpm"',
+            installer,
+        )
+        self.assertIn(
+            'readonly default_sha256="36b30a88033a882733ffd41bfce29bb8287930c5ae12dac42a37b0940794661e"',
+            installer,
+        )
         self.assertIn('dnf5_bin="${HEARTH_DNF5:-/usr/bin/dnf5}"', installer)
         self.assertNotIn("/latest/", installer)
 
