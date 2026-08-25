@@ -6,6 +6,16 @@ layer-rule {
     place-within-backdrop true
 }
 
+// Quickshell requests a shaped blur through ext-background-effect. Keep this
+// rule as the compositor-owned fallback when that protocol path is unavailable.
+layer-rule {
+    match namespace="^hearth-launcher-drawer$"
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
 binds {
     Super+A repeat=false hotkey-overlay-title="Hearth Launcher" {
         spawn "busctl" "--user" "call" "org.starlight.HearthShell" "/Launcher" "org.starlight.HearthShell.Launcher1" "Toggle";

@@ -680,6 +680,12 @@ class ImageContractTests(unittest.TestCase):
         for event in contract["events"]:
             self.assertIn(f"dbus: {event}", profile)
 
+        niri_rules = (SYSTEM / "usr/share/hearth/niri/hearth.kdl").read_text(encoding="utf-8")
+        self.assertIn('match namespace="^hearth-launcher-drawer$"', niri_rules)
+        self.assertIn("background-effect {", niri_rules)
+        self.assertIn("blur true", niri_rules)
+        self.assertIn("xray true", niri_rules)
+
     def test_scripts_are_syntactically_valid_and_executable(self):
         scripts = [
             ROOT / "files/scripts/configure-hearth-session.sh",

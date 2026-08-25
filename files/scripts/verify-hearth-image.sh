@@ -77,6 +77,9 @@ done
 grep -Fqx 'OnlyShowIn=KDE;' /etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
 grep -Fqx 'desktop = "hearth.desktop"' /usr/share/steamos-manager/user.d/config.toml
 grep -Fqx 'Name=Hearth Desktop' /usr/share/wayland-sessions/hearth.desktop
+grep -Fq 'namespace="^hearth-launcher-drawer$"' /usr/share/hearth/niri/hearth.kdl
+grep -Fq 'blur true' /usr/share/hearth/niri/hearth.kdl
+grep -Fq 'xray true' /usr/share/hearth/niri/hearth.kdl
 [[ ! -e /usr/bin/starlight ]]
 
 systemctl is-enabled tailscaled.service
