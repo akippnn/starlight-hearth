@@ -55,6 +55,9 @@ It is local evidence only, not a published RC.2 identity.
 The source-identical shell tree is clean at
 `a67c014c8f9278b02ced45f3b52799746cab1014` on
 `codex/hsn-001-launcher-nucleus`. No tag or remote publication was created.
+The local product integration is clean at image-changing commit `dc6e746`,
+with the hashed evidence checkpoint recorded through
+`ddffa30ebff25b832468816b0a2b547d4b06512f` on the matching feature branch.
 
 The subsequent RC.2 build/package gate was intentionally interrupted at the
 owner's request before a new build process or container was running. Inspection
@@ -131,8 +134,7 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Commit the source-identical shell and product candidates on their existing
-feature branches, record those exact revisions in the evidence manifest, and
-present the real-niri screenshots for owner visual approval. Do not create
-`hearth-v0.3.0-rc.2`, publish the RPM, or build/pin a new OCI until that approval
-is recorded. Formal rebase, recovery, and owner validation remain later gates.
+Present the real-niri Grid/List screenshots, selected-corner crops, and motion
+recording for owner visual approval. Do not create `hearth-v0.3.0-rc.2`, publish
+the RPM, or build/pin a new OCI until that approval is recorded. Formal rebase,
+recovery, and owner validation remain later gates.
