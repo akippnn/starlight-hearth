@@ -12,11 +12,11 @@
 > support from an older candidate.
 
 hearthOS is a living-room gaming operating system in the Starlight family.
-Steam Gaming Mode remains the console experience. Hearth Desktop is intended
+Steam Gaming Mode remains the console experience. hearthOS Desktop is intended
 to become a controller-, keyboard-, and pointer-native alternative that is
 usable locally without requiring another computer over SSH.
 
-The target Hearth Shell is a Hearth-owned Quickshell/QML shell on unmodified
+The target hearthOS Shell is a hearthOS-owned Quickshell/QML shell on unmodified
 niri. DMS remains useful as a reference and selective source, but it is no
 longer the product architecture. The target is not a web, Electron, React,
 WebView, or localhost shell.
@@ -57,7 +57,7 @@ Rust hearth-shell companion
 └── supervised wvkbd-derived OSK child
               │
               ▼
-Quickshell/QML Hearth surfaces
+Quickshell/QML hearthOS surfaces
 ```
 
 Applications launch outside the shell's lifecycle in transient user-systemd
@@ -65,7 +65,7 @@ units/scopes. Configuration is one versioned JSON model layered from packaged
 defaults through `/etc` policy to XDG user overrides. HSN-001 freezes the v1
 launcher subset and public typed service boundary.
 
-Hearth Shell's accepted license direction is `GPL-3.0-only`, enabling deliberate
+hearthOS Shell's accepted license direction is `GPL-3.0-only`, enabling deliberate
 license-compatible reuse from Clavis, Caelestia, DMS, M3Shapes, wvkbd, and
 other audited donors. Every import requires exact revision and per-file
 attribution records.

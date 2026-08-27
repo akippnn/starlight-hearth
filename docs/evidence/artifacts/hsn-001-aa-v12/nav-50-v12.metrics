@@ -1,0 +1,8 @@
+cpu_before_ns=957430000
+cpu_after_ns=1178681000
+cpu_delta_ns=221251000
+memory_before_bytes=175415296
+memory_after_bytes=170315776
+memory_peak_bytes=182734848
+frames=458 p50=16 p95=16 p99=32 max=33
+render_frames=230 render_p50_ms=0 render_p95_ms=16 render_p99_ms=16 render_max_ms=17

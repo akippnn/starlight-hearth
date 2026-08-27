@@ -1,0 +1,55 @@
+● hearth-shell-ui-bounded-icons-v11-timing-dev.service - [systemd-run] /usr/bin/quickshell --path /home/aki/.local/share/hearth-dev/hsn001-rc2-work/quickshell/shell.qml
+     Loaded: loaded (/run/user/1000/systemd/transient/hearth-shell-ui-bounded-icons-v11-timing-dev.service; transient)
+  Transient: yes
+    Drop-In: /usr/lib/systemd/user/service.d
+             └─10-timeout-abort.conf
+     Active: active (running) since Thu 2026-08-27 21:37:06 +08; 2h 3min ago
+ Invocation: b6ebdb0aa1ae4599be17b760af0be4a5
+   Main PID: 78658 (quickshell)
+      Tasks: 34 (limit: 38103)
+     Memory: 155.7M (peak: 164.7M)
+        CPU: 5.512s
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/hearth-shell-ui-bounded-icons-v11-timing-dev.service
+             └─78658 /usr/bin/quickshell --path /home/aki/.local/share/hearth-dev/hsn001-rc2-work/quickshell/shell.qml
+
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][render thread 0x7f561d006d20] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][render thread 0x7f561d006d20] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][render thread 0x7f561d006d20] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 23:36:07 hearth quickshell[78658]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7f561b6640a0][render thread 0x7f561d006d20] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+
+● hearth-hsn001-profile-input-v7-dev.service - [systemd-run] /usr/bin/ydotoold --socket-path=/run/user/1000/hearth-hsn001-profile-v7.sock
+     Loaded: loaded (/run/user/1000/systemd/transient/hearth-hsn001-profile-input-v7-dev.service; transient)
+  Transient: yes
+    Drop-In: /usr/lib/systemd/user/service.d
+             └─10-timeout-abort.conf
+     Active: active (running) since Thu 2026-08-27 21:13:51 +08; 2h 26min ago
+ Invocation: 27554910a5fe4c888bf7074132c8c58c
+   Main PID: 58441 (ydotoold)
+      Tasks: 1 (limit: 38103)
+     Memory: 188K (peak: 1.5M)
+        CPU: 82ms
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/hearth-hsn001-profile-input-v7-dev.service
+             └─58441 /usr/bin/ydotoold --socket-path=/run/user/1000/hearth-hsn001-profile-v7.sock
+
+Aug 27 21:13:51 hearth systemd[1767]: Started hearth-hsn001-profile-input-v7-dev.service - [systemd-run] /usr/bin/ydotoold --socket-path=/run/user/1000/hearth-hsn001-profile-v7.sock.
+
+● hearth-shell-rc2-dev.service - Hearth Shell RC.2 local validation companion
+     Loaded: loaded (/home/aki/.config/systemd/user/hearth-shell-rc2-dev.service; static)
+    Drop-In: /usr/lib/systemd/user/service.d
+             └─10-timeout-abort.conf
+     Active: active (running) since Thu 2026-08-27 21:02:51 +08; 2h 37min ago
+ Invocation: f54e8845367c4ed4ba9f1b1072ab6cdd
+   Main PID: 49375 (hearth-shell-se)
+      Tasks: 7 (limit: 38103)
+     Memory: 2.4M (peak: 4.2M)
+        CPU: 2.766s
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/hearth-shell-rc2-dev.service
+             └─49375 /home/aki/.local/share/hearth-dev/hsn001-rc2-work/target/debug/hearth-shell-service
+
+Aug 27 21:02:51 hearth systemd[1767]: Started hearth-shell-rc2-dev.service - Hearth Shell RC.2 local validation companion.

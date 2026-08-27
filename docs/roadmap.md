@@ -1,7 +1,7 @@
 # hearthOS planning roadmap
 
 **Roadmap state:** HSN-001 active/pending at exact frozen contract revision
-**Last updated:** 2026-08-25
+**Last updated:** 2026-08-28
 
 Future identifiers are intentionally unassigned. They will be reserved only
 when an owner-visible contract is approved, preventing reuse of historical
@@ -18,23 +18,45 @@ VS/HS aliases or either collided `GM-001` meaning.
 Historical contracts and evidence remain under `docs/slices/` and
 `docs/evidence/`. Their original state is not rewritten.
 
-## Candidate Hearth Shell outcomes
+## Candidate hearthOS Shell outcomes
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| **HSN-001 — Hearth-native Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; RC.1 shell and signed image proven, candidate boot and target proof pending |
-| Hearth Bar minimum | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, multi-input behavior, and owner-visible reachability | Proposed |
+| **HSN-001 — hearthOS Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; local RC.2 presentation/runtime/package evidence passes engineering gates; owner visual approval and signed-candidate validation remain pending |
+| **HSN-002 — App Menu** | Verified HSN-001 RC.2 component baseline | Reusable `CollectionBrowser`/read-only `Category1`, local `Search Apps`, Favorites/Recents/By Name/By Category tabs, reusable input hints, right Grid/List selector, schema-v2 migration, and typed context actions | Reserved draft; App Menu only. First Setup, wallpaper onboarding, arbitrary placement, and docking are excluded. Until the hearthOS System Bar exists, placement remains right/center/floating. |
+| hearthOS System Bar | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, App Menu attachment, multi-input behavior, and owner-visible reachability | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
-| Hearth Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
+| hearthOS Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
 | Workspace/window and control surfaces | niri IPC plus Bar foundation | Authentic niri state, no focus traps, controller-aware sliders, and coherent notifications/control center | Proposed |
-| Expressive design-system refinement | Proven functional shell surfaces | Shared motion tokens, reduced motion, performance, and consistent mouse/keyboard/controller states | Proposed |
+| Focus Cursor | Proven focus semantics across several shell surfaces | Shell-wide animated selection-border cursor moves coherently without becoming a launcher-specific implementation | Proposed independent slice |
+
+## Ordered successor outcomes
+
+1. **Desktop Controller Controls** — configurable hold-by-default modifier
+   layers and typed niri window/workspace actions; visible hearthOS surfaces
+   override global actions.
+2. **Independent Linux Search Engine** — desktop-neutral search project with a
+   typed hearthOS provider adapter; HSN-002 initially keeps its app-local
+   provider.
+3. **hearthOS System Bar** — authentic App Menu and panel attachment points.
+4. **hearthOS Control Center**.
+5. **Add Controls & Widgets** — reuse `CollectionBrowser` and `Category1` as
+   `ControlsCatalog`, entered from Control Center with North/Y or `i`, and use
+   `Search Controls & Widgets` without a redundant title.
+6. **Focus Cursor** — separate contract for the shell-wide moving selection
+   border.
+7. **HWP-001 Local Wallpaper** — typed local-file service, recovery wallpaper,
+   per-output background, deterministic center crop, last-good retention, and
+   reduced-motion handling.
+8. **hearthOS Settings** — edit existing configuration and palette contracts
+   rather than creating parallel state.
 
 ## Candidate application and plugin outcomes
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
 | Hearth Portal foundation | Safe typed action adapter and shared Hearth app controls | Maintainable Bazzite catalog alignment, privilege isolation, Desktop/Gaming context, and recovery | Proposed |
-| Default wallpaper plugin | Plugin boundary plus config/provider service | Local and Waifu.im sources, failure-safe cache, deterministic crop provenance, and responsive Settings | Proposed |
+| **HWP-001 — Local Wallpaper** | Independent typed plugin contract plus config/provider service | Typed local-file selection, packaged recovery background, deterministic center crop, last-good retention, nonblocking per-output rendering, and a future MD3E palette-provider seam | Reserved for a small independent contract; no implementation or delivery claim in HSN-001 |
 | Controller-friendly default applications | Input/app-profile policy and exact catalog | Required workflows graded against exact candidates; no silent unsupported defaults | Proposed |
 | File-manager contingency | Dolphin and Nautilus both fail documented owner workflows | Explicit owner activation, Index history-preserving fork, MauiKit/KIO reuse, and separate acceptance | Deferred contingency |
 
@@ -59,6 +81,12 @@ their individual contracts are approved.
 
 ## Current gate
 
-Authorize and boot the exact signed HSN-001 image digest, then run the
-physical-target and recovery gates against the recorded contract revision.
-Owner acceptance remains separate.
+Record the antialiased RC.2 staging tree and package evidence against exact
+clean feature revisions. Obtain owner visual approval before creating a signed
+RC.2 tag or publishing an RPM. Signed-image boot, recovery, and owner
+acceptance remain later separate gates.
+
+Public product naming is **hearthOS** or **HearthOS**, part of the u128
+Starlight family. Repository names and the current technical bus, service,
+filesystem, and package identifiers remain unchanged until a separate naming
+migration is authorized.

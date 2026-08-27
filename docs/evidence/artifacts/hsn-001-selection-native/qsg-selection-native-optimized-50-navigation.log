@@ -1,0 +1,1050 @@
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 12980 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 12981 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=2 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa57ce0ec60][gui thread] polishAndSync: start, elapsed since last call: 13000 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa57ce0ec60][render thread 0x7fa57b406e00] syncAndRender: start, elapsed since last call: 13000 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa57ce0ec60][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 3 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa57ce0ec60][render thread 0x7fa57b406e00] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=2ms, preprocess=0, updates=0, rendering=2
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 5ms, sync=2, render=2, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 5 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=2 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579f0b180][gui thread] polishAndSync: start, elapsed since last call: 13144 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579f0b180][render thread 0x7fa57b407960] syncAndRender: start, elapsed since last call: 13144 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579f0b180][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579f0b180][render thread 0x7fa57b407960] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 12ms, sync=0, render=0, swap=12
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 32 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 29 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 19 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 19 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 14 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 11 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 10 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 14 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 14 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 9 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 10 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 2 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 1 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 13ms, sync=1, render=0, swap=12
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 30 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 30 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 1 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:43 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=14
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 31 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 31 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 2 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 1 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 8ms, sync=1, render=0, swap=7
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=1, render=0, swap=14
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:44 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=1, render=0, swap=14
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 11 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 11ms, sync=0, render=0, swap=10
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 11 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 5ms, sync=0, render=0, swap=4
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 21 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 21 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 1ms, sync=1, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=1, render=0, swap=14
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 18 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=1, render=0, swap=14
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:45 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=1 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=1, render=0, swap=14
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=1 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=1, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=16
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 17 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 15ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 16ms, sync=0, render=0, swap=15
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 11 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 11ms, sync=0, render=0, swap=10
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 11 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 5ms, sync=0, render=0, swap=4
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 22 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 22 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 15 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] polishAndSync: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: start, elapsed since last call: 16 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][gui thread] Frame prepared, polish=0 ms, lock=0 ms, blockedForSync=0 ms, animations=0 ms
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderer: time in renderer: total=0ms, preprocess=0, updates=0, rendering=0
+Aug 27 00:51:46 hearth quickshell[62174]:  DEBUG qt.scenegraph.time.renderloop: [window 0x7fa579e87250][render thread 0x7fa57b407260] syncAndRender: frame rendered in 0ms, sync=0, render=0, swap=0

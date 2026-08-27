@@ -1,0 +1,12 @@
+workload=50-rapid-navigation-optimized
+frames=210
+p50_ms=1
+p95_ms=16
+p99_ms=16
+cpu_before_ns=1173474000
+cpu_after_ns=1566789000
+cpu_delta_ns=393315000
+memory_before_bytes=205615104
+memory_after_bytes=192942080
+memory_delta_bytes=-12673024
+memory_peak_bytes=209956864

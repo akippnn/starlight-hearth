@@ -1,0 +1,40 @@
+unit=hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service
+PartOf=graphical-session.target
+ActiveState=active
+SubState=running
+Type=notify
+ExitType=cgroup
+MainPID=0
+Slice=app.slice
+ControlGroup=/user.slice/user-1000.slice/user@1000.service/app.slice/hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service
+● hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service - [systemd-run] /home/aki/.local/share/hearth-dev/hsn001-rc2-work/target/debug/hearth-shell-launch org.kde.dolphin.desktop
+     Loaded: loaded (/run/user/1000/systemd/transient/hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service; transient)
+  Transient: yes
+    Drop-In: /usr/lib/systemd/user/service.d
+             └─10-timeout-abort.conf
+     Active: active (running) since Fri 2026-08-28 00:36:04 +08; 45ms ago
+ Invocation: 11fe82bb89b74c14b3ce9b6c78a84f68
+    Process: 199848 ExecStart=/home/aki/.local/share/hearth-dev/hsn001-rc2-work/target/debug/hearth-shell-launch org.kde.dolphin.desktop (code=exited, status=0/SUCCESS)
+   Main PID: 199848 (code=exited, status=0/SUCCESS)
+     Status: "Launched org.kde.dolphin.desktop (gtk-launch pid 199849)"
+      Tasks: 7 (limit: 38103)
+     Memory: 10.3M (peak: 10.3M)
+        CPU: 46ms
+     CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service
+             └─199849 /usr/bin/gtk-launch org.kde.dolphin.desktop
+
+Aug 28 00:36:04 hearth systemd[1767]: Starting hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service - [systemd-run] /home/aki/.local/share/hearth-dev/hsn001-rc2-work/target/debug/hearth-shell-launch org.kde.dolphin.desktop...
+Aug 28 00:36:04 hearth systemd[1767]: Started hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service - [systemd-run] /home/aki/.local/share/hearth-dev/hsn001-rc2-work/target/debug/hearth-shell-launch org.kde.dolphin.desktop.
+application_cgroup_pid=199886
+ui_pid_before=171837
+ui_pid_after=200392
+companion_pid_before=168933
+companion_pid_after=200368
+application_alive_after_restart=yes
+PartOf=graphical-session.target
+ActiveState=active
+SubState=running
+Type=notify
+ExitType=cgroup
+Slice=app.slice
+ControlGroup=/user.slice/user-1000.slice/user@1000.service/app.slice/hearth-app-org-kde-dolphin-168933-18cfb6cc1c377343-2.service

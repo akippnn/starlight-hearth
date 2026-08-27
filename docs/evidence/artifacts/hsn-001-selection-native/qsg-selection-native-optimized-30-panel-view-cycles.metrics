@@ -1,0 +1,12 @@
+workload=30-open-close-grid-list-cycles
+frames=1953
+p50_ms=0
+p95_ms=16
+p99_ms=16
+cpu_before_ns=1586417000
+cpu_after_ns=3761431000
+cpu_delta_ns=2175014000
+memory_before_bytes=193052672
+memory_after_bytes=194686976
+memory_delta_bytes=1634304
+memory_peak_bytes=209956864

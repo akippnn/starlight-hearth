@@ -1,0 +1,2 @@
+Error: GDBus.Error:org.freedesktop.DBus.Error.Failed: invalid desktop ID
+(<true>,)
