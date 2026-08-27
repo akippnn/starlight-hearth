@@ -16,15 +16,20 @@ layer-rule {
     }
 }
 
+// niri-session normally activates the linked user units. Keep an explicit,
+// idempotent compositor entrypoint as recovery for Gaming Mode transitions
+// where the persistent user manager did not traverse niri.service.wants.
+spawn-at-startup "systemctl" "--user" "start" "hearth-shell.service" "hearth-shell-ui.service"
+
 binds {
-    Super+A repeat=false hotkey-overlay-title="Hearth Launcher" {
+    Super+A repeat=false hotkey-overlay-title="hearthOS Launcher" {
         spawn "busctl" "--user" "call" "org.starlight.HearthShell" "/Launcher" "org.starlight.HearthShell.Launcher1" "Toggle";
     }
 
-    // Emergency keyboard paths remain available when Hearth Shell is unhealthy.
+    // Emergency keyboard paths remain available when hearthOS Shell is unhealthy.
     Ctrl+Alt+Return hotkey-overlay-title="Emergency Terminal" { spawn "konsole"; }
-    Ctrl+Alt+D hotkey-overlay-title="Restart Hearth Shell" {
+    Ctrl+Alt+D hotkey-overlay-title="Restart hearthOS Shell" {
         spawn "systemctl" "--user" "restart" "hearth-shell.service" "hearth-shell-ui.service";
     }
-    Ctrl+Alt+Shift+E hotkey-overlay-title="Exit Hearth Desktop" { quit; }
+    Ctrl+Alt+Shift+E hotkey-overlay-title="Exit hearthOS Desktop" { quit; }
 }

@@ -20,6 +20,7 @@ required_files=(
   /usr/libexec/hearth-session
   /usr/libexec/hearth-session-bootstrap
   /usr/libexec/hearth-session-mode
+  /usr/libexec/hearth-shell-launch
   /usr/libexec/hearth-default-desktop-bootstrap
   /usr/libexec/hearth-display-policy
   /usr/libexec/hearth-input-adapter

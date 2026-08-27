@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=/usr/share/inputplumber/schema/device_profile_v1.json
 version: 1
 kind: DeviceProfile
-name: Hearth Desktop v4
+name: hearthOS Desktop v4
 description: HSN-001 semantic shell actions with deliberate pointer and scroll outputs
 target_devices:
   - dbus
@@ -43,10 +43,10 @@ mapping:
     source_event: {gamepad: {axis: {name: LeftStick, direction: down, deadzone: 0.25}}}
     target_events: [{mouse: {button: WheelDown}}]
   - name: Primary click
-    source_event: {gamepad: {button: LeftBumper}}
+    source_event: {gamepad: {button: RightBumper}}
     target_events: [{mouse: {button: Left}}]
   - name: Secondary click
-    source_event: {gamepad: {button: RightBumper}}
+    source_event: {gamepad: {button: LeftBumper}}
     target_events: [{mouse: {button: Right}}]
 
 # Guide, View, North, L3/R3, LT/RT remain deliberately unbound in HSN-001.

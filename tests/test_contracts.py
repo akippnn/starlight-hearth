@@ -670,13 +670,22 @@ class ImageContractTests(unittest.TestCase):
         manager = tomllib.loads(manager_path.read_text(encoding="utf-8"))
         self.assertEqual(manager["session"]["desktop"], "hearth.desktop")
         profile = (SYSTEM / "usr/share/hearth/input/hearth-desktop-v4.yaml").read_text(encoding="utf-8")
-        self.assertIn("name: Hearth Desktop v4", profile)
+        self.assertIn("name: hearthOS Desktop v4", profile)
         self.assertIn("target_events: [{dbus: ui_option}]", profile)
-        self.assertIn("target_events: [{mouse: {button: Left}}]", profile)
+        self.assertIn(
+            "source_event: {gamepad: {button: RightBumper}}\n"
+            "    target_events: [{mouse: {button: Left}}]",
+            profile,
+        )
+        self.assertIn(
+            "source_event: {gamepad: {button: LeftBumper}}\n"
+            "    target_events: [{mouse: {button: Right}}]",
+            profile,
+        )
         self.assertNotIn("keyboard:", profile)
         self.assertIn("Guide, View, North, L3/R3, LT/RT remain deliberately unbound", profile)
         contract = json.loads((SYSTEM / "usr/share/hearth/input/inputplumber-v4.json").read_text(encoding="utf-8"))
-        self.assertEqual(contract["profileName"], "Hearth Desktop v4")
+        self.assertEqual(contract["profileName"], "hearthOS Desktop v4")
         for event in contract["events"]:
             self.assertIn(f"dbus: {event}", profile)
 
@@ -712,6 +721,8 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("rpm -q hearth-shell", image_setup)
         self.assertNotIn("dms.service", image_setup)
         self.assertIn("hearth-shell-ui.service", image_setup)
+        self.assertIn('spawn-at-startup "systemctl" "--user" "start" "hearth-shell.service" "hearth-shell-ui.service"',
+                      (SYSTEM / "usr/share/hearth/niri/hearth.kdl").read_text(encoding="utf-8"))
         self.assertIn("hearth-display-policy.service", image_setup)
         self.assertIn("hearth-default-desktop.service", image_setup)
 

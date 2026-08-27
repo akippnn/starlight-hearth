@@ -3,6 +3,7 @@ set -euo pipefail
 
 required=(
   /usr/bin/hearth-shell-service
+  /usr/libexec/hearth-shell-launch
   /usr/bin/niri
   /usr/bin/niri-session
   /usr/lib/systemd/user/hearth-shell.service

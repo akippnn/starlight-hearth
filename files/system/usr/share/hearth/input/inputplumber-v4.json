@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "profileName": "Hearth Desktop v4",
+  "profileName": "hearthOS Desktop v4",
   "events": {
     "ui_up": "navigate-north",
     "ui_down": "navigate-south",
