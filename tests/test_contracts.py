@@ -721,8 +721,10 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("rpm -q hearth-shell", image_setup)
         self.assertNotIn("dms.service", image_setup)
         self.assertIn("hearth-shell-ui.service", image_setup)
-        self.assertIn('spawn-at-startup "systemctl" "--user" "start" "hearth-shell.service" "hearth-shell-ui.service"',
-                      (SYSTEM / "usr/share/hearth/niri/hearth.kdl").read_text(encoding="utf-8"))
+        niri_config = (SYSTEM / "usr/share/hearth/niri/hearth.kdl").read_text(encoding="utf-8")
+        self.assertNotIn('spawn-at-startup "systemctl" "--user" "start"', niri_config)
+        self.assertIn("hearth-shell.service", image_setup)
+        self.assertIn("hearth-shell-ui.service", image_setup)
         self.assertIn("hearth-display-policy.service", image_setup)
         self.assertIn("hearth-default-desktop.service", image_setup)
 
