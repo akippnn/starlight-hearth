@@ -6,10 +6,12 @@ layer-rule {
     place-within-backdrop true
 }
 
-// Quickshell requests a shaped blur through ext-background-effect. Keep this
-// rule as the compositor-owned fallback when that protocol path is unavailable.
+// Quickshell requests a shaped blur through ext-background-effect by default.
+// This compositor-owned fallback is selected only when the shell uses the
+// explicit xray namespace; applying it to the normal drawer would blur the
+// whole mapped layer instead of the requested rounded region.
 layer-rule {
-    match namespace="^hearth-launcher-drawer$"
+    match namespace="^hearth-launcher-drawer-xray$"
     background-effect {
         blur true
         xray true
