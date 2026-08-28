@@ -1,7 +1,7 @@
 # Current status
 
 **Last updated:** 2026-08-28
-**Current phase:** HSN-001 RC.2 exact-digest deployment and target validation
+**Current phase:** HSN-001 local correction and HSN-002 preparation; delivery held
 **Active implementation slice:** HSN-001
 **New owner verdict:** pending
 
@@ -70,13 +70,36 @@ artifacts, and unrelated processes were left untouched. The requested shared
 native selection increment and resumed local package gate are complete at an
 evidence-recorded engineering checkpoint.
 
-The owner authorized promotion to a new live image in this turn. This is
-authorization to integrate and deploy RC.2, not an HSN-001 acceptance verdict.
+The owner authorized promotion to the RC.2 live image. This was authorization
+to integrate and deploy that exact candidate, not an HSN-001 acceptance
+verdict.
 Shell Fedora verification run `33098257890` and RPM run `33098257814` passed at
 the exact candidate revision. Signed tag `hearth-v0.3.0-rc.2` and the sole main
 RPM asset are published; the asset SHA-256 is
 `02084a8f3197d34553088464e0d4321a484c04c4c841ee998c0388d88437f1e3`.
 Public `main`, final `hearth-v0.3.0`, and owner verdict remain unchanged.
+
+The owner then rebased and rebooted `aki@hearth` to signed OCI index
+`sha256:dea09a20687b3f235b0dd89f817a3a63dcbc24499d1dfa6fa34a813af8f6b191`.
+The deployment and automatic hearthOS Shell startup passed. Field inspection
+found a gray frosted drawer-sized surface while the launcher was closed. The
+image applied its compositor-wide xray fallback to the normal always-warm
+drawer namespace, so the complete layer was blurred after Quickshell cleared
+the shaped region.
+
+The correction is clean locally at shell revision
+`b17c1bb582090fa2aa294c29a7e97e3b2e5ac3ea` and product revision
+`30fb91dd0ddf1de2ad4afe473663ca789aea5644`. Real-niri staging removed the
+artifact across 30 open/close plus Grid/List cycles at p95/p99/max
+`13/19/19 ms`, with stable peak memory, no measured mesh allocations, and no
+QML warnings. Packaged services were restored after testing; the booted RC.2
+therefore still contains the defect.
+
+The current owner directive supersedes any earlier continuing-delivery
+authorization: public delivery is postponed until the HSN-002 stage. No
+feature-branch push, tag, RPM publication, OCI build, or target rebase may
+occur without a new explicit owner greenlight. Local implementation, tests,
+screenshots, and evidence remain authorized. HSN-001 stays `active/pending`.
 
 ## Superseded phase statement
 
@@ -138,17 +161,20 @@ remain unchanged; HSN-001 work lives on dedicated feature branches and signed
 candidate tags. Product revision `79eae57e…` passed BlueBuild run
 `33144073834`. Its signed index is `sha256:dea09a…`, its amd64 manifest is
 `sha256:d1af12…`, and independent Cosign verification passed on `aki@hearth`.
-The host still boots the recorded RC.1 digest and retains the previous
-deployment. The owner has authorized the RC.2 rebase; noninteractive SSH does
-not have sudo authority, so the exact-digest `rpm-ostree rebase` requires one
-owner password entry.
+The host now boots that exact RC.2 index and retains the previous RC.1
+deployment as rollback. The local blur correction is not installed in the
+booted deployment.
 
 Existing image/build metadata may still project historical VS-002 state. No
-new image may be built or presented as current until a later non-documentation
-change reconciles those non-document public projections against this status.
+new image may be built or presented as current without the owner's explicit
+delivery greenlight and reconciliation of those non-document public
+projections against this status.
 
 ## Next gate
 
-Rebase `aki@hearth` only to signed index `sha256:dea09a…` with rollback
-preserved, then validate packaged Desktop startup and reconcile the remaining
-HSN-001 target and recovery gates before any audit-ready claim.
+Continue small local HSN-001 corrections and HSN-002 implementation with
+revision-specific target staging and evidence. Do not promote either slice or
+change the booted deployment. When the owner explicitly greenlights delivery,
+reconcile the exact clean combined candidate, publish immutable artifacts,
+build and verify its signed OCI, and only then resume formal target and
+recovery validation. No audit-ready claim is currently permitted.

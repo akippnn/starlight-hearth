@@ -22,7 +22,7 @@ Historical contracts and evidence remain under `docs/slices/` and
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| **HSN-001 — hearthOS Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; RC.2 local presentation, runtime, package, performance, and Desktop-transition gates pass; signed package/image integration and remaining recovery proof are current |
+| **HSN-001 — hearthOS Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; signed RC.2 boots and starts the shell but has a closed-state compositor-blur defect. Its correction passes local real-niri proof and remains deliberately unpublished. |
 | **HSN-002 — App Menu** | Verified HSN-001 RC.2 component baseline | Reusable `CollectionBrowser`/read-only `Category1`, local `Search Apps`, Favorites/Recents/By Name/By Category tabs, reusable input hints, right Grid/List selector, schema-v2 migration, and typed context actions | Reserved draft; App Menu only. First Setup, wallpaper onboarding, arbitrary placement, and docking are excluded. Until the hearthOS System Bar exists, placement remains right/center/floating. |
 | hearthOS System Bar | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, App Menu attachment, multi-input behavior, and owner-visible reachability | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
@@ -81,10 +81,12 @@ their individual contracts are approved.
 
 ## Current gate
 
-Rebase the physical target only to the independently verified RC.2 signed
-index, then close packaged startup, physical reconnect, pointer, recovery,
-signed-image motion, and owner-audit gaps without weakening the frozen HSN-001
-contract.
+Continue HSN-001 corrections and HSN-002 as small, independently proved local
+increments. Public push, tags, RPMs, OCI builds, and further target rebases are
+held until the owner explicitly greenlights delivery at the HSN-002 stage.
+After that authorization, reconcile the exact candidate and close physical
+reconnect, pointer, recovery, signed-image motion, and owner-audit gaps without
+weakening the frozen HSN-001 contract.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,

@@ -1,0 +1,19 @@
+Output "HDMI-A-1":
+  Background layer: (empty)
+
+  Bottom layer: (empty)
+
+  Top layer:
+    Surface:
+      Namespace: "hearth-launcher-scrim"
+      Keyboard interactivity: none
+
+  Overlay layer:
+    Surface:
+      Namespace: "hearth-launcher-drawer"
+      Keyboard interactivity: exclusive
+
+    Surface:
+      Namespace: "hearth-launcher-edge"
+      Keyboard interactivity: none
+

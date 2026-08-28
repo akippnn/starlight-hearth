@@ -4,8 +4,8 @@
 > **Pre-alpha — owner testing only.**
 >
 > hearthOS is not ready for general installation. HSN-001 is active at an
-> exact frozen contract revision with an immutable RC.1 shell package. It is
-> not audit-ready or owner-accepted.
+> exact frozen contract revision. Signed RC.2 boots, but has a recorded
+> closed-launcher visual defect. It is not audit-ready or owner-accepted.
 >
 > Existing GHCR images are historical development artifacts; download counts
 > do not imply a supported release. Do not rebase to `latest` or infer current
@@ -23,7 +23,12 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**HSN-001 active/pending; the signed RC.2 image is ready for exact-digest target validation.**
+**HSN-001 active/pending; work is local-only until the owner explicitly greenlights delivery at the HSN-002 stage.**
+
+The signed RC.2 image booted and starts hearthOS Shell automatically, but
+field testing found an unconditional compositor-blur artifact while the
+launcher is closed. The correction passes local real-niri staging and remains
+unpublished. Do not treat RC.2 or the local correction as an audit candidate.
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation
