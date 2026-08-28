@@ -1,7 +1,7 @@
 # Current status
 
 **Last updated:** 2026-08-28
-**Current phase:** HSN-001 RC.2 package and signed-image integration
+**Current phase:** HSN-001 RC.2 exact-digest deployment and target validation
 **Active implementation slice:** HSN-001
 **New owner verdict:** pending
 
@@ -134,13 +134,14 @@ archive before switching to `main`.
 
 The historical DMS refs and dirty state remain preserved in the private archive
 recorded by repository reconciliation. Public shell and product `main` branches
-remain unchanged; HSN-001 work lives on dedicated feature branches and the
-signed RC.1 tag. Preflight is recorded, but the deployed host has not been
-rebased to RC.2 because its signed OCI does not exist yet. The host currently
-boots the recorded RC.1 digest and retains the previous deployment. The owner
-has authorized the RC.2 rebase; noninteractive SSH does not have sudo authority,
-so the final `rpm-ostree rebase` may require one owner password entry after the
-digest is ready.
+remain unchanged; HSN-001 work lives on dedicated feature branches and signed
+candidate tags. Product revision `79eae57e…` passed BlueBuild run
+`33144073834`. Its signed index is `sha256:dea09a…`, its amd64 manifest is
+`sha256:d1af12…`, and independent Cosign verification passed on `aki@hearth`.
+The host still boots the recorded RC.1 digest and retains the previous
+deployment. The owner has authorized the RC.2 rebase; noninteractive SSH does
+not have sudo authority, so the exact-digest `rpm-ostree rebase` requires one
+owner password entry.
 
 Existing image/build metadata may still project historical VS-002 state. No
 new image may be built or presented as current until a later non-documentation
@@ -148,7 +149,6 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Commit and push the exact RC.2 RPM pin, build and independently verify a signed
-OCI, then rebase `aki@hearth` only to that digest with rollback preserved.
-Reconcile the remaining HSN-001 target and recovery gates before any
-audit-ready claim.
+Rebase `aki@hearth` only to signed index `sha256:dea09a…` with rollback
+preserved, then validate packaged Desktop startup and reconcile the remaining
+HSN-001 target and recovery gates before any audit-ready claim.

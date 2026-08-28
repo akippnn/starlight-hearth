@@ -1,0 +1,14 @@
+Verification host: aki@hearth
+Verification key: /home/aki/Projects/starlight-hearth/cosign.pub
+Reference: ghcr.io/akippnn/starlight-hearth@sha256:dea09a20687b3f235b0dd89f817a3a63dcbc24499d1dfa6fa34a813af8f6b191
+
+The following checks passed:
+- Cosign claims validated.
+- Transparency-log claim existence verified offline.
+- Signature verified against the recorded public key.
+
+Verified docker-manifest-digest:
+sha256:dea09a20687b3f235b0dd89f817a3a63dcbc24499d1dfa6fa34a813af8f6b191
+
+Rekor log index: 2621970219
+Integrated time: 1787894308

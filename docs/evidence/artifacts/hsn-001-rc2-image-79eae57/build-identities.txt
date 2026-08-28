@@ -1,0 +1,14 @@
+product-revision=79eae57e02a4eb8a398d4851c80f014e5c32b544
+workflow-run=33144073834
+workflow-url=https://github.com/akippnn/starlight-hearth/actions/runs/33144073834
+workflow-conclusion=success
+image-tag=ghcr.io/akippnn/starlight-hearth:79eae57-44
+branch-tag=ghcr.io/akippnn/starlight-hearth:br-codex_hsn-001-launcher-nucleus-44
+index-digest=sha256:dea09a20687b3f235b0dd89f817a3a63dcbc24499d1dfa6fa34a813af8f6b191
+amd64-manifest-digest=sha256:d1af1203e7896947f5bcd17b86a9dc6bfb858647e30f8ee4c47fbb26ba8da978
+attestation-manifest-digest=sha256:016e32f47daf3426485338fcb843e0e53779532ef0e9adcbf0cb5c6ed4f610eb
+base-image=ghcr.io/ublue-os/bazzite-deck:stable
+base-digest=sha256:035fbf36e555ac596bad1f5260b60981e0ea0d9d12f7731625028536cea6cb1b
+ostree-commit=3f121b21ba2dfb297fe9aacf3cfc68cec080bd8f2d99550851bf02cb4375fe7c
+shell-package=hearth-shell-0:0.3.0-0.2.rc2.fc44.x86_64
+shell-rpm-sha256=02084a8f3197d34553088464e0d4321a484c04c4c841ee998c0388d88437f1e3

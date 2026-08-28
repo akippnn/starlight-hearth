@@ -81,10 +81,10 @@ their individual contracts are approved.
 
 ## Current gate
 
-Finish exact RC.2 shell CI, signed RPM publication, product pinning, signed OCI
-verification, and target rebase. Then close the remaining physical reconnect,
-pointer, recovery, signed-image motion, and owner-audit gaps without weakening
-the frozen HSN-001 contract.
+Rebase the physical target only to the independently verified RC.2 signed
+index, then close packaged startup, physical reconnect, pointer, recovery,
+signed-image motion, and owner-audit gaps without weakening the frozen HSN-001
+contract.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,

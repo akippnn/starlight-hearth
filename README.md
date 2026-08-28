@@ -23,7 +23,7 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**HSN-001 active/pending; RC.2 package and signed-image integration are underway.**
+**HSN-001 active/pending; the signed RC.2 image is ready for exact-digest target validation.**
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation
