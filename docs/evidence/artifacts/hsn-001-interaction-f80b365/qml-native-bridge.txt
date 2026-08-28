@@ -1,0 +1,7 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.1.1 20260501 (Red Hat 16.1.1-1)), fedora 44
+PASS   : qmltestrunner::HearthNativeBridge::initTestCase()
+PASS   : qmltestrunner::HearthNativeBridge::test_liveFavoriteTupleDecode()
+PASS   : qmltestrunner::HearthNativeBridge::cleanupTestCase()
+Totals: 3 passed, 0 failed, 0 skipped, 0 blacklisted, 9ms
+********* Finished testing of qmltestrunner *********

@@ -1,0 +1,17 @@
+Date=2026-08-28
+LoginSession=54
+Name=aki
+TTY=tty1
+Service=sddm-autologin
+Desktop=gamescope
+Type=wayland
+Class=user
+State=active
+GamescopeProcess=running
+SteamGamepadUIProcess=running
+NiriService=inactive
+HearthShellService=inactive
+HearthShellUIService=inactive
+InteractionDevUIService=inactive
+InteractionTimingUIService=inactive
+TemporaryYdotooldService=inactive

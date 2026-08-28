@@ -1,0 +1,7 @@
+Id=hearth-shell-ui-interaction-timing.service
+ActiveState=active
+SubState=running
+MainPID=181612
+MemoryCurrent=154017792
+MemoryPeak=166219776
+CPUUsageNSec=1842274000

@@ -1,0 +1,2 @@
+Aug 28 18:40:43 hearth quickshell[181612]:   INFO: Configuration Loaded
+Aug 28 18:40:43 hearth quickshell[181612]:   INFO: hearthOS selection mesh allocated once with capacity 36840

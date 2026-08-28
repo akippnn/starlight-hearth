@@ -1,0 +1,18 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.1.1 20260501 (Red Hat 16.1.1-1)), fedora 44
+PASS   : qmltestrunner::HearthLauncher::initTestCase()
+PASS   : qmltestrunner::HearthLauncher::test_closedLauncherRejectsControllerActivation()
+PASS   : qmltestrunner::HearthLauncher::test_configFallbackIsVisible()
+PASS   : qmltestrunner::HearthLauncher::test_contextAndMissingFavoriteReflow()
+PASS   : qmltestrunner::HearthLauncher::test_iconOnlyViewSelectorIsRightAligned()
+PASS   : qmltestrunner::HearthLauncher::test_keyboardGridListNavigationAndActivation()
+PASS   : qmltestrunner::HearthLauncher::test_motionEndpointsAndIconAxes()
+PASS   : qmltestrunner::HearthLauncher::test_pointerActivation()
+PASS   : qmltestrunner::HearthLauncher::test_pointerHoverSharesCanonicalSelection()
+PASS   : qmltestrunner::HearthLauncher::test_pressFeedbackIsContainedAndShared()
+PASS   : qmltestrunner::HearthLauncher::test_responsiveGridAndListLayouts()
+PASS   : qmltestrunner::HearthLauncher::test_semanticControllerNavigationAndViewToggle()
+PASS   : qmltestrunner::HearthLauncher::test_sharedNativeSelectionSurface()
+PASS   : qmltestrunner::HearthLauncher::cleanupTestCase()
+Totals: 14 passed, 0 failed, 0 skipped, 0 blacklisted, 264ms
+********* Finished testing of qmltestrunner *********

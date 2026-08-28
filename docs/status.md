@@ -95,6 +95,28 @@ artifact across 30 open/close plus Grid/List cycles at p95/p99/max
 QML warnings. Packaged services were restored after testing; the booted RC.2
 therefore still contains the defect.
 
+A subsequent owner field evaluation on that booted RC.2 passed controller,
+keyboard, physical-pointer, controller-pointer, Grid/List, external-launch,
+shell-restart survival, receiver reconnect, and Return to Gaming Mode
+workflows. The initial teardown snapshot preceded the owner's return action;
+the later overlapping trace ended with Gamescope active and niri plus both
+shell units stopped, so it does not establish a session-lifecycle defect.
+
+The same evaluation found a second blocking presentation defect: cards and the
+Grid/List selector can show competing selection, hover, press, and uncontained
+ripple shapes. Clean local shell revision
+`f80b365ebda1d4f226918f76328375e25cb52969` repairs the shared interaction
+primitives: pointer hover immediately retargets the one canonical controller/
+keyboard selection through the native sliding/morphing surface, and activation
+adds at most one contained ripple/deformation. macOS and Fedora suites pass;
+real-niri selection and panel/view workloads both measured p95/p99/max
+`16/16/16 ms`, with stable peak memory and no QML warnings. HSN-001 keeps its
+frozen contract and remains `active/pending` because the repair is unpublished,
+has no explicit owner motion verdict, and has not been audited on a signed
+immutable image. The over-eager invisible right-edge hover anchor is
+nonblocking for HSN-001 and is allocated to the future System Bar, where a
+generous click target will surround the visible App Menu button.
+
 The current owner directive supersedes any earlier continuing-delivery
 authorization: public delivery is postponed until the HSN-002 stage. No
 feature-branch push, tag, RPM publication, OCI build, or target rebase may
@@ -172,9 +194,10 @@ projections against this status.
 
 ## Next gate
 
-Continue small local HSN-001 corrections and HSN-002 implementation with
-revision-specific target staging and evidence. Do not promote either slice or
-change the booted deployment. When the owner explicitly greenlights delivery,
-reconcile the exact clean combined candidate, publish immutable artifacts,
-build and verify its signed OCI, and only then resume formal target and
-recovery validation. No audit-ready claim is currently permitted.
+Integrate the locally verified blur and unified-selection repairs with the
+HSN-002 work. Do not promote either slice or change the booted deployment.
+When the owner explicitly greenlights delivery, reconcile the exact clean
+combined candidate, publish immutable artifacts, build and verify its signed
+OCI, and only then resume formal target, motion, and recovery validation.
+HSN-001 and HSN-002 receive separate owner verdicts. No audit-ready claim is
+currently permitted.
