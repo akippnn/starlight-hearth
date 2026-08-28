@@ -32,7 +32,7 @@ can be retired.
 
 ## Experience principles
 
-- Hearth-native surfaces have explicit focus graphs, visible focus, reliable
+- hearthOS-native surfaces have explicit focus graphs, visible focus, reliable
   return paths, and no automatic search-field focus on open.
 - The same semantic actions drive controller and keyboard interaction while
   leaving physical keyboard text input independent.
@@ -41,7 +41,7 @@ can be retired.
   coordinated blur, and lively defaults with a real reduced-motion path.
 - Typography, iconography, controller glyphs, motion, and state changes must be
   deliberate and varied rather than generic rounded-card styling.
-- Hearth Settings and Hearth Portal are the first Hearth-native applications.
+- hearthOS Settings and hearthOS Portal are the first hearthOS-native applications.
   They share shell input/design primitives and may run as the same installed
   applications in Desktop and Gaming Mode.
 

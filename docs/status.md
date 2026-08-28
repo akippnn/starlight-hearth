@@ -1,7 +1,7 @@
 # Current status
 
 **Last updated:** 2026-08-28
-**Current phase:** HSN-001 local correction and HSN-002 preparation; delivery held
+**Current phase:** HSN-001 v2 local correction and proposed HSN-002; delivery held
 **Active implementation slice:** HSN-001
 **New owner verdict:** pending
 
@@ -11,8 +11,9 @@ This is the single mutable delivery-status authority for `starlight-hearth`.
 
 The documentation foundation is clean at
 `6b544e02c3c9a70985b886672482e92c135032f3`. The owner approved
-`HSN-001 — hearthOS Launcher Nucleus`; its frozen contract revision is
-`17fedae8776ff38b53c07d4098d8ee8b13852253`.
+`HSN-001 — hearthOS Launcher Nucleus`; its active v2 contract is frozen at
+`43ca3393adf1dbbc2448ea8bfbfddc80761f386f`. Immutable v1 remains byte-for-byte
+unchanged at `17fedae8776ff38b53c07d4098d8ee8b13852253`.
 
 Delivery state is `active`; owner verdict remains `pending`. RC.1 remains
 released at signed tag `hearth-v0.3.0-rc.1`, source revision
@@ -102,6 +103,13 @@ workflows. The initial teardown snapshot preceded the owner's return action;
 the later overlapping trace ended with Gamescope active and niri plus both
 shell units stopped, so it does not establish a session-lifecycle defect.
 
+The historical field wording called LB the primary click. HSN-001 v2 records
+the approved physical order as RB primary/left click and LB secondary/right
+click. The ambiguous physical-click and cross-repository mapping-compatibility
+proof are invalidated and must be rerun on the next signed candidate; all
+other field, lifecycle, launch, reconnect, performance, blur, and presentation
+evidence retains its recorded identity.
+
 The same evaluation found a second blocking presentation defect: cards and the
 Grid/List selector can show competing selection, hover, press, and uncontained
 ripple shapes. Clean local shell revision
@@ -111,7 +119,7 @@ keyboard selection through the native sliding/morphing surface, and activation
 adds at most one contained ripple/deformation. macOS and Fedora suites pass;
 real-niri selection and panel/view workloads both measured p95/p99/max
 `16/16/16 ms`, with stable peak memory and no QML warnings. HSN-001 keeps its
-frozen contract and remains `active/pending` because the repair is unpublished,
+frozen v2 contract and remains `active/pending` because the repair is unpublished,
 has no explicit owner motion verdict, and has not been audited on a signed
 immutable image. The over-eager invisible right-edge hover anchor is
 nonblocking for HSN-001 and is allocated to the future System Bar, where a
@@ -121,7 +129,11 @@ The current owner directive supersedes any earlier continuing-delivery
 authorization: public delivery is postponed until the HSN-002 stage. No
 feature-branch push, tag, RPM publication, OCI build, or target rebase may
 occur without a new explicit owner greenlight. Local implementation, tests,
-screenshots, and evidence remain authorized. HSN-001 stays `active/pending`.
+screenshots, and evidence remain authorized. Product
+`3c88f23f9f341e4e812baec653eb3f3fdb628a26` and shell
+`f80b365ebda1d4f226918f76328375e25cb52969` are clean local-only checkpoints,
+not audit targets. HSN-001 stays `active/pending`. HSN-002 stays
+`proposed/pending` with no candidate, implementation authority, or evidence.
 
 ## Superseded phase statement
 
@@ -163,7 +175,7 @@ through these newer authorities.
 - Explicit Navigation/Text modes and current semantic input defaults.
 - Right-drawer App Menu with exactly Grid/List modes.
 - wvkbd-derived OSK architecture and privacy/geometry/input behavior.
-- Hearth Bar visible for hover, focus, or any owned open panel.
+- hearthOS System Bar visible for hover, focus, or any owned open panel.
 - Dolphin retained with a dormant Index/MauiKit file-manager contingency.
 - Explicit decision lifecycle and owner-only product acceptance.
 
@@ -194,10 +206,13 @@ projections against this status.
 
 ## Next gate
 
-Integrate the locally verified blur and unified-selection repairs with the
-HSN-002 work. Do not promote either slice or change the booted deployment.
-When the owner explicitly greenlights delivery, reconcile the exact clean
-combined candidate, publish immutable artifacts, build and verify its signed
-OCI, and only then resume formal target, motion, and recovery validation.
+Carry the locally verified blur and unified-selection repairs into the next
+explicitly authorized signed candidate; HSN-002 may share an image but retains
+independent evidence and verdict. Do not begin HSN-002 implementation, promote
+either slice, or change the booted deployment under the current hold. When the
+owner explicitly greenlights delivery, reconcile the exact clean candidate,
+publish immutable artifacts, build and verify its signed OCI, and only then
+rerun RB/LB physical clicks, cross-repository mapping compatibility, formal
+target motion, and recovery.
 HSN-001 and HSN-002 receive separate owner verdicts. No audit-ready claim is
 currently permitted.

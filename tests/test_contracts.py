@@ -682,10 +682,24 @@ class ImageContractTests(unittest.TestCase):
             "    target_events: [{mouse: {button: Right}}]",
             profile,
         )
+        self.assertLess(profile.index("button: RightBumper"), profile.index("button: LeftBumper"))
         self.assertNotIn("keyboard:", profile)
         self.assertIn("Guide, View, North, L3/R3, LT/RT remain deliberately unbound", profile)
         contract = json.loads((SYSTEM / "usr/share/hearth/input/inputplumber-v4.json").read_text(encoding="utf-8"))
         self.assertEqual(contract["profileName"], "hearthOS Desktop v4")
+        self.assertEqual(
+            contract["directOutputs"],
+            {
+                "LeftStick": "scroll-vertical",
+                "RightStick": "pointer-motion",
+                "RightBumper": "pointer-primary",
+                "LeftBumper": "pointer-secondary",
+            },
+        )
+        self.assertEqual(
+            list(contract["directOutputs"]),
+            ["LeftStick", "RightStick", "RightBumper", "LeftBumper"],
+        )
         for event in contract["events"]:
             self.assertIn(f"dbus: {event}", profile)
 

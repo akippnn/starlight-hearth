@@ -1,6 +1,6 @@
 # hearthOS planning roadmap
 
-**Roadmap state:** HSN-001 active/pending at exact frozen contract revision
+**Roadmap state:** HSN-001 v2 active/pending at `43ca3393adf1dbbc2448ea8bfbfddc80761f386f`; HSN-002 proposed/pending
 **Last updated:** 2026-08-28
 
 Future identifiers are intentionally unassigned. They will be reserved only
@@ -22,8 +22,8 @@ Historical contracts and evidence remain under `docs/slices/` and
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| **HSN-001 — hearthOS Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; signed RC.2 boots and its functional field paths pass, but it retains blur and duplicate-selection presentation defects. Both corrections pass local real-niri proof and remain deliberately unpublished pending the HSN-002-stage signed candidate and separate HSN-001 owner verdict. |
-| **HSN-002 — App Menu** | Verified HSN-001 RC.2 component baseline | Reusable `CollectionBrowser`/read-only `Category1`, local `Search Apps`, Favorites/Recents/By Name/By Category tabs, reusable input hints, right Grid/List selector, schema-v2 migration, and typed context actions | Reserved draft; App Menu only. First Setup, wallpaper onboarding, arbitrary placement, and docking are excluded. Until the hearthOS System Bar exists, placement remains right/center/floating. |
+| **HSN-001 — hearthOS Launcher Nucleus** | Frozen v2 contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending at exact v2 revision `43ca3393…`; signed RC.2 boots and its functional field paths pass, but it retains blur and duplicate-selection presentation defects. Both corrections pass local real-niri proof and remain deliberately unpublished. RB/LB physical and cross-repository mapping proof must be rerun on the next signed candidate. |
+| **HSN-002 — App Menu** | Proposed contract plus a later verified HSN-001 component baseline | Reusable `CollectionBrowser`/read-only `Category1`, local `Search Apps`, Favorites/Recents/By Name/By Category tabs, reusable input hints, right index rail and Grid/List selector, schema-v2 migration, and typed context actions | Proposed/pending only; no frozen revision, candidate, evidence, or implementation authority. First Setup, wallpaper, broad independent search, System Bar, arbitrary placement, and docking are excluded. Temporary placement remains right/center/floating. |
 | hearthOS System Bar | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, App Menu attachment, multi-input behavior, and owner-visible reachability; replace the temporary invisible hover edge with a generous click target around the placed App Menu button | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
 | hearthOS Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
@@ -50,13 +50,19 @@ Historical contracts and evidence remain under `docs/slices/` and
    reduced-motion handling.
 8. **hearthOS Settings** — edit existing configuration and palette contracts
    rather than creating parallel state.
+9. **First Setup** — explicit Classic/Vim keyboard preset selection and later
+   onboarding outcomes; not HSN-002.
+10. **Install hearthOS** — separately frozen installation, recovery, and
+    rollback outcome.
+11. **hearthOS Portal and plugin architecture** — typed privileged actions and
+    explicit trust/lifecycle boundaries after their independent contracts.
 
 ## Candidate application and plugin outcomes
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| Hearth Portal foundation | Safe typed action adapter and shared Hearth app controls | Maintainable Bazzite catalog alignment, privilege isolation, Desktop/Gaming context, and recovery | Proposed |
-| **HWP-001 — Local Wallpaper** | Independent typed plugin contract plus config/provider service | Typed local-file selection, packaged recovery background, deterministic center crop, last-good retention, nonblocking per-output rendering, and a future MD3E palette-provider seam | Reserved for a small independent contract; no implementation or delivery claim in HSN-001 |
+| hearthOS Portal foundation | Safe typed action adapter and shared hearthOS app controls | Maintainable Bazzite catalog alignment, privilege isolation, Desktop/Gaming context, and recovery | Proposed |
+| **HWP-001 — Local Wallpaper** | Independent local-file contract plus config/background service | Typed local-file selection, packaged recovery background, deterministic center crop, last-good retention, and nonblocking per-output rendering | Reserved for a small independent contract; online providers, palette extraction, advanced saliency/cropping, and plugin architecture are later proposed/Open outcomes. |
 | Controller-friendly default applications | Input/app-profile policy and exact catalog | Required workflows graded against exact candidates; no silent unsupported defaults | Proposed |
 | File-manager contingency | Dolphin and Nautilus both fail documented owner workflows | Explicit owner activation, Index history-preserving fork, MauiKit/KIO reuse, and separate acceptance | Deferred contingency |
 
@@ -81,12 +87,12 @@ their individual contracts are approved.
 
 ## Current gate
 
-Continue HSN-001 corrections and HSN-002 as small, independently proved local
-increments. Public push, tags, RPMs, OCI builds, and further target rebases are
-held until the owner explicitly greenlights delivery at the HSN-002 stage.
-After that authorization, reconcile the exact candidate and close physical
-reconnect, pointer, recovery, signed-image motion, and owner-audit gaps without
-weakening the frozen HSN-001 contract.
+Keep the verified HSN-001 corrections local and refine HSN-002 planning only.
+Do not begin HSN-002 implementation. Public push, tags, RPMs, OCI builds, and
+further target rebases are held until the owner explicitly greenlights
+delivery at the HSN-002 stage. After that authorization, reconcile the exact
+candidate and close physical RB/LB mapping, reconnect, pointer, recovery,
+signed-image motion, and owner-audit gaps without weakening frozen HSN-001 v2.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,

@@ -1,12 +1,12 @@
 # Input and navigation behavior
 
 **State:** Accepted planning contract; not frozen for implementation
-**Authority:** Hearth-owned surface interaction shared by controller and keyboard
+**Authority:** Canonical hearthOS surface interaction shared by controller and keyboard
 
 ## Input model
 
-Controller actions are normalized by InputPlumber and resolved by a Hearth
-semantic router. Hearth QML surfaces consume actions such as focus, accept,
+Controller actions are normalized by InputPlumber and resolved by a hearthOS
+semantic router. hearthOS QML surfaces consume actions such as focus, accept,
 back, search, context, group navigation, scrolling, and panel commands. They do
 not receive fake global Arrow, Enter, Escape, Tab, or function-key events.
 
@@ -16,7 +16,7 @@ actually pointer, scrolling, or text entry.
 
 ## Navigation and Text modes
 
-Every Hearth-owned surface starts in Navigation Mode unless it is restoring an
+Every hearthOS-owned surface starts in Navigation Mode unless it is restoring an
 explicit active text session.
 
 - Arrows, bare `HJKL`, and `WASD` move semantic focus in Navigation Mode.
@@ -46,8 +46,10 @@ explicit active text session.
 
 ## Accepted default controls
 
-Mappings are data-driven and contextual. A more specific visible context such
-as the OSK overrides the global meaning.
+Mappings are data-driven and contextual. An active, more-specific hearthOS
+surface always overrides a broader or global controller action. For example,
+the OSK layer overrides desktop-wide bumper and face-button meanings while it
+is visible.
 
 | Physical control | Default semantic behavior outside the OSK |
 | --- | --- |
@@ -59,11 +61,14 @@ as the OSK overrides the global meaning.
 | West face | Surface alternate action; toggles Grid/List in App Menu |
 | North face | Open OSK immediately and target the active field or surface primary search |
 | RT / LT | App Menu next/previous tab; other contexts remain to be specified |
-| RB / LB | Primary/secondary pointer click in Desktop/App Menu contexts |
+| RB | Primary/left pointer click in Desktop/App Menu contexts |
+| LB | Secondary/right pointer click in Desktop/App Menu contexts |
 | Menu/Start | Open App Menu globally; open selected-item actions inside App Menu |
 | Guide | Open decision outside Gaming Mode |
 | View | Open decision outside OSK |
-| L3 / R3 | Open decision outside OSK |
+| L3 + LB / RB | Previous/next window |
+| L3 + West / North | Close/fullscreen active window |
+| R3 + LB / RB | Previous/next workspace |
 
 West refers to physical position, not printed letter: Xbox X, PlayStation
 Square, and Nintendo Y.
@@ -81,9 +86,26 @@ Square, and Nintendo Y.
 | Accept/back | Enter / Escape where not in Text Mode-specific handling |
 | Manual OSK fallback | `Super+I` or `F12` |
 
-The old global F10 launcher binding is superseded. Remaining window,
-workspace, Bar-focus, media, and recovery shortcuts require conflict review
-before acceptance.
+The old global F10 launcher binding is superseded. System Bar-focus, media,
+Guide/View, and recovery shortcuts require conflict review before acceptance.
+
+## Future keyboard presets and First Setup
+
+First Setup will offer explicit Classic and Vim presets. These are future
+outcomes and are not part of HSN-002. During setup both vocabularies may work
+temporarily; pointer/WASD usage recommends Classic, HJKL usage recommends Vim,
+and controller-only setup asks for an explicit choice.
+
+| Intent | Classic | Vim |
+| --- | --- | --- |
+| Navigate | Arrows, `WASD`, `Tab` | Arrows, `HJKL` |
+| Previous/next tab | `Shift+A` / `Shift+D` | `Shift+H` / `Shift+L`, `gT` / `gt` |
+| First/last item | Home / End | `gg` / `G` |
+| Remove selected item | Delete | `dd` |
+| Undo | `Ctrl+Z` | `u` |
+
+Both presets retain `/` for search, `o` or Enter for activation, and Menu or
+`Shift+F10` for context actions.
 
 ## Glyphs and configuration
 
@@ -99,7 +121,7 @@ defaults are not current behavior.
 
 ## Third-party applications
 
-Hearth does not promise native semantic focus inside arbitrary applications.
+hearthOS does not promise native semantic focus inside arbitrary applications.
 The supported strategy remains native gamepad when available, explicit
 application profiles where later justified, right-stick pointer fallback, and
 the best-effort OSK path described in `osk.md`. Application capability claims
@@ -107,6 +129,6 @@ require candidate-specific evidence.
 
 ## Open boundary
 
-Guide, View, L3/R3, global media/window/workspace actions, pointer
-acceleration, glyph-family precedence, and remaining keyboard conflicts are
+Guide, View, global media and System Bar actions, pointer acceleration,
+glyph-family precedence, and remaining keyboard conflicts are
 tracked in `docs/open-questions.md`.

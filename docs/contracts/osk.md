@@ -7,7 +7,7 @@
 
 Create a separate `starlight-hearth-keyboard` fork preserving wvkbd history.
 The Rust shell companion spawns and supervises it as a child; it is not an
-unrelated standalone service. The companion remains Hearth's sole public API.
+unrelated standalone service. The companion remains hearthOS's sole public API.
 The private child protocol is not yet specified.
 
 Use Wayland input-method-v2, text-input-v3, virtual-keyboard-v1, and layer
@@ -21,13 +21,13 @@ application keyboard events.
 - Mouse, right-stick pointer, and physical-keyboard activation do not auto-open
   it.
 - North face outside the OSK opens it immediately with no hold delay.
-- Target the active text field; if none exists on a Hearth surface, target its
+- Target the active text field; if none exists on a hearthOS surface, target its
   primary search. In App Menu this means focus search.
 - `Super+I` and `F12` are manual physical-keyboard fallbacks.
 - Back closes the OSK and exits Text Mode in one action, restoring focus to the
   field's owning navigational control. A later Back may close the parent.
 
-Hearth-owned fields are reliable. Supported third-party Wayland fields are
+hearthOS-owned fields are reliable. Supported third-party Wayland fields are
 best effort through text-input/input-method protocols. Unsupported and
 XWayland clients retain an explicit manual fallback; universal support is not
 claimed.
@@ -84,7 +84,7 @@ or key content.
 
 ## Visual phase
 
-The first implementation may use a functional Hearth skin with correct color,
+The first implementation may use a functional hearthOS skin with correct color,
 typography, focus, hints, privacy, and responsive geometry. Full expressive
 motion refinement is later work and cannot delay correct input behavior.
 

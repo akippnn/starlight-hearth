@@ -1,7 +1,7 @@
 # App Menu behavior
 
-**State:** Accepted planning contract; not frozen for implementation
-**Surface:** Hearth Bar-owned right drawer
+**State:** Proposed HSN-002 v1 contract; not frozen or authorized for implementation
+**Surface:** Temporary right/center/floating placement until the hearthOS System Bar exists
 
 ## Presentation
 
@@ -9,7 +9,7 @@
 - Render as a right-side drawer at approximately 38% of logical output width,
   clamped near 520–760 logical pixels with safe margins.
 - Use near-full width only where a narrow output cannot satisfy the clamp.
-- Dim and subtly blur the desktop while keeping the Hearth Bar and opening item
+- Dim and subtly blur the desktop while keeping any hearthOS System Bar opener
   active and visually connected.
 - Close from the scrim, Back, the opening control, or successful launch
   according to the later launch-failure policy.
@@ -25,10 +25,10 @@ The selected mode is global across tabs and persisted between sessions. West
 face toggles the two modes. `Ctrl+1` directly selects Grid and `Ctrl+2`
 directly selects List.
 
-Initial tabs, in order:
+Place `Search Apps` above the tabs. Initial tabs, in order:
 
 1. Favorites
-2. Recent
+2. Recents
 3. By Name
 4. By Category
 
@@ -41,13 +41,18 @@ By Name groups applications under letter headings. By Category uses
 freedesktop Main Categories. An application may appear in every matching main
 category; applications without a match appear under Other.
 
-A separate left vertical index rail lists the current letters or categories.
-Moving left into the rail morphs the content into overview rows. Each row shows
-its label and up to two stacked app-card previews. Moving right at a selected
-group restores the persisted Grid/List presentation positioned at that group.
+A separate right vertical index rail lists the current letters or categories.
+Moving right into the rail morphs the content into overview rows. Each row
+shows its label and up to two stacked app-card previews. Moving left at a
+selected group restores the persisted Grid/List presentation positioned at
+that group.
 
-Empty groups are not invented. Exact treatment of a group becoming empty while
-focused remains open.
+Empty groups are not invented. The icon-only Grid/List selector is on the
+right. The active tab does not repeat a redundant content title.
+
+The reusable `CollectionBrowser` consumes a read-only `Category1` provider.
+App Menu supplies that provider, while future catalogs may reuse the same
+component without acquiring App Menu-specific policy.
 
 ## Focus and navigation
 
@@ -72,19 +77,26 @@ Default core favorites are:
 4. Dolphin
 5. Ghostty
 
-Favorites are user configuration. Initial context actions are
-Favorite/Unfavorite and Remove from Recent.
+Favorites are user configuration. Initial typed context actions are Favorite,
+Unfavorite, and Remove from Recents. QML never supplies arbitrary commands.
 
-Recents record successful launches made through App Menu only. They are unique
+Recents record successful app launches made through App Menu only. They are unique
 MRU entries ordered newest first and capped at 12. Removing an entry is not a
 blocklist; a later successful launch may add it again.
 
 ## Catalog and launch boundary
 
-Use freedesktop desktop-entry data. Manual `.desktop` entries are acceptable
-for the initial catalog. The Rust companion resolves typed desktop IDs and
+Use freedesktop desktop-entry data. `Search Apps` matches Name, GenericName,
+and Keywords. Rank exact name, then name prefix, then name-word matches, then
+GenericName/Keywords, then remaining substrings, with stable alphabetical
+tie-breaking. Manual
+`.desktop` entries are acceptable for the initial catalog. The Rust companion resolves typed desktop IDs and
 launches applications in separate transient user-systemd units/scopes.
 
-Category reassignment, drag/drop management, Clear All Recents, exact search,
-desktop-entry edge cases, launch failure behavior, and multi-output persistence
-remain open in `docs/open-questions.md`.
+HSN-002 migrates configuration to schema v2 while preserving the public
+schema-v1 and D-Bus compatibility boundary. Category reassignment, drag/drop
+management, Clear All Recents, desktop-entry edge cases, launch failure
+details, and multi-output persistence remain open in `docs/open-questions.md`.
+
+First Setup, wallpaper, arbitrary placement/docking, the hearthOS System Bar,
+and broad independent search are excluded from HSN-002.

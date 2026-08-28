@@ -1,6 +1,6 @@
 # Reuse, licensing, and provenance ledger
 
-**License direction:** Hearth Shell `GPL-3.0-only`
+**License direction:** hearthOS Shell `GPL-3.0-only`
 **Ledger state:** HSN-001 imports packaged in RC.1; target verification pending
 **Last reconciled:** 2026-08-25
 
@@ -24,7 +24,7 @@ license, local modifications, notice obligations, and destination.
 | Index | Research snapshot `ebb31be…`; exact full revision must be repinned if activated | GPLv3 | File-manager contingency only. |
 | MauiKit FileBrowsing | `4c51bff2e8b106501cd67fc6ff5b907068c14cd7` | Mixed per-file, predominantly LGPL | Candidate dependency for the Index contingency. |
 | COSMIC Files | `7cebbef82f59a5fc020e4bcb369abc542e5e1cd6` | Verify exact files before use | Reference only; not selected as the contingency base. |
-| U²-Net / U²-NetP | Exact model/conversion artifact not yet selected | Official source Apache-2.0 | Accepted saliency approach; model provenance/checksum remain open. |
+| U²-Net / U²-NetP | Exact model/conversion artifact not selected | Official source Apache-2.0 | Historical research input only; HWP-001 uses deterministic center crop. Any model-based saliency belongs to a later proposed outcome with fresh provenance and license review. |
 
 ## Required import record
 

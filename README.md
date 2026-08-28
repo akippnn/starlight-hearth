@@ -3,9 +3,10 @@
 > [!WARNING]
 > **Pre-alpha — owner testing only.**
 >
-> hearthOS is not ready for general installation. HSN-001 is active at an
-> exact frozen contract revision. Signed RC.2 boots, but has a recorded
-> closed-launcher visual defect. It is not audit-ready or owner-accepted.
+> hearthOS is not ready for general installation. HSN-001 is active at its
+> exact v2 frozen contract revision. Signed RC.2 boots, but has recorded
+> closed-launcher blur and presentation defects. It is not audit-ready or
+> owner-accepted.
 >
 > Existing GHCR images are historical development artifacts; download counts
 > do not imply a supported release. Do not rebase to `latest` or infer current
@@ -27,8 +28,10 @@ WebView, or localhost shell.
 
 The signed RC.2 image booted and starts hearthOS Shell automatically, but
 field testing found an unconditional compositor-blur artifact while the
-launcher is closed. The correction passes local real-niri staging and remains
-unpublished. Do not treat RC.2 or the local correction as an audit candidate.
+launcher is closed and competing selection/press shapes. Both corrections
+pass local real-niri staging and remain unpublished. HSN-002 is proposed only,
+with no candidate or implementation claim. Do not treat RC.2 or the local
+corrections as an audit candidate.
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation
@@ -67,8 +70,10 @@ Quickshell/QML hearthOS surfaces
 
 Applications launch outside the shell's lifecycle in transient user-systemd
 units/scopes. Configuration is one versioned JSON model layered from packaged
-defaults through `/etc` policy to XDG user overrides. HSN-001 freezes the v1
-launcher subset and public typed service boundary.
+defaults through `/etc` policy to XDG user overrides. HSN-001 v2 freezes the
+launcher subset, public typed service boundary, RB/LB ordering, and niri-owned
+shell lifecycle at product revision
+`43ca3393adf1dbbc2448ea8bfbfddc80761f386f`.
 
 hearthOS Shell's accepted license direction is `GPL-3.0-only`, enabling deliberate
 license-compatible reuse from Clavis, Caelestia, DMS, M3Shapes, wvkbd, and
@@ -82,7 +87,7 @@ attribution records.
 - VS-002/HS-002 proved useful session/input-handoff behavior but did not produce
   an accepted controller-native desktop.
 - HS-003 contains reusable semantic-routing and UI test evidence but was never
-  owner-accepted and is now superseded by the Hearth-native direction.
+  owner-accepted and is now superseded by the hearthOS-native direction.
 
 Historical identifiers are mapped in
 [docs/identifier-migration.md](docs/identifier-migration.md). Historical files

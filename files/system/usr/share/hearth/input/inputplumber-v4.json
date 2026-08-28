@@ -14,7 +14,7 @@
   "directOutputs": {
     "LeftStick": "scroll-vertical",
     "RightStick": "pointer-motion",
-    "LeftBumper": "pointer-primary",
-    "RightBumper": "pointer-secondary"
+    "RightBumper": "pointer-primary",
+    "LeftBumper": "pointer-secondary"
   }
 }

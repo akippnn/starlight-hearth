@@ -21,11 +21,11 @@ establish an application grade.
 | Surface/application | Required workflow | Target | Current evidence |
 | --- | --- | --- | --- |
 | Hearth session transition | Gaming → Desktop → Gaming, reconnect, recovery | A/B | Historical partial evidence only |
-| App Menu | Open, focus, search, change Grid/List, launch, context action, close | A | No Hearth-native candidate |
-| Hearth Bar | Reveal, focus, open/close owned panel, restore focus | A | No Hearth-native candidate |
+| App Menu | Open, focus, search, change Grid/List, launch, context action, close | A | HSN-002 proposed; no candidate |
+| hearthOS System Bar | Reveal, focus, open/close owned panel, restore focus | A | No hearthOS-native candidate |
 | OSK | Open, type, change layer/layout, dock, secure field, close | A | No wvkbd-derived candidate |
-| Hearth Settings | Navigate and apply/recover one setting | A | Proposed |
-| Hearth Portal | Inspect and execute one typed safe action | A | Proposed |
+| hearthOS Settings | Navigate and apply/recover one setting | A | Proposed |
+| hearthOS Portal | Inspect and execute one typed safe action | A | Proposed |
 | KDE recovery | Enter recovery, perform essential workflow, return | A–C | Historical recovery evidence; remains required |
 | Firefox | Browse, URL/text entry, download | A–C | Candidate-specific audit required |
 | Dolphin | Browse, open, copy/move/rename/delete/recover | A–C | Default retained; contingency gate requires evidence |

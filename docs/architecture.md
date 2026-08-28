@@ -32,7 +32,7 @@ Rust hearth-shell companion
                 │
                 ▼
 Quickshell/QML hearthOS surfaces
-├── Hearth Bar and owned panels
+├── hearthOS System Bar and owned panels
 ├── App Menu
 ├── focus graphs and input contexts
 ├── Settings/Portal shared controls
@@ -60,7 +60,7 @@ layers, from lowest to highest precedence:
 
 1. packaged defaults;
 2. image/administrator policy under `/etc`;
-3. XDG user configuration edited by Hearth Settings.
+3. XDG user configuration edited by hearthOS Settings.
 
 `starlight-hearth-shell` owns the schema and migrator. `starlight-hearth` pins
 the exact shell artifact and supplies image policy. Invalid user configuration

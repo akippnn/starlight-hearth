@@ -1,14 +1,14 @@
 # Application catalog and inventory contract
 
 **State:** Proposed planning inventory; not frozen or implemented
-**Last reconciled:** 2026-08-25
+**Last reconciled:** 2026-08-28
 
 This document separates four facts that were previously conflated:
 
 1. installed in the immutable image;
 2. installed as a system or user Flatpak;
-3. visible in the Menu/Start-button App Menu;
-4. available on demand through Hearth Portal.
+3. visible in the hearthOS App Menu;
+4. available on demand through hearthOS Portal.
 
 An installed recovery dependency does not automatically belong in App Menu. A
 Portal-only application is absent by default and must have a typed, auditable
@@ -33,7 +33,7 @@ replacement for the immutable base above:
 | --- | --- | --- | --- | --- | --- |
 | Steam | `steam` | Default | Visible | Gaming identity | Gaming Mode and library entrypoint |
 | Return to Gaming Mode | `hearth-return-gaming.desktop` | Default | Visible | Shell-native | Recovery/session transition |
-| Hearth Portal | Hearth application entry | Default after its future accepted application outcome | Visible | Shell-native | Controller-native system/application management |
+| hearthOS Portal | Technical Hearth application entry | Default after its future accepted application outcome | Visible | Shell-native | Controller-native system/application management |
 | Firefox | `org.mozilla.firefox` | Default | Visible | Custom bindings | Browser |
 | Dolphin | `dolphin` | Default | Visible | Custom bindings | File manager |
 | Ark | `ark` | Default | Visible | Custom bindings | Archive handling |
@@ -65,7 +65,7 @@ replacement for the immutable base above:
 | Waydroid | Native package installed | Portal-only | Preserve underlying requirements only when needed |
 | Web Apps | Native package installed | Portal-only | Optional web-app manager |
 | OpenGamepadUI | Native package installed | Portal-only | Optional alternate launcher/overlay |
-| Bazzite Updater | Native package installed | Flow may move into Hearth Portal | Remove launcher only after a future Portal outcome proves update status/action parity |
+| Bazzite Updater | Native package installed | Flow may move into hearthOS Portal | Remove launcher only after a future Portal outcome proves update status/action parity |
 | Btrfs Assistant | Native package installed | Portal maintenance action | Keep hidden if required for recovery |
 | Cardwire | Native package installed | Portal maintenance action | Hardware-specific utility |
 | Disks | Native package installed | Portal maintenance action | Keep hidden if dependency-safe removal is unavailable |
@@ -78,8 +78,8 @@ replacement for the immutable base above:
 
 | Surface | Current state | Required result |
 | --- | --- | --- |
-| Documentation | Visible inherited desktop link | Remove desktop entry and Hearth Portal link |
-| Discourse | Visible inherited web link | Remove desktop entry and Hearth Portal link |
+| Documentation | Visible inherited desktop link | Remove desktop entry and hearthOS Portal link |
+| Discourse | Visible inherited web link | Remove desktop entry and hearthOS Portal link |
 | Haruna | System Flatpak installed | Remove; mpv remains the general media fallback |
 | Mission Center | hearthOS-added system Flatpak | Remove only after a proven Hearth process surface owns the workflow |
 | KDE System Monitor | Native package installed | Remove when dependency-safe, otherwise hide |

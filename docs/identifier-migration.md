@@ -25,6 +25,6 @@ requirement IDs and the following registry:
 
 | Prefix | Meaning | First reservation |
 | --- | --- | --- |
-| `HSN` | Hearth-native Shell owner-visible outcomes | `HSN-001` — Hearth-native Launcher Nucleus |
+| `HSN` | hearthOS-native Shell owner-visible outcomes | `HSN-001` — hearthOS Launcher Nucleus; `HSN-002` — proposed hearthOS App Menu |
 
 The HSN prefix does not reinterpret or reuse any historical VS/HS identifier.
