@@ -1,7 +1,7 @@
 # Current status
 
 **Last updated:** 2026-08-28
-**Current phase:** HSN-001 RC.2 clean local candidate and owner visual gate
+**Current phase:** HSN-001 RC.2 package and signed-image integration
 **Active implementation slice:** HSN-001
 **New owner verdict:** pending
 
@@ -26,10 +26,10 @@ Independent Cosign verification passed on `aki@hearth`, and the owner later
 booted that exact index. The RC.1 field smoke proved controller and keyboard
 navigation plus Return to Gaming Mode, but found packaged UI startup, pointer,
 application-launch lifecycle, layout, scrim, icon, and performance defects.
-The local shell commits through `3bfe0f4c` and product commit `ee6b158` are
-unreleased RC.2 inputs only. RC.2 implementation and local target staging are
-the current gate; recovery, exact signed-image proof, and owner audit remain
-pending.
+The earlier shell commits through `3bfe0f4c` and product commit `ee6b158` were
+unreleased RC.2 inputs. They are superseded as candidate identities by the
+clean revisions recorded below. Recovery, exact signed-image proof, and owner
+audit remain pending.
 
 The preserved v11 checkpoint met its performance target but failed Launcher
 Presentation because the selection contour remained faceted and its fade was
@@ -52,9 +52,13 @@ offline-install checks. Its local RPM SHA-256 is
 `463f6409247eafecd9a13e5226bb27f08192cc03cd541db0ccafa1d85f0d5cf9`.
 It is local evidence only, not a published RC.2 identity.
 
-The source-identical shell tree is clean at
-`a67c014c8f9278b02ced45f3b52799746cab1014` on
-`codex/hsn-001-launcher-nucleus`. No tag or remote publication was created.
+The current shell candidate is clean and pushed at
+`38059d5b03705e8a663e191cf1cd4a6a753ada6b` on
+`codex/hsn-001-launcher-nucleus`. It makes niri the sole owner of companion/UI
+startup and teardown. A real Gaming Mode-to-Desktop transition started the
+companion about 61 ms and the UI about 72 ms after niri; Quickshell completed
+configuration loading in about 548 ms with `Input1.Ready=true` and one UI
+process. The task-labeled transition setup was removed afterward.
 The local product integration is clean at image-changing commit `dc6e746`,
 with the hashed evidence checkpoint recorded through
 `ddffa30ebff25b832468816b0a2b547d4b06512f` on the matching feature branch.
@@ -64,8 +68,15 @@ owner's request before a new build process or container was running. Inspection
 confirmed that no task-labeled builder required termination; caches, build
 artifacts, and unrelated processes were left untouched. The requested shared
 native selection increment and resumed local package gate are complete at an
-evidence-recorded engineering checkpoint. Owner visual approval and exact clean
-source identities are the current gate.
+evidence-recorded engineering checkpoint.
+
+The owner authorized promotion to a new live image in this turn. This is
+authorization to integrate and deploy RC.2, not an HSN-001 acceptance verdict.
+Shell Fedora verification run `33098257890` and RPM run `33098257814` passed at
+the exact candidate revision. Signed tag `hearth-v0.3.0-rc.2` and the sole main
+RPM asset are published; the asset SHA-256 is
+`02084a8f3197d34553088464e0d4321a484c04c4c841ee998c0388d88437f1e3`.
+Public `main`, final `hearth-v0.3.0`, and owner verdict remain unchanged.
 
 ## Superseded phase statement
 
@@ -125,8 +136,11 @@ The historical DMS refs and dirty state remain preserved in the private archive
 recorded by repository reconciliation. Public shell and product `main` branches
 remain unchanged; HSN-001 work lives on dedicated feature branches and the
 signed RC.1 tag. Preflight is recorded, but the deployed host has not been
-rebased to HSN-001 because remote rpm-ostree authorization is unavailable; its
-booted and rollback deployments remain unchanged.
+rebased to RC.2 because its signed OCI does not exist yet. The host currently
+boots the recorded RC.1 digest and retains the previous deployment. The owner
+has authorized the RC.2 rebase; noninteractive SSH does not have sudo authority,
+so the final `rpm-ostree rebase` may require one owner password entry after the
+digest is ready.
 
 Existing image/build metadata may still project historical VS-002 state. No
 new image may be built or presented as current until a later non-documentation
@@ -134,7 +148,7 @@ change reconciles those non-document public projections against this status.
 
 ## Next gate
 
-Present the real-niri Grid/List screenshots, selected-corner crops, and motion
-recording for owner visual approval. Do not create `hearth-v0.3.0-rc.2`, publish
-the RPM, or build/pin a new OCI until that approval is recorded. Formal rebase,
-recovery, and owner validation remain later gates.
+Commit and push the exact RC.2 RPM pin, build and independently verify a signed
+OCI, then rebase `aki@hearth` only to that digest with rollback preserved.
+Reconcile the remaining HSN-001 target and recovery gates before any
+audit-ready claim.

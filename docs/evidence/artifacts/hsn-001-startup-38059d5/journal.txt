@@ -1,0 +1,10 @@
+[18247.531576] hearth systemd[1767]: Starting hearth-shell-startup-rc2-dev.service - hearthOS Shell RC.2 startup-transition companion proof...
+[18247.556936] hearth systemd[1767]: Started hearth-shell-startup-rc2-dev.service - hearthOS Shell RC.2 startup-transition companion proof.
+[18247.562959] hearth systemd[1767]: Starting hearth-shell-ui-startup-rc2-dev.service - hearthOS Shell RC.2 startup-transition UI proof...
+[18247.568218] hearth systemd[1767]: Started hearth-shell-ui-startup-rc2-dev.service - hearthOS Shell RC.2 startup-transition UI proof.
+[18247.608811] hearth quickshell[242934]:   INFO: Launching config: "/home/aki/.local/share/hearth-dev/hsn001-rc2-work/quickshell/shell.qml"
+[18247.609181] hearth quickshell[242934]:   INFO: Shell ID: "228025349cb0f11136b4a44b8910609c" Path ID "228025349cb0f11136b4a44b8910609c"
+[18247.610071] hearth quickshell[242934]:   INFO: Saving logs to "/run/user/1000/quickshell/by-id/6g75pxufkt/log.qslog"
+[18248.043852] hearth quickshell[242934]:   INFO: Configuration Loaded
+[18248.383297] hearth quickshell[242934]:   INFO: hearthOS selection mesh allocated once with capacity 36840
+[18248.393169] hearth quickshell[242934]:   WARN qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")

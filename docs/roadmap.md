@@ -22,7 +22,7 @@ Historical contracts and evidence remain under `docs/slices/` and
 
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
-| **HSN-001 — hearthOS Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; local RC.2 presentation/runtime/package evidence passes engineering gates; owner visual approval and signed-candidate validation remain pending |
+| **HSN-001 — hearthOS Launcher Nucleus** | Frozen contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending; RC.2 local presentation, runtime, package, performance, and Desktop-transition gates pass; signed package/image integration and remaining recovery proof are current |
 | **HSN-002 — App Menu** | Verified HSN-001 RC.2 component baseline | Reusable `CollectionBrowser`/read-only `Category1`, local `Search Apps`, Favorites/Recents/By Name/By Category tabs, reusable input hints, right Grid/List selector, schema-v2 migration, and typed context actions | Reserved draft; App Menu only. First Setup, wallpaper onboarding, arbitrary placement, and docking are excluded. Until the hearthOS System Bar exists, placement remains right/center/floating. |
 | hearthOS System Bar | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, App Menu attachment, multi-input behavior, and owner-visible reachability | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
@@ -81,10 +81,10 @@ their individual contracts are approved.
 
 ## Current gate
 
-Record the antialiased RC.2 staging tree and package evidence against exact
-clean feature revisions. Obtain owner visual approval before creating a signed
-RC.2 tag or publishing an RPM. Signed-image boot, recovery, and owner
-acceptance remain later separate gates.
+Finish exact RC.2 shell CI, signed RPM publication, product pinning, signed OCI
+verification, and target rebase. Then close the remaining physical reconnect,
+pointer, recovery, signed-image motion, and owner-audit gaps without weakening
+the frozen HSN-001 contract.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,

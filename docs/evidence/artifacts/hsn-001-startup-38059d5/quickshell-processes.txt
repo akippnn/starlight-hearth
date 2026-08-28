@@ -1,0 +1,1 @@
+242934 /usr/bin/quickshell --path /home/aki/.local/share/hearth-dev/hsn001-rc2-work/quickshell/shell.qml

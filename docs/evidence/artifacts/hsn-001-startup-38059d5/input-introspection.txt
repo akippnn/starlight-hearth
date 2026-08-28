@@ -1,0 +1,9 @@
+NAME              TYPE     SIGNATURE RESULT/VALUE FLAGS
+.ClearContext     method   s         b            -
+.RegisterContext  method   sas       b            -
+.ActiveContext    property s         "launcher"   emits-change
+.Connected        property b         true         emits-change
+.GlyphFamily      property s         "xbox"       emits-change
+.Ready            property b         true         emits-change
+.Action           signal   ssdt      -            -
+.ReadinessChanged signal   bs        -            -
