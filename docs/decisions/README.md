@@ -14,3 +14,4 @@ not product-slice verdicts. Later ADRs supersede only the stated portions;
 | ADR-0006 | Current accepted shell/reuse/license direction. |
 | ADR-0007 | Current accepted runtime/configuration/OSK boundaries. |
 | ADR-0008 | Current accepted documentation and delivery governance. |
+| ADR-0009 | Current accepted hearthOS Desktop shell-lifecycle ownership. |

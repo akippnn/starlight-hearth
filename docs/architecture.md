@@ -1,7 +1,7 @@
-# Hearth architecture foundation
+# hearthOS architecture foundation
 
-**Decision state:** Accepted architecture direction; not implemented or frozen
-**Last reconciled:** 2026-08-25
+**Decision state:** Accepted architecture; HSN-001 subset implemented and under validation
+**Last reconciled:** 2026-08-28
 
 ## Repository ownership
 
@@ -9,9 +9,8 @@
 niri integration policy, InputPlumber/session policy, recovery, cross-repository
 contracts, roadmap, status, and evidence.
 
-`starlight-hearth-shell` owns the independently released Hearth Shell UI and
-its implementation-facing documentation. It will be reconciled only after its
-separate history reset; the current documentation pass does not mutate it.
+`starlight-hearth-shell` owns the independently released hearthOS Shell UI and
+its implementation-facing documentation.
 
 A future `starlight-hearth-keyboard` repository will preserve the upstream
 wvkbd history and own Hearth's OSK fork. File-manager work remains a dormant
@@ -32,7 +31,7 @@ Rust hearth-shell companion
 └── OSK child supervision
                 │
                 ▼
-Quickshell/QML Hearth surfaces
+Quickshell/QML hearthOS surfaces
 ├── Hearth Bar and owned panels
 ├── App Menu
 ├── focus graphs and input contexts
@@ -44,9 +43,15 @@ The Rust companion is the tested public service boundary. QML does not execute
 privileged commands or invent application launch shell strings. C++ is limited
 to native QML modules such as expressive-shape integration when required.
 
-Applications launched from Hearth run in separate transient user-systemd
+Applications launched from hearthOS run in separate transient user-systemd
 units or scopes so a shell restart does not terminate them. niri remains the
 source of truth for windows, outputs, workspaces, and active XKB state.
+
+`niri.service` is the sole Desktop-session lifecycle owner for the companion
+and UI. Image-owned `niri.service.wants` links start both units; the companion
+acquires its D-Bus name before the UI starts, and `PartOf=niri.service` tears
+them down when Desktop Mode ends. The compositor configuration does not issue
+a duplicate shell start. See ADR-0009.
 
 ## Configuration ownership
 

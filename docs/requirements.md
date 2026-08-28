@@ -1,7 +1,7 @@
 # Hearth requirements register
 
 **Authority:** canonical product requirements
-**Last reconciled:** 2026-08-25
+**Last reconciled:** 2026-08-28
 **Freeze state:** the HSN-001 subset is frozen by its exact slice contract;
 remaining requirements retain their row states
 
@@ -27,6 +27,7 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `ARCH-007` | Accepted | Use layered versioned JSON configuration: packaged defaults, `/etc` policy, then XDG user configuration. |
 | `ARCH-008` | Accepted | Invalid user configuration must fail visibly and fall back safely rather than preventing shell startup. |
 | `ARCH-009` | Accepted | The eventual runtime performs a hard Hearth rename; DMS command, service, IPC, and config compatibility are not target contracts. |
+| `ARCH-010` | Accepted | In hearthOS Desktop, `niri.service` exclusively owns companion/UI startup and teardown; the companion acquires the public D-Bus name before the UI starts, and no compositor command duplicates the systemd start path. |
 
 ## Input, focus, and glyphs
 
