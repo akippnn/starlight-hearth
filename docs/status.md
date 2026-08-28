@@ -1,7 +1,7 @@
 # Current status
 
-**Last updated:** 2026-08-28
-**Current phase:** HSN-001 v2 local correction and proposed HSN-002; delivery held
+**Last updated:** 2026-08-29
+**Current phase:** HSN-001 v2 local correction and HSN-002 contract review; delivery held
 **Active implementation slice:** HSN-001
 **New owner verdict:** pending
 
@@ -128,12 +128,15 @@ generous click target will surround the visible App Menu button.
 The current owner directive supersedes any earlier continuing-delivery
 authorization: public delivery is postponed until the HSN-002 stage. No
 feature-branch push, tag, RPM publication, OCI build, or target rebase may
-occur without a new explicit owner greenlight. Local implementation, tests,
-screenshots, and evidence remain authorized. Product
+occur without a new explicit owner greenlight. Existing HSN-001 local repair
+tests, screenshots, and evidence remain authorized. Product
 `3c88f23f9f341e4e812baec653eb3f3fdb628a26` and shell
 `f80b365ebda1d4f226918f76328375e25cb52969` are clean local-only checkpoints,
 not audit targets. HSN-001 stays `active/pending`. HSN-002 stays
 `proposed/pending` with no candidate, implementation authority, or evidence.
+Its interaction decisions, additive `Category1`/`AppCatalog1` wire shapes, and
+schema-v2 migration rules are now decision-complete review material. The owner
+explicitly retained proposed state; no exact revision is approved or frozen.
 
 ## Superseded phase statement
 
@@ -206,13 +209,13 @@ projections against this status.
 
 ## Next gate
 
-Carry the locally verified blur and unified-selection repairs into the next
-explicitly authorized signed candidate; HSN-002 may share an image but retains
-independent evidence and verdict. Do not begin HSN-002 implementation, promote
-either slice, or change the booted deployment under the current hold. When the
-owner explicitly greenlights delivery, reconcile the exact clean candidate,
-publish immutable artifacts, build and verify its signed OCI, and only then
-rerun RB/LB physical clicks, cross-repository mapping compatibility, formal
-target motion, and recovery.
+Review the decision-complete proposed HSN-002 contract. Its next gate is an
+explicit owner freeze decision at a new exact product revision, followed by a
+separate implementation authorization. Until both occur, do not create HSN-002
+implementation branches or change shell code. The locally verified HSN-001
+repairs may later enter the same signed candidate, but both slices retain
+independent evidence and verdicts. Publication, signed OCI work, deployment,
+and RB/LB physical and compatibility reruns remain held for a later explicit
+delivery greenlight.
 HSN-001 and HSN-002 receive separate owner verdicts. No audit-ready claim is
 currently permitted.

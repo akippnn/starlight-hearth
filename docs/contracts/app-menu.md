@@ -1,6 +1,6 @@
 # App Menu behavior
 
-**State:** Proposed HSN-002 v1 contract; not frozen or authorized for implementation
+**State:** Decision-complete proposed HSN-002 v1; not frozen or authorized for implementation
 **Surface:** Temporary right/center/floating placement until the hearthOS System Bar exists
 
 ## Presentation
@@ -25,7 +25,8 @@ The selected mode is global across tabs and persisted between sessions. West
 face toggles the two modes. `Ctrl+1` directly selects Grid and `Ctrl+2`
 directly selects List.
 
-Place `Search Apps` above the tabs. Initial tabs, in order:
+Every opening starts on Favorites with an empty query. Place `Search Apps`
+above the tabs. Initial tabs, in order:
 
 1. Favorites
 2. Recents
@@ -59,6 +60,11 @@ component without acquiring App Menu-specific policy.
 - Opening chooses the first favorite; if none exists, it chooses the first
   alphabetically visible application.
 - Search never receives initial focus automatically.
+- Entering search records the current tab, selection, and scroll position;
+  clearing the query exits search and restores all three.
+- Tab, query, selection, and scroll state are transient across closes.
+- Until the OSK outcome, controller can enter/exit search and navigate results,
+  but composing query text requires a physical keyboard and is labeled as such.
 - D-pad moves card/list/index focus.
 - Left stick scrolls; it does not duplicate D-pad focus.
 - Right stick remains pointer motion.
@@ -79,6 +85,7 @@ Default core favorites are:
 
 Favorites are user configuration. Initial typed context actions are Favorite,
 Unfavorite, and Remove from Recents. QML never supplies arbitrary commands.
+Favorite reorder/edit mode is outside HSN-002.
 
 Recents record successful app launches made through App Menu only. They are unique
 MRU entries ordered newest first and capped at 12. Removing an entry is not a
@@ -93,8 +100,10 @@ tie-breaking. Manual
 `.desktop` entries are acceptable for the initial catalog. The Rust companion resolves typed desktop IDs and
 launches applications in separate transient user-systemd units/scopes.
 
-HSN-002 migrates configuration to schema v2 while preserving the public
-schema-v1 and D-Bus compatibility boundary. Category reassignment, drag/drop
+HSN-002 migrates configuration to schema v2 while preserving schema-v1 input
+compatibility and the existing D-Bus boundary. Exact additive `Category1` and
+`AppCatalog1` wire shapes are owned by the proposed slice contract.
+Category reassignment, drag/drop
 management, Clear All Recents, desktop-entry edge cases, launch failure
 details, and multi-output persistence remain open in `docs/open-questions.md`.
 

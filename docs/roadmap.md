@@ -1,7 +1,7 @@
 # hearthOS planning roadmap
 
 **Roadmap state:** HSN-001 v2 active/pending at `43ca3393adf1dbbc2448ea8bfbfddc80761f386f`; HSN-002 proposed/pending
-**Last updated:** 2026-08-28
+**Last updated:** 2026-08-29
 
 Future identifiers are intentionally unassigned. They will be reserved only
 when an owner-visible contract is approved, preventing reuse of historical
@@ -23,7 +23,7 @@ Historical contracts and evidence remain under `docs/slices/` and
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
 | **HSN-001 — hearthOS Launcher Nucleus** | Frozen v2 contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending at exact v2 revision `43ca3393…`; signed RC.2 boots and its functional field paths pass, but it retains blur and duplicate-selection presentation defects. Both corrections pass local real-niri proof and remain deliberately unpublished. RB/LB physical and cross-repository mapping proof must be rerun on the next signed candidate. |
-| **HSN-002 — App Menu** | Proposed contract plus a later verified HSN-001 component baseline | Reusable `CollectionBrowser`/read-only `Category1`, local `Search Apps`, Favorites/Recents/By Name/By Category tabs, reusable input hints, right index rail and Grid/List selector, schema-v2 migration, and typed context actions | Proposed/pending only; no frozen revision, candidate, evidence, or implementation authority. First Setup, wallpaper, broad independent search, System Bar, arbitrary placement, and docking are excluded. Temporary placement remains right/center/floating. |
+| **HSN-002 — App Menu** | Decision-complete proposed contract plus a later verified HSN-001 component baseline | Reusable `CollectionBrowser`; additive read-only `Category1` and typed `AppCatalog1`; local `Search Apps`; Favorites/Recents/By Name/By Category tabs; right index rail and Grid/List; schema-v2 migration | Proposed/pending review only; no frozen revision, candidate, evidence, or implementation authority. Opens on Favorites; clearing search restores prior context; physical keyboard composes queries until OSK; edit/reorder mode and adjacent surfaces are excluded. |
 | hearthOS System Bar | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, App Menu attachment, multi-input behavior, and owner-visible reachability; replace the temporary invisible hover edge with a generous click target around the placed App Menu button | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
 | hearthOS Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
@@ -87,12 +87,12 @@ their individual contracts are approved.
 
 ## Current gate
 
-Keep the verified HSN-001 corrections local and refine HSN-002 planning only.
-Do not begin HSN-002 implementation. Public push, tags, RPMs, OCI builds, and
-further target rebases are held until the owner explicitly greenlights
-delivery at the HSN-002 stage. After that authorization, reconcile the exact
-candidate and close physical RB/LB mapping, reconnect, pointer, recovery,
-signed-image motion, and owner-audit gaps without weakening frozen HSN-001 v2.
+Keep the verified HSN-001 corrections local and review the decision-complete
+proposed HSN-002 contract. Do not begin HSN-002 implementation until the owner
+first approves and freezes an exact contract revision, then separately
+authorizes local implementation. Public push, tags, RPMs, OCI builds, target
+rebases, and HSN-001 physical RB/LB reruns remain held for an explicit delivery
+greenlight.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,

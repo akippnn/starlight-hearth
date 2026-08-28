@@ -1,7 +1,7 @@
 # Open decision register
 
 **Authority:** unresolved product and implementation choices
-**Last reconciled:** 2026-08-28
+**Last reconciled:** 2026-08-29
 
 These questions are deliberately not delegated to a future implementer. They
 remain open until research resolves a discoverable fact or the owner explicitly
@@ -31,6 +31,10 @@ HSN-002: `Search Apps` covers Name, GenericName, and Keywords with explicit
 ranking; tabs are Favorites, Recents, By Name, and By Category; the index rail
 and icon-only Grid/List selector are on the right; recents retain 12 unique
 successful launches; categories use freedesktop main categories with Other.
+`OQ-021` is resolved for the proposed contract: every open starts on Favorites,
+clearing search restores its prior tab/selection/scroll context, and all
+tab/search/focus state is transient. These choices become normative only after
+an exact contract revision is approved and frozen.
 
 ## Shell, repository, and configuration
 
@@ -52,7 +56,6 @@ successful launches; categories use freedesktop main categories with Other.
 
 | ID | Decision still needed |
 | --- | --- |
-| `OQ-021` | HSN-002 empty-query behavior, focus restoration after leaving search, and whether the default/last tab is remembered. |
 | `OQ-024` | Per-output App Menu placement, remembered state, and behavior when focus/output changes. |
 | `OQ-025` | Clear All Recents, category-editing workflow, and whether later manual application additions remain `.desktop` based. |
 | `OQ-026` | Final Bar left/center/right layout, merged control-center/notification placement, initial focus item, and multi-output visibility. |

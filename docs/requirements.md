@@ -78,6 +78,9 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `LAUNCH-011` | Accepted | `Super+A` is the sole accepted global keyboard launcher shortcut; the former F10 proposal is superseded. |
 | `LAUNCH-012` | Proposed | HSN-002 `Search Apps` covers Name, GenericName, and Keywords, ranked by exact name, name prefix, name-word match, GenericName/Keywords, then remaining substring with stable alphabetical ties. |
 | `LAUNCH-013` | Proposed | HSN-002 migrates configuration to schema v2 and exposes typed Favorite, Unfavorite, and Remove from Recents actions while preserving schema-v1 and public D-Bus compatibility. |
+| `LAUNCH-014` | Proposed | Every App Menu open starts on Favorites; clearing search restores the prior tab, selection, and scroll position; those states are transient while Grid/List persists. |
+| `LAUNCH-015` | Proposed | Before OSK delivery, controller can enter/exit search and navigate results, but physical keyboard input is required to compose the query and the limitation remains visible. |
+| `LAUNCH-016` | Proposed | Add read-only `Category1` and typed `AppCatalog1` at `/Catalog` without reinterpreting `Launcher1` or `Config1`; exact wire shapes are frozen only with the HSN-002 contract. |
 
 ## On-screen keyboard
 
