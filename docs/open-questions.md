@@ -24,6 +24,12 @@ proposals are recorded separately below; proposals do not authorize work.
 | `OQ-062` | HSN-001 freezes only launcher-nucleus input, config, launch, visual, package, image, and recovery behavior; tabs/search/OSK/Bar and adjacent contracts remain separate. |
 | `OQ-063` | HSN-001 v2 sets RB to primary/left click, LB to secondary/right click, and niri as exclusive companion/UI lifecycle owner. |
 
+## Resolved future allocation
+
+| ID | Resolution |
+| --- | --- |
+| `OQ-011` | View/Select is allocated to the future System Bar focus action, initially selecting Control Center. It remains a remappable default and is not HIN-001 implementation scope. |
+
 ## Defined by the proposed HSN-002 contract
 
 These choices are stable planning inputs but do not freeze or authorize
@@ -43,14 +49,17 @@ HIN-001 is an always-available, headless hold/chord layer: R3 navigates real
 niri windows/workspaces, L3 manipulates the focused window, App Menu may
 override L3+LB/RB for tabs, and capability-gated Guide chords provide media,
 niri screenshot, safe force-quit, and controller power-off only where a real
-provider exists. HIN-002 is the separate visible, mutually exclusive R3
-Navigate/L3 Manipulate latched niri mode with action-aware release, niri
-Overview, bottom reusable hints, `Meta+Tab`, and Classic/Vim navigation.
+provider exists. These are packaged defaults over stable semantic layers;
+physical actions are remappable and hold/latch triggers may differ. HIN-002 is
+the separate visible, mutually exclusive Navigate/Manipulate latched niri mode
+with R3/L3 defaults, action-aware release, niri Overview, bottom reusable
+hints, `Meta+Tab`, and Classic/Vim navigation.
 
 This resolves the controller semantics and shortcut portion of `OQ-010`,
 `OQ-015`, and `OQ-040` for the proposed contracts. Remaining questions are
-limited below to unsupported receiver power-off, unrelated global keyboard
-conflicts, and multi-output mode placement. The choices become normative only
+limited below to unsupported receiver power-off, persisted custom-binding
+schema/editor details, unrelated global keyboard conflicts, and multi-output
+mode placement. The choices become normative only
 after each exact contract revision is independently approved and frozen.
 
 ## Shell, repository, and configuration
@@ -63,11 +72,11 @@ after each exact contract revision is independently approved and frozen.
 
 | ID | Decision still needed |
 | --- | --- |
-| `OQ-011` | View behavior outside the OSK, including hearthOS System Bar focus and initial focus target. |
 | `OQ-013` | Right-stick pointer acceleration, dead zones, speed tiers, and click/drag behavior. |
 | `OQ-014` | Controller-family detection and override precedence for Xbox, PlayStation, Nintendo, and generic glyphs. |
 | `OQ-015` | Remaining global keyboard conflict policy outside the proposed `Meta+H`, `Meta+L`, and `Meta+Tab` input defaults, including System Bar, recovery, and later First Setup preset selection. |
 | `OQ-016` | Whether a future hardware provider can safely power off the owner 8BitDo receiver; HIN-001 must expose the action as unavailable until capability discovery proves support. |
+| `OQ-017` | Final persisted schema, import/export, conflict-resolution UX, and recovery policy for remapping every action and creating custom hold/latch modifier layers. HIN-001/HIN-002 already require a binding-independent semantic model. |
 
 ## App Menu and hearthOS System Bar
 
@@ -75,7 +84,7 @@ after each exact contract revision is independently approved and frozen.
 | --- | --- |
 | `OQ-024` | Per-output App Menu placement, remembered state, and behavior when focus/output changes. |
 | `OQ-025` | Clear All Recents, category-editing workflow, and whether later manual application additions remain `.desktop` based. |
-| `OQ-026` | Final Bar left/center/right layout, merged control-center/notification placement, initial focus item, and multi-output visibility. |
+| `OQ-026` | Final Bar left/center/right layout, merged control-center/notification placement, fallback when the default Control Center item is unavailable, and multi-output visibility. View/Select initially focuses Control Center. |
 | `OQ-027` | Bar edit mode, drag/drop details, widget persistence, and keyboard/controller equivalents. |
 
 ## OSK and external applications

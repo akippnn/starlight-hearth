@@ -150,16 +150,20 @@ write leaves the intact v1 file in place.
   repeat is deliberately faster than the 140 ms selection transition so the
   existing canonical surface retargets by sliding instead of restarting its
   initial morph for every item.
-- Base RB/LB remain HSN-001 primary/secondary pointer clicks. While L3 is held
-  in the App Menu context, LB/RB become previous/next tab and cannot leak
-  pointer clicks. RT/LT are not App Menu tab controls.
+- Base RB/LB remain HSN-001 primary/secondary pointer clicks. With the packaged
+  defaults, holding L3 in the App Menu context makes LB/RB previous/next tab
+  and cannot leak pointer clicks. The semantic tab actions follow a remapped
+  manipulation modifier; App Menu does not hardcode L3. Base RT/LT are not App
+  Menu tab controls.
 
 ### Reusable InputHintBar
 
 - `InputHintBar` receives ordered semantic action descriptions, current
-  `Input1` context, available actions, active modifiers, capabilities, and
-  controller glyph family. Individual surfaces do not hardcode controller
-  labels or duplicate hint-state logic.
+  `Input1` context, available actions, active modifiers, capabilities, binding
+  snapshot/revision, and controller glyph family. Individual surfaces do not
+  hardcode controller labels or duplicate hint-state logic.
+- Hint glyphs and labels come from the active binding model, including remapped
+  or custom modifier triggers; packaged L3/R3 labels are defaults only.
 - A modifier action renders as one modifier hint while inactive. While the
   modifier is held, that hint expands in place to reveal only actions valid in
   the active context. Capability-gated unavailable actions are omitted or
@@ -269,7 +273,8 @@ Owner verdict: `pending`. No candidate exists.
 ## Contract approval
 
 Interaction decisions were confirmed by @akippnn during planning on
-2026-08-28 and amended on 2026-08-29 with left-stick repeat, L3+bumper tabs,
-the reusable `InputHintBar`, and the bounded pinned Blob adaptation. The owner
+2026-08-28 and amended on 2026-08-29 with left-stick repeat, default
+L3+bumper tabs, remapped-binding-aware `InputHintBar`, and the bounded pinned
+Blob adaptation. The owner
 directed that documentation be completed before implementation. Contract
 freeze and implementation authorization remain separate pending decisions.

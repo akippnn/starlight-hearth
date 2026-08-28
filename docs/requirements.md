@@ -42,15 +42,17 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `INPUT-006` | Accepted | Controller/touch text activation may open the OSK; physical keyboard entry does not and instead shows a small mode indicator. |
 | `INPUT-007` | Accepted | Reusable glyphs adapt to Xbox, PlayStation, Nintendo physical positions, and a generic fallback; mappings are data-driven. |
 | `INPUT-008` | Accepted | D-pad controls focus, right stick controls the pointer, and left stick is context-sensitive: base Desktop scroll remains available, while registered Hearth navigation surfaces such as App Menu consume its axis as semantic focus with hysteresis and repeat. |
-| `INPUT-009` | Proposed | Controller Settings provides a layout illustration, family-correct face labels, leader lines, action descriptions, modifier support, and a New Keybind flow. |
-| `INPUT-010` | Accepted | Active specific-context actions override broader/global actions and suppress the losing action completely. Base RB/LB remain primary/secondary pointer clicks. Proposed HIN-001 makes R3 navigation and L3 manipulation; historical L3-window/R3-workspace bumper defaults are superseded planning. |
+| `INPUT-009` | Proposed | Controller Settings provides a layout illustration, family-correct face labels, leader lines, action descriptions, and a New Keybind flow. Every action is remappable; users may create custom semantic modifier layers and assign hold and/or latch triggers independently, with conflict diagnostics and recovery. |
+| `INPUT-010` | Accepted | Active specific-context actions override broader/global actions and suppress the losing action completely. Base RB/LB remain primary/secondary pointer clicks. Proposed HIN-001 uses R3 navigation and L3 manipulation as packaged defaults; historical L3-window/R3-workspace bumper defaults are superseded planning. |
 | `INPUT-011` | Proposed | First Setup offers Classic and Vim keyboard presets while preserving shared search, activation, and context commands; this is future work outside HSN-002. |
-| `INPUT-012` | Proposed | HIN-001 provides an always-available headless hold/chord layer backed by real niri IPC: R3 plus D-pad/left stick focuses windows/workspaces; L3 plus LB/RB/West/North moves, closes, or maximizes the focused window. |
+| `INPUT-012` | Proposed | HIN-001 provides an always-available headless hold/chord layer backed by real niri IPC: packaged R3 plus D-pad/left stick focuses windows/workspaces; packaged L3 plus LB/RB/West/North moves, closes, or maximizes the focused window. Semantic layers remain independent from these defaults. |
 | `INPUT-013` | Proposed | HIN-001 adds Guide+left-stick media, Guide+RT niri screenshot, capability-gated controller power-off, and a 2.4-second capability-gated force-quit that targets only a verified user application scope. |
 | `INPUT-014` | Proposed | Disconnect, reconnect, provider loss, context transfer, and session teardown release all dependent actions, clear modifiers/repeat timers, and never replay stale input. |
-| `INPUT-015` | Proposed | HIN-002 provides mutually exclusive visible R3 Navigate and L3 Manipulate latches, switches directly between them, uses niri Overview/state/animation, and never emulates windows or workspaces in QML. |
+| `INPUT-015` | Proposed | HIN-002 provides mutually exclusive visible Navigate and Manipulate latches with packaged R3/L3 defaults, switches directly between them, uses niri Overview/state/animation, and never emulates windows or workspaces in QML. |
 | `INPUT-016` | Proposed | `Meta+Tab` toggles HIN-002 Navigate; `Meta+H/L` directly focuses left/right; Vim HJKL navigates and `x`/`f` close/maximize through the same semantic actions. Bindings remain configurable and future First Setup owns preset choice. |
 | `INPUT-017` | Proposed | `InputHintBar` is a first-class shared primitive with semantic action sourcing, context precedence, modifier-first expansion, controller-family glyphs, bottom-safe placement, accessibility text, reduced motion, and reuse across HSN-002, HIN-002, OSK/Text Mode, System Bar, and later surfaces. HIN-001 supplies headless state; HSN-002 supplies the first visual implementation. |
+| `INPUT-018` | Accepted | Physical bindings are defaults, not immutable behavior. Stable semantic layers/actions are separate from trigger data; hold and latch triggers may differ, including RT/LT hold with R3/L3 latch, and custom modifiers may reference only registered semantic actions rather than arbitrary commands. |
+| `INPUT-019` | Accepted | View/Select is reserved for future System Bar controller focus, initially selecting Control Center. Base LT/RT and Guide+LT, Guide+RS, Guide+LB, and Guide+RB remain unassigned. |
 
 ## hearthOS System Bar and shell surfaces
 
@@ -61,7 +63,8 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `BAR-003` | Accepted | Closing a bar-owned panel with controller/keyboard returns focus to its opening bar item and keeps the bar visible while that focus remains. |
 | `BAR-004` | Proposed | Bar items are customizable and support pointer drag/drop/context actions with keyboard/controller equivalents. |
 | `BAR-005` | Proposed | Hardware-inapplicable controls, such as battery/power on a desktop, remain hidden. |
-| `BAR-006` | Open | Final left/center/right information architecture, initial focus item, multi-output policy, and edit workflow remain undecided. |
+| `BAR-006` | Open | Final left/center/right information architecture, unavailable-default fallback, multi-output policy, and edit workflow remain undecided. |
+| `BAR-007` | Accepted | View/Select enters System Bar focus and initially selects Control Center; later customization may change its remembered/default target without changing the semantic focus action. |
 | `SURFACE-001` | Accepted | Opening a shell panel coordinates dim/blur with its originating bar item; the active bar and surface stay visually connected. |
 | `SURFACE-002` | Accepted | Do not restore the inherited enlarged-panel treatment merely by renaming DMS components. |
 | `WORKSPACE-001` | Proposed | Workspace and window surfaces use real niri IPC/state and expressive directional overlays rather than a duplicate shell model. |
@@ -76,7 +79,7 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `LAUNCH-001` | Accepted | App Menu is a right drawer, approximately 38% logical width and clamped near 520–760 logical pixels with safe margins; narrow outputs may use near-full width. |
 | `LAUNCH-002` | Accepted | The drawer dims/subtly blurs the desktop, leaves any hearthOS System Bar opener active, and closes from its scrim. |
 | `LAUNCH-003` | Accepted | Exactly two persistent modes exist: Grid and List. West face toggles them; `Ctrl+1` selects Grid and `Ctrl+2` selects List. |
-| `LAUNCH-004` | Accepted | Initial tabs are Favorites, Recents, By Name, and By Category; App Menu-context L3+RB/LB moves next/previous tab and `Ctrl+Tab`/`Ctrl+Shift+Tab` are keyboard equivalents. RT/LT are not tab controls. |
+| `LAUNCH-004` | Accepted | Initial tabs are Favorites, Recents, By Name, and By Category; the App Menu manipulation modifier plus RB/LB moves next/previous tab (`L3` is the packaged modifier default), and `Ctrl+Tab`/`Ctrl+Shift+Tab` are keyboard equivalents. Base RT/LT are not tab controls. |
 | `LAUNCH-005` | Accepted | By Name groups letters; By Category uses freedesktop Main Categories, allows all matching groups, and has an Other fallback. |
 | `LAUNCH-006` | Proposed | HSN-002 places a right index rail and right icon-only Grid/List selector around reusable `CollectionBrowser`/read-only `Category1` content; the active tab has no redundant title. |
 | `LAUNCH-007` | Accepted | Opening focuses the first favorite or, if none exists, the first alphabetically visible application. Search never steals initial focus. |

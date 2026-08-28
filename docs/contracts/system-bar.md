@@ -32,6 +32,8 @@ flicker while the input region changes during reveal/hide animation.
 ## Focus and panel ownership
 
 - Keyboard and controller System Bar focus are equally visible.
+- View/Select enters System Bar controller focus. Until a later customization
+  changes the remembered/default target, Control Center is selected first.
 - Opening a panel records its opening System Bar item and marks that item active.
 - Moving focus into the panel does not break the System Bar's visible/open state.
 - Closing a panel through keyboard/controller returns focus to its opening
@@ -60,6 +62,7 @@ Battery/power controls appear only when applicable hardware exists.
 
 ## Open boundary
 
-Initial focus item, final control-center/notification placement, output policy,
-edit mode, widget schema, and motion constants remain in
+Focus return after the initially selected Control Center item disappears, final
+control-center/notification placement, output policy, edit mode, widget schema,
+and motion constants remain in
 `docs/open-questions.md`.

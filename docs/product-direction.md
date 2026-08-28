@@ -28,6 +28,9 @@ can be retired.
 - Maintain shared semantic input, focus, catalog, hint, and surface primitives;
   an outcome may extend them but must not create a private equivalent merely
   because it ships in a separate slice.
+- Treat controller mappings as remappable data over stable semantic actions.
+  Hold and latch triggers may be assigned independently, custom modifier layers
+  remain possible, and user bindings never become arbitrary command execution.
 - Use native helpers where QML is the wrong boundary. Do not substitute a web
   frontend, Electron, React, WebView, or localhost application for the shell.
 - Preserve KDE, TTY, Tailscale, Gaming Mode, and the previous atomic deployment

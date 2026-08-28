@@ -82,6 +82,10 @@ graphs. Deliberate pointer, scrolling, and text injection remain virtual-device
 operations rather than semantic UI key emulation.
 
 The router owns modifier, precedence, repeat, reconnect, and capability state.
+Semantic layers/actions are independent from physical trigger data; every
+controller action remains remappable, and hold/latch triggers may differ. The
+router accepts only registered semantic actions, never arbitrary commands from
+a custom binding.
 The shell has one reusable `InputHintBar` driven by semantic action data;
 individual surfaces do not hardcode physical mappings or fork hint state.
 HIN-001 proposes the headless state, HSN-002 the first visual component, and

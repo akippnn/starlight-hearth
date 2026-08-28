@@ -140,6 +140,13 @@ HIN-001 owns headless hold/chord routing, HSN-002 owns App Menu and the first
 reusable `InputHintBar`, and HIN-002 owns visible niri-backed latches. No exact
 revision is approved or frozen yet.
 
+R3/L3 are packaged navigation/manipulation defaults rather than immutable
+controls. The proposed router and hint contracts keep semantic layers separate
+from physical bindings so hold and latch triggers can differ; later Controller
+Settings may remap every action and create safe custom modifiers. View/Select
+is allocated to future System Bar focus with Control Center initially selected.
+Base LT/RT and Guide+LT/RS/LB/RB remain free.
+
 ## Superseded phase statement
 
 The complete 2026-08-24 handoff and later planning decisions were

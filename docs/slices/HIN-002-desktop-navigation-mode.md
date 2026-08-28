@@ -22,13 +22,14 @@ not authorize implementation, publication, deployment, or acceptance.
 ## Owner-visible outcome
 
 From the normal hearthOS Desktop, the owner can latch a visible niri-backed
-Navigate or Manipulate mode, switch between them with R3/L3, understand the
+Navigate or Manipulate mode, switch between them with the default R3/L3 latch
+triggers, understand the
 available controller actions from bottom hints, and leave with the selected
 real window/workspace state intact.
 
 ## Authentic path
 
-`R3 or L3 -> HIN-001 semantic state -> Rust niri event stream/actions -> niri Overview and compositor animation -> hearthOS mode indicator + shared InputHintBar`
+`configured latch or hold trigger -> HIN-001 semantic state -> Rust niri event stream/actions -> niri Overview and compositor animation -> hearthOS mode indicator + shared InputHintBar`
 
 Cannot prove this outcome:
 
@@ -44,7 +45,8 @@ animation. The shell supplies only a small mode indicator and bottom
 `InputHintBar`; it does not reproduce window thumbnails, focus state, workspace
 layout, or motion.
 
-Two mutually exclusive modes exist:
+Two mutually exclusive modes exist. R3 and L3 are their packaged default latch
+and hold triggers, not immutable physical requirements:
 
 - **Navigate (R3):** left stick or D-pad left/right focuses the niri
   column/window to the left/right; up/down focuses the workspace above/below.
@@ -61,6 +63,15 @@ R3 while Manipulate is active switches directly to Navigate. The previous mode
 is fully released before the new mode activates, so both cannot be active and
 no action crosses the transition.
 
+These rules apply to the configured triggers. Hold and latch bindings are
+independent: for example, a later user mapping may use RT/LT to hold Navigate/
+Manipulate while leaving R3/L3 as their latch triggers. The mode indicator and
+`InputHintBar` render the active bindings supplied by the router rather than
+hardcoding stick-click glyphs. Custom modifier/latch authoring belongs to the
+later Controller Settings outcome. HIN-002 consumes remapped triggers for its
+two built-in layers without a private mapping model; later custom-layer UI must
+reuse the same router and hint protocol.
+
 HIN-002 extends the existing `org.starlight.HearthShell.Input1` interface
 without renaming HIN-001 members. It adds read-only `DesktopMode:s` with exact
 values `none`, `navigate`, and `manipulate`, plus
@@ -71,14 +82,19 @@ does not own or infer the latch state.
 
 ### Latch and hold
 
-- A press activates its mode immediately and reveals hints.
-- Releasing the modifier without having invoked a dependent action latches
-  that mode.
-- Releasing after a dependent action exits a momentary mode. If the mode was
+- A configured hold or latch press activates its mode immediately and reveals
+  hints. Trigger role, not the physical control, determines release behavior.
+- A hold-only trigger is momentary and always exits on release, whether or not
+  a dependent action ran. A latch-only trigger toggles the mode after a clean
+  press/release and does not become momentary merely because it is held.
+- When the same physical trigger is assigned both hold and latch, action-aware
+  release applies: releasing without a dependent action latches the mode;
+  releasing after a dependent action exits the momentary mode. If the mode was
   already latched, dependent actions do not unlatch it except for the explicit
   exit/return behavior above.
-- Pressing and releasing the active mode's modifier without an action toggles
-  the latch off. Pressing the other modifier switches modes seamlessly.
+- Pressing and releasing the active mode's latch trigger without an action
+  toggles the latch off. Pressing the other mode's configured trigger switches
+  modes seamlessly.
 - East always backs out one level: Manipulate to Navigate, then Navigate to
   closed. Closing the surface also closes niri Overview.
 - Disconnect, provider loss, session teardown, or shell restart closes the
@@ -102,7 +118,8 @@ does not own or infer the latch state.
 - The current mode is shown in a compact non-focusable pill above the bottom
   safe area. The shared `InputHintBar` sits below it and consumes HIN-001
   `Input1` state; HIN-002 does not fork or wrap a private hint implementation.
-- Hints show R3 or L3 first, then reveal the active mode's available actions.
+- Hints show the configured modifier trigger first, then reveal the active
+  mode's available actions.
   They update atomically when switching modes and omit capability-gated actions
   that cannot run.
 - Full motion uses shared mode/hint transitions; reduced motion uses opacity
@@ -136,7 +153,10 @@ does not own or infer the latch state.
 
 In:
 
-- visible mutually exclusive R3 Navigate and L3 Manipulate latches;
+- visible mutually exclusive Navigate and Manipulate latches with packaged
+  R3/L3 defaults;
+- binding-independent Navigate/Manipulate semantics with separate hold/latch
+  trigger input from HIN-001;
 - momentary hold behavior using the same modes;
 - niri Overview, real focus/swap/close/maximize actions, bottom reusable hints,
   reduced motion, keyboard access, context transfer, and recovery.
@@ -147,7 +167,7 @@ Out:
   by QML, arbitrary workspace/window reordering, moving apps to another
   workspace, whole-column movement, multi-select, drag/drop, or tiling editor;
 - Focus Cursor, System Bar, Control Center, Settings, OSK, and controller
-  remapping UI;
+  remapping/custom-modifier authoring UI;
 - acceptance of HIN-001 or HSN-002 merely because their implementation is
   reused.
 
@@ -169,9 +189,12 @@ Out:
 - [ ] Contract is frozen and its exact approved revision is recorded externally.
 - [ ] HIN-001 exact candidate passes its independent routing/reconnect gates;
       HSN-002's exact `InputHintBar` API passes reusable component tests.
-- [ ] State-machine tests cover tap latch, action-aware release, same-modifier
-      toggle, cross-modifier switch, East/South behavior, context transfer,
-      disconnect, reconnect, provider failure, and duplicate events.
+- [ ] State-machine tests cover hold-only release, latch-only toggle, combined
+      trigger action-aware release, same-modifier toggle, cross-modifier switch,
+      East/South behavior, context transfer, disconnect, reconnect, provider
+      failure, and duplicate events.
+- [ ] Binding tests cover shared versus distinct hold/latch triggers, remapped
+      glyph hints, conflict rejection, and R3/L3 packaged-default recovery.
 - [ ] Real niri tests prove Overview state synchronization and directional,
       workspace, swap, close, and maximize actions without QML state emulation.
 - [ ] QML tests prove non-focusable contained surfaces, modifier-first hints,
@@ -204,6 +227,6 @@ Owner verdict: `pending`. No candidate exists.
 
 | Version | Supersedes | Reason / source finding | Approved by/date | Material change |
 | --- | --- | --- | --- | --- |
-| 1 | — | Owner separated visible latched navigation from HIN-001 on 2026-08-29 | Pending | Initial proposed contract |
+| 1 | — | Owner separated visible latched navigation from HIN-001 and clarified distinct remappable hold/latch triggers on 2026-08-29 | Pending | Initial proposed contract with R3/L3 packaged defaults |
 
 Canonical evidence: [HIN-002 evidence](../evidence/HIN-002.md)

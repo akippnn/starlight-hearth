@@ -33,9 +33,11 @@ above the tabs. Initial tabs, in order:
 3. By Name
 4. By Category
 
-While L3 is held in App Menu, RB moves to the next tab and LB to the previous;
-the modifier context suppresses their base pointer clicks. Keyboard
-equivalents are `Ctrl+Tab` and `Ctrl+Shift+Tab`. RT/LT are not tab controls.
+With packaged defaults, while L3 is held in App Menu, RB moves to the next tab
+and LB to the previous; the modifier context suppresses their base pointer
+clicks. The semantic tab actions follow a remapped manipulation modifier rather
+than hardcoding L3. Keyboard equivalents are `Ctrl+Tab` and
+`Ctrl+Shift+Tab`. Base RT/LT are not tab controls.
 
 ## Grouping and index rail
 
@@ -77,7 +79,8 @@ component without acquiring App Menu-specific policy.
 - Pointer use and mode/tab changes preserve a valid deterministic focus target.
 - The bottom `InputHintBar` is a shared shell primitive driven by semantic
   action/modifier/capability state. App Menu does not maintain a private glyph
-  or modifier-hint implementation.
+  or modifier-hint implementation, and displays configured bindings rather
+  than assuming packaged L3/R3 defaults.
 
 ## Bounded Blob transition
 

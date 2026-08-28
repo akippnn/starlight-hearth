@@ -38,10 +38,11 @@ Cannot prove this outcome:
 
 ## Public behavior and ownership
 
-- R3 is always the navigation modifier. While held, left stick or D-pad
+- R3 is the default navigation hold trigger. While held, left stick or D-pad
   left/right focuses the niri column/window to the left/right and up/down
   focuses the niri workspace above/below.
-- L3 is always the manipulation modifier. In the desktop context, L3+LB/RB
+- L3 is the default manipulation hold trigger. In the desktop context,
+  L3+LB/RB
   swaps only the focused window left/right in its current workspace,
   L3+West requests a normal close, and L3+North toggles niri maximization.
 - Base RB remains primary/left pointer click and base LB remains
@@ -66,6 +67,26 @@ Cannot prove this outcome:
   the physical north position, and South remains accept/activate.
 - `Meta+H` and `Meta+L` are keyboard equivalents for focus left/right. These
   bindings call the same semantic/niri actions and remain configurable.
+- Base LT/RT and Guide+LT, Guide+RS, Guide+LB, and Guide+RB are intentionally
+  unassigned. View/Select is reserved for the future System Bar focus workflow,
+  initially selecting Control Center; HIN-001 does not consume it.
+
+Navigation and manipulation are stable semantic layers, not hardcoded stick
+buttons. The routing model keeps physical trigger bindings separate from layer
+action maps and represents hold and latch triggers independently. The packaged
+defaults bind R3/L3 stick clicks as the navigation/manipulation hold triggers.
+A later Controller Settings outcome may instead bind RT/LT as hold triggers
+while retaining R3/L3 as latch triggers, or define additional custom modifier
+layers. Custom layers may reference only registered semantic action IDs; they
+cannot embed commands, D-Bus destinations, or niri request text.
+
+HIN-001 supplies the data-driven router and packaged default binding manifest,
+but not the user-facing remapping editor or final persisted user-schema. The
+future editor must be able to remap every controller action, create/delete
+custom modifiers, choose hold and/or latch activation per layer, detect
+same-context conflicts, and retain a visible recovery path. HIN-001 must not
+make that later work require replacing its state machine or public semantic
+action vocabulary.
 
 The Rust companion consumes niri's event stream as the only window/workspace
 state authority and invokes typed niri actions over its IPC socket. QML does
@@ -73,7 +94,13 @@ not participate in HIN-001.
 
 `org.starlight.HearthShell.Input1` remains the interface and keeps its existing
 members, including read-only `ActiveContext:s`. It adds read-only
-`ActiveModifiers:as`, `AvailableActions:as`, and `Capabilities:a{sb}`, plus
+`ActiveModifiers:as`, `AvailableActions:as`, `Capabilities:a{sb}`, and
+`BindingRevision:t`; `GetBindings()` returns `a(sssss)` records containing
+`(context, layer, action, activation, trigger)`, where activation is one of
+`press`, `hold`, `latch`, or `long-press` and trigger uses normalized physical
+control IDs joined by `+` for a chord. `action` is empty for a layer-activation
+record and otherwise names a registered semantic action. It also adds
+`BindingsChanged(t revision)` and
 `StateChanged(as activeModifiers, as availableActions, a{sb} capabilities,
 s activeContext)`. Existing `Action(s action, s phase, d value, t monotonicUsec)`
 publishes the additive semantic actions below without renaming v1 actions:
@@ -88,7 +115,7 @@ publishes the additive semantic actions below without renaming v1 actions:
 
 | Responsibility | Canonical owner | Contract/version | Independent proof |
 | --- | --- | --- | --- |
-| Physical normalization and canonical mapping | Product image | InputPlumber desktop profile + mapping manifest | Schema, drift, and physical-event tests |
+| Physical normalization and packaged defaults | Product image | InputPlumber desktop profile + extensible binding manifest | Schema, drift, and physical-event tests |
 | Chord state, precedence, repeat, capabilities, diagnostics | Rust companion | `Input1` additive state/actions | Router/state-machine and user-bus tests |
 | Window/workspace state and actions | niri 26.04 | niri IPC event stream/actions | Real-socket provider tests |
 | Media and screenshot actions | Rust companion + system providers | Typed semantic actions | Provider fixtures plus authentic target |
@@ -97,6 +124,9 @@ publishes the additive semantic actions below without renaming v1 actions:
 
 - A modifier press becomes active immediately. Its release emits releases for
   every active dependent action before clearing modifier state.
+- Trigger resolution uses the active binding manifest. Hold and latch triggers
+  for one semantic layer may be the same physical control or different controls;
+  changing a trigger never renames the layer or its semantic actions.
 - D-pad and left-stick directions emit one action immediately, repeat after
   260 ms, repeat every 90 ms, and accelerate to 55 ms after one second.
 - Left-stick direction engages at 0.55, releases at 0.35, and locks to the
@@ -118,7 +148,8 @@ publishes the additive semantic actions below without renaming v1 actions:
 
 In:
 
-- the headless R3 navigation and L3 manipulation hold layers;
+- the headless navigation and manipulation hold layers with packaged R3/L3
+  defaults and an extensible trigger/action representation;
 - App Menu tab semantic actions without App Menu UI implementation;
 - bounded Guide media, screenshot, capability-gated power-off, and safe
   force-quit chords;
@@ -128,7 +159,8 @@ In:
 Out:
 
 - latched modes, niri Overview orchestration, hint UI, or any shell surface;
-- App Menu implementation, OSK invocation, controller settings/key rebinding,
+- App Menu implementation, OSK invocation, Controller Settings/remapping UI,
+  persisted custom-binding authoring and migration,
   controller-specific HID reverse engineering, brightness, magnifier, and
   screen-reader chords;
 - moving a window to another workspace, moving whole columns/workspaces, and
@@ -155,6 +187,10 @@ Out:
 - [ ] Router tests cover precedence, modifier ordering, repeat/hysteresis,
       duplicate suppression, click suppression, disconnect, reconnect, and
       capability changes.
+- [ ] Binding-model tests prove physical triggers are separate from semantic
+      layers, hold/latch triggers can differ, free controls remain unclaimed,
+      custom layers accept only registered actions, conflicts fail visibly,
+      and `GetBindings`/`BindingsChanged` expose the exact active mapping.
 - [ ] Real niri IPC tests cover event-stream bootstrap/reconnect and every
       approved focus, swap, close, maximize, and screenshot action.
 - [ ] Media tests cover repeat and no-repeat actions; force-quit tests prove
@@ -184,6 +220,6 @@ Owner verdict: `pending`. No candidate exists.
 
 | Version | Supersedes | Reason / source finding | Approved by/date | Material change |
 | --- | --- | --- | --- | --- |
-| 1 | — | Owner separated headless hold/chord routing from visible navigation on 2026-08-29 | Pending | Initial proposed contract |
+| 1 | — | Owner separated headless hold/chord routing from visible navigation and clarified remappable hold/latch defaults on 2026-08-29 | Pending | Initial proposed contract, including binding-independent semantics and free-control reservations |
 
 Canonical evidence: [HIN-001 evidence](../evidence/HIN-001.md)

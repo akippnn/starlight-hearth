@@ -60,17 +60,18 @@ is visible.
 | East face | Back/cancel |
 | West face | Surface alternate action; toggles Grid/List in App Menu |
 | North face | Open OSK immediately and target the active field or surface primary search |
-| RT / LT | Unbound by default; Guide+RT is the proposed HIN-001 native screenshot chord |
+| RT / LT | Base controls unbound by default; Guide+RT is the proposed HIN-001 native screenshot chord |
 | RB | Primary/left pointer click in Desktop/App Menu contexts |
 | LB | Secondary/right pointer click in Desktop/App Menu contexts |
 | Menu/Start | Open App Menu globally; open selected-item actions inside App Menu |
 | Guide | Proposed HIN-001 system-chord modifier outside Gaming Mode |
-| View | Open decision outside OSK |
+| View/Select | Future System Bar focus; initially select Control Center |
 | R3 + D-pad / left stick | Proposed HIN-001 focus window left/right and workspace up/down |
 | L3 + LB / RB | Proposed HIN-001 swap focused window left/right; App Menu overrides with previous/next tab |
 | L3 + West / North | Proposed HIN-001 close/maximize focused window |
 | Guide + left stick / L3 | Proposed volume, track, and play/pause media actions |
 | Guide + West hold / North / RT | Proposed capability-gated force-quit, power-off, and native screenshot |
+| Guide + LT / RS / LB / RB | Unassigned and reserved for later remappable actions |
 
 West refers to physical position, not printed letter: Xbox X, PlayStation
 Square, and Nintendo Y.
@@ -118,7 +119,8 @@ Mode, System Bar, and later surfaces reuse that component rather than creating
 surface-specific hint systems.
 
 HIN-001 reuses the existing `Input1.ActiveContext` member and adds modifier,
-available-action, and capability state. HIN-002 separately proposes additive
+available-action, capability, and read-only active-binding snapshot/revision
+state. HIN-002 separately proposes additive
 `Input1.DesktopMode` state for `none`, `navigate`, and `manipulate`; QML does
 not infer or own that latch. An active specific surface suppresses unregistered
 desktop modifier actions as well as overriding registered conflicts, so an
@@ -137,9 +139,20 @@ Reduced motion uses opacity/state changes with no translation, deformation, or
 stagger. Context transfer updates hints atomically and cannot replay an input.
 
 The controller manifest and keyboard shortcuts are versioned configuration,
-not hardcoded QML policy. Existing v3 service/state-machine work is reusable
-evidence, but its trigger-click, bumper-group, north-hold, and other superseded
-defaults are not current behavior.
+not hardcoded QML policy. Every controller action is intended to be remappable.
+Semantic layers and actions remain stable while physical triggers are data:
+hold and latch triggers are independent and may be the same or different
+controls. Packaged R3/L3 navigation/manipulation defaults therefore allow a
+later mapping such as RT/LT for hold while R3/L3 remain latch triggers.
+
+The later Controller Settings editor owns user-facing remapping, custom
+modifier creation, per-layer hold/latch choice, conflict diagnostics, and
+recovery. Custom bindings may select only registered semantic actions and must
+never become arbitrary command execution. HIN-001/HIN-002 must use an
+extensible binding/state model now so that editor does not require a parallel
+router or hint implementation. Existing v3 service/state-machine work is
+reusable evidence, but its trigger-click, bumper-group, north-hold, and other
+superseded defaults are not current behavior.
 
 ## Third-party applications
 
@@ -151,6 +164,7 @@ require candidate-specific evidence.
 
 ## Open boundary
 
-View and System Bar actions, pointer acceleration, final glyph-family override
-precedence, controller-power implementation for unsupported hardware, and
-remaining keyboard conflicts are tracked in `docs/open-questions.md`.
+Final System Bar focus-return details, pointer acceleration, final glyph-family
+override precedence, controller-power implementation for unsupported hardware,
+the persisted custom-binding schema, and remaining keyboard conflicts are
+tracked in `docs/open-questions.md`.

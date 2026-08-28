@@ -25,6 +25,11 @@ facts:
   modifier; base RB/LB behavior returns when no winning modifier context exists;
 - HIN-001 is the headless hold/chord layer, while HIN-002 is the visible latched
   niri mode and is the only one of those two outcomes that owns mode UI;
+- R3/L3 are packaged navigation/manipulation defaults, not immutable controls;
+  every action remains remappable, hold and latch triggers may differ, and a
+  later mapping may use RT/LT for hold while retaining R3/L3 for latch;
+- View/Select is reserved for future System Bar focus with Control Center first;
+  base LT/RT and Guide+LT/RS/LB/RB remain unassigned;
 - future Classic/Vim preset selection and First Setup remain outside HIN-001,
   HSN-002, and HIN-002.
 
