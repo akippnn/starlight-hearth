@@ -1,7 +1,7 @@
 # Hearth product direction
 
 **Decision state:** Accepted; not frozen for an implementation slice
-**Last reconciled:** 2026-08-25
+**Last reconciled:** 2026-08-29
 
 ## Product identity
 
@@ -25,6 +25,9 @@ can be retired.
 - Keep DMS as a reference and selective source, not the product architecture.
 - Reuse proven, license-compatible code, services, libraries, tests, and
   upstream histories instead of rebuilding them without cause.
+- Maintain shared semantic input, focus, catalog, hint, and surface primitives;
+  an outcome may extend them but must not create a private equivalent merely
+  because it ships in a separate slice.
 - Use native helpers where QML is the wrong boundary. Do not substitute a web
   frontend, Electron, React, WebView, or localhost application for the shell.
 - Preserve KDE, TTY, Tailscale, Gaming Mode, and the previous atomic deployment
@@ -44,13 +47,21 @@ can be retired.
 - hearthOS Settings and hearthOS Portal are the first hearthOS-native applications.
   They share shell input/design primitives and may run as the same installed
   applications in Desktop and Gaming Mode.
+- Built-in plugins such as local wallpaper and independent search are
+  first-party packaged/audited components. Third-party plugins are explicitly
+  trusted user-installed code with visible provenance, consent, diagnostics,
+  disable/recovery paths, and no hearthOS security or compatibility guarantee.
+  LLM-assisted GPL-3.0-compatible plugins remain subject to human review and
+  license/provenance verification; generation is never a safety claim.
 
 ## Delivery philosophy
 
-The roadmap is exhaustive, but implementation is incremental. No product
-slice is active during the current documentation reconciliation. A future
-slice begins only after its owner-visible outcome and contract are explicitly
-approved at an exact revision.
+The roadmap is exhaustive, but implementation is incremental. HSN-001 remains
+active/pending under its exact frozen v2 contract. HIN-001, HSN-002, and
+HIN-002 are decision-complete proposals only. After this documentation pass,
+each needs explicit owner approval, an exact frozen product revision, and
+separate implementation authorization. The intended implementation order is
+HIN-001, HSN-002, then HIN-002; shared integration does not merge acceptance.
 
 Historical implementation and evidence are preserved without being promoted
 to current support. Compilation, boot, or partial tests never substitute for

@@ -33,8 +33,9 @@ above the tabs. Initial tabs, in order:
 3. By Name
 4. By Category
 
-RT moves to the next tab and LT to the previous. Keyboard equivalents are
-`Ctrl+Tab` and `Ctrl+Shift+Tab`.
+While L3 is held in App Menu, RB moves to the next tab and LB to the previous;
+the modifier context suppresses their base pointer clicks. Keyboard
+equivalents are `Ctrl+Tab` and `Ctrl+Shift+Tab`. RT/LT are not tab controls.
 
 ## Grouping and index rail
 
@@ -65,13 +66,27 @@ component without acquiring App Menu-specific policy.
 - Tab, query, selection, and scroll state are transient across closes.
 - Until the OSK outcome, controller can enter/exit search and navigate results,
   but composing query text requires a physical keyboard and is labeled as such.
-- D-pad moves card/list/index focus.
-- Left stick scrolls; it does not duplicate D-pad focus.
+- D-pad and left stick move card/list/tab/index focus. Both emit immediately,
+  repeat after 260 ms at 90 ms, and accelerate to 55 ms after one second. Left
+  stick engages at 0.55, releases at 0.35, and locks to the strongest axis
+  until recentered so diagonal jitter cannot alternate focus.
 - Right stick remains pointer motion.
 - South accepts, East backs out, and Menu/Start opens the selected app's
   actions.
 - Menu key and `Shift+F10` are keyboard context equivalents.
 - Pointer use and mode/tab changes preserve a valid deterministic focus target.
+- The bottom `InputHintBar` is a shared shell primitive driven by semantic
+  action/modifier/capability state. App Menu does not maintain a private glyph
+  or modifier-hint implementation.
+
+## Bounded Blob transition
+
+HSN-002 may adapt the exact Caelestia Blob files and revision named by its
+slice contract only for the contained transition between ordinary content and
+right-index overview. It never replaces the canonical selection surface,
+changes pixels outside the App Menu containment boundary, or runs continuously.
+Reduced motion disables deformation. Source, package, license, allocation,
+memory, frame-time, and containment claims require candidate-specific proof.
 
 ## Favorites and recents
 

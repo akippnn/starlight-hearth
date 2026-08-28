@@ -5,8 +5,8 @@
 
 These questions are deliberately not delegated to a future implementer. They
 remain open until research resolves a discoverable fact or the owner explicitly
-accepts a product tradeoff. HSN-001 resolved only the rows listed below; other
-questions remain outside that slice.
+accepts a product tradeoff. Frozen HSN-001 decisions and decision-complete
+proposals are recorded separately below; proposals do not authorize work.
 
 ## Resolved for HSN-001
 
@@ -36,6 +36,23 @@ clearing search restores its prior tab/selection/scroll context, and all
 tab/search/focus state is transient. These choices become normative only after
 an exact contract revision is approved and frozen.
 
+## Defined by the proposed HIN contracts
+
+These choices are stable planning inputs but are not implementation authority.
+HIN-001 is an always-available, headless hold/chord layer: R3 navigates real
+niri windows/workspaces, L3 manipulates the focused window, App Menu may
+override L3+LB/RB for tabs, and capability-gated Guide chords provide media,
+niri screenshot, safe force-quit, and controller power-off only where a real
+provider exists. HIN-002 is the separate visible, mutually exclusive R3
+Navigate/L3 Manipulate latched niri mode with action-aware release, niri
+Overview, bottom reusable hints, `Meta+Tab`, and Classic/Vim navigation.
+
+This resolves the controller semantics and shortcut portion of `OQ-010`,
+`OQ-015`, and `OQ-040` for the proposed contracts. Remaining questions are
+limited below to unsupported receiver power-off, unrelated global keyboard
+conflicts, and multi-output mode placement. The choices become normative only
+after each exact contract revision is independently approved and frozen.
+
 ## Shell, repository, and configuration
 
 | ID | Decision still needed |
@@ -46,11 +63,11 @@ an exact contract revision is approved and frozen.
 
 | ID | Decision still needed |
 | --- | --- |
-| `OQ-010` | Global Guide behavior and Guide+right-stick volume/possible brightness semantics after current Steam/Bazzite verification. |
 | `OQ-011` | View behavior outside the OSK, including hearthOS System Bar focus and initial focus target. |
 | `OQ-013` | Right-stick pointer acceleration, dead zones, speed tiers, and click/drag behavior. |
 | `OQ-014` | Controller-family detection and override precedence for Xbox, PlayStation, Nintendo, and generic glyphs. |
-| `OQ-015` | Remaining global keyboard defaults and conflict policy for workspace/window switching, Bar focus, context actions, and recovery shortcuts. |
+| `OQ-015` | Remaining global keyboard conflict policy outside the proposed `Meta+H`, `Meta+L`, and `Meta+Tab` input defaults, including System Bar, recovery, and later First Setup preset selection. |
+| `OQ-016` | Whether a future hardware provider can safely power off the owner 8BitDo receiver; HIN-001 must expose the action as unavailable until capability discovery proves support. |
 
 ## App Menu and hearthOS System Bar
 
@@ -74,11 +91,11 @@ an exact contract revision is approved and frozen.
 
 | ID | Decision still needed |
 | --- | --- |
-| `OQ-040` | Workspace/window switcher workflow, default shortcuts, controller semantics, and multi-output behavior. |
+| `OQ-040` | Multi-output placement and output-transfer behavior for the proposed HIN-002 indicator/Overview workflow; its single-output controls and shortcuts are defined by the proposed contract. |
 | `OQ-041` | Initial control-center controls, grid-density meaning/default, controller slider mechanics, and notification history behavior. |
 | `OQ-042` | Steam notification behavior and whether it is fixable in Hearth, niri, Steam, or not at all. |
 | `OQ-043` | Settings information architecture beyond the accepted initial areas and how Gaming Mode-only system settings are linked. |
-| `OQ-044` | Built-in versus user plugin trust, render/service capabilities, sandboxing, updates, failure containment, and immutable-image installation. |
+| `OQ-044` | Exact plugin render/service capabilities, sandboxing where feasible, update protocol, and immutable-image installation. Trust policy is settled: built-ins are first-party packaged/audited components; third-party plugins are explicitly trusted user-installed code with no Hearth guarantee, including when LLM-assisted. |
 
 ## Wallpaper, Portal, and Gaming Mode
 

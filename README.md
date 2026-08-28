@@ -24,14 +24,17 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**HSN-001 active/pending; work is local-only until the owner explicitly greenlights delivery at the HSN-002 stage.**
+**HSN-001 remains active/pending. HIN-001, HSN-002, and HIN-002 are proposed only; documentation, approval, and exact freeze come before implementation.**
 
 The signed RC.2 image booted and starts hearthOS Shell automatically, but
 field testing found an unconditional compositor-blur artifact while the
 launcher is closed and competing selection/press shapes. Both corrections
-pass local real-niri staging and remain unpublished. HSN-002 is proposed only,
-with no candidate or implementation claim. Do not treat RC.2 or the local
-corrections as an audit candidate.
+pass local real-niri staging and remain unpublished. The next proposed outcomes
+are the headless HIN-001 Desktop Input Chords, HSN-002 App Menu, and visible
+HIN-002 Desktop Navigation Mode. None has a frozen revision, candidate,
+implementation authority, or evidence claim. Their intended implementation
+order, after separate approval/freeze/start gates, is HIN-001, HSN-002, then
+HIN-002. Do not treat RC.2 or the local corrections as an audit candidate.
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation
@@ -65,7 +68,7 @@ Rust hearth-shell companion
 └── supervised wvkbd-derived OSK child
               │
               ▼
-Quickshell/QML hearthOS surfaces
+Quickshell/QML hearthOS surfaces and shared semantic hints
 ```
 
 Applications launch outside the shell's lifecycle in transient user-systemd
@@ -102,7 +105,9 @@ outcome; it is not authorized by the shell direction change.
 This repository owns image policy, integration, recovery, cross-repository
 contracts, and delivery truth. `starlight-hearth-shell` remains a separate
 release boundary and will be reconciled only against the exact HSN-001
-contract revision.
+contract revision. Future HIN-001/HSN-002/HIN-002 work must start from the
+repaired HSN-001 product and shell baselines, but each outcome retains separate
+tests, evidence, readiness, and owner verdicts even when packaged together.
 
 Existing repository checks can be run with:
 

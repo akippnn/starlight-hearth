@@ -21,7 +21,9 @@ establish an application grade.
 | Surface/application | Required workflow | Target | Current evidence |
 | --- | --- | --- | --- |
 | Hearth session transition | Gaming → Desktop → Gaming, reconnect, recovery | A/B | Historical partial evidence only |
+| Desktop Input Chords | Hold R3/L3, navigate/move/close/maximize, media/screenshot, disconnect/reconnect | A | HIN-001 proposed; no candidate |
 | App Menu | Open, focus, search, change Grid/List, launch, context action, close | A | HSN-002 proposed; no candidate |
+| Desktop Navigation Mode | Latch/switch Navigate and Manipulate, niri Overview, hints, keyboard, recovery | A | HIN-002 proposed; no candidate |
 | hearthOS System Bar | Reveal, focus, open/close owned panel, restore focus | A | No hearthOS-native candidate |
 | OSK | Open, type, change layer/layout, dock, secure field, close | A | No wvkbd-derived candidate |
 | hearthOS Settings | Navigate and apply/recover one setting | A | Proposed |

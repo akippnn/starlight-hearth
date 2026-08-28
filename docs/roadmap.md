@@ -1,6 +1,6 @@
 # hearthOS planning roadmap
 
-**Roadmap state:** HSN-001 v2 active/pending at `43ca3393adf1dbbc2448ea8bfbfddc80761f386f`; HSN-002 proposed/pending
+**Roadmap state:** HSN-001 v2 active/pending at `43ca3393adf1dbbc2448ea8bfbfddc80761f386f`; HIN-001, HSN-002, and HIN-002 proposed/pending
 **Last updated:** 2026-08-29
 
 Future identifiers are intentionally unassigned. They will be reserved only
@@ -23,7 +23,9 @@ Historical contracts and evidence remain under `docs/slices/` and
 | Candidate outcome | Dependency | Principal future gate | Planning state |
 | --- | --- | --- | --- |
 | **HSN-001 — hearthOS Launcher Nucleus** | Frozen v2 contract plus exact clean shell/image inputs | From a real hearthOS Desktop session, controller/keyboard/pointer opens the right drawer, switches Grid/List, launches a separate available core favorite, and retains recovery | Active/pending at exact v2 revision `43ca3393…`; signed RC.2 boots and its functional field paths pass, but it retains blur and duplicate-selection presentation defects. Both corrections pass local real-niri proof and remain deliberately unpublished. RB/LB physical and cross-repository mapping proof must be rerun on the next signed candidate. |
-| **HSN-002 — App Menu** | Decision-complete proposed contract plus a later verified HSN-001 component baseline | Reusable `CollectionBrowser`; additive read-only `Category1` and typed `AppCatalog1`; local `Search Apps`; Favorites/Recents/By Name/By Category tabs; right index rail and Grid/List; schema-v2 migration | Proposed/pending review only; no frozen revision, candidate, evidence, or implementation authority. Opens on Favorites; clearing search restores prior context; physical keyboard composes queries until OSK; edit/reorder mode and adjacent surfaces are excluded. |
+| **HIN-001 — Desktop Input Chords** | Repaired HSN-001 input/lifecycle baseline | Headless R3 navigation, L3 manipulation, context precedence, media/screenshot, safe capability gates, real niri IPC, and reconnect recovery | Proposed/pending; implement first after documentation, exact owner freeze, and separate authorization. No UI and no candidate. |
+| **HSN-002 — App Menu** | HIN-001 semantic state plus a verified HSN-001 component baseline | Reusable `CollectionBrowser` and `InputHintBar`; additive read-only `Category1` and typed `AppCatalog1`; local search/tabs/index/Grid/List; schema-v2 migration; bounded attributed Blob transition | Proposed/pending review only; no frozen revision, candidate, evidence, or implementation authority. D-pad and left stick navigate with rapid repeat; L3+LB/RB changes tabs; physical keyboard composes queries until OSK. |
+| **HIN-002 — Desktop Navigation Mode** | Exact HIN-001 routing plus HSN-002 shared `InputHintBar` | Mutually exclusive visible R3 Navigate/L3 Manipulate latches over niri Overview with real state, animation, keyboard access, hints, and recovery | Proposed/pending; implement after HSN-002 in this train. No candidate, evidence, or implementation authority. |
 | hearthOS System Bar | Launcher/input foundation | Visibility invariant, focus return, owned-panel pinning, App Menu attachment, multi-input behavior, and owner-visible reachability; replace the temporary invisible hover edge with a generous click target around the placed App Menu button | Proposed |
 | OSK and explicit Text Mode | Input foundation plus history-preserving wvkbd fork | Hearth text entry, secure-field privacy, active XKB layout, overlay/dock behavior, and bounded third-party claims | Proposed |
 | hearthOS Settings foundation | Versioned config schema and shared controls | Controller/keyboard edits apply safely through the layered config model with rollback/fallback | Proposed |
@@ -32,30 +34,37 @@ Historical contracts and evidence remain under `docs/slices/` and
 
 ## Ordered successor outcomes
 
-1. **Desktop Controller Controls** — configurable hold-by-default modifier
-   layers and typed niri window/workspace actions; visible hearthOS surfaces
-   override global actions.
-2. **Independent Linux Search Engine** — desktop-neutral search project with a
-   typed hearthOS provider adapter; HSN-002 initially keeps its app-local
-   provider.
-3. **hearthOS System Bar** — authentic App Menu and panel attachment points.
-4. **hearthOS Control Center**.
-5. **Add Controls & Widgets** — reuse `CollectionBrowser` and `Category1` as
+1. **HIN-001 Desktop Input Chords** — headless hold/chord routing and real niri
+   actions.
+2. **HSN-002 App Menu** — full application catalog plus the first shared
+   `InputHintBar` and bounded Blob adaptation.
+3. **HIN-002 Desktop Navigation Mode** — visible latches and niri Overview,
+   reusing HIN-001 state and HSN-002 hints.
+4. **hearthOS System Bar** — authentic App Menu and panel attachment points.
+5. **hearthOS Control Center**.
+6. **Add Controls & Widgets** — reuse `CollectionBrowser` and `Category1` as
    `ControlsCatalog`, entered from Control Center with North/Y or `i`, and use
    `Search Controls & Widgets` without a redundant title.
-6. **Focus Cursor** — separate contract for the shell-wide moving selection
+7. **Focus Cursor** — separate contract for the shell-wide moving selection
    border.
-7. **HWP-001 Local Wallpaper** — typed local-file service, recovery wallpaper,
-   per-output background, deterministic center crop, last-good retention, and
-   reduced-motion handling.
 8. **hearthOS Settings** — edit existing configuration and palette contracts
    rather than creating parallel state.
-9. **First Setup** — explicit Classic/Vim keyboard preset selection and later
-   onboarding outcomes; not HSN-002.
-10. **Install hearthOS** — separately frozen installation, recovery, and
+9. **Plugin architecture** — first-party packaged/audited built-ins, explicitly
+   trusted user-installed third-party code, compatibility, containment,
+   diagnostics, disable/recovery, and provenance/consent requirements.
+10. **HWP-001 Local Wallpaper built-in plugin** — typed local-file service,
+    recovery wallpaper, per-output background, deterministic center crop, and
+    last-good retention.
+11. **Independent Linux Search Engine built-in plugin** — desktop-neutral
+    search with a typed hearthOS provider adapter; HSN-002 initially keeps its
+    app-local provider.
+12. **hearthOS Portal** — typed privileged actions and Bazzite catalog adapter.
+13. **First Setup** — explicit Classic/Vim keyboard preset selection and later
+    onboarding outcomes; not HSN-002.
+14. **Install hearthOS** — separately frozen installation, recovery, and
     rollback outcome.
-11. **hearthOS Portal and plugin architecture** — typed privileged actions and
-    explicit trust/lifecycle boundaries after their independent contracts.
+15. **Later shell surfaces and applications** — bounded owner-visible outcomes
+    using established shared providers and controls.
 
 ## Candidate application and plugin outcomes
 
@@ -87,12 +96,12 @@ their individual contracts are approved.
 
 ## Current gate
 
-Keep the verified HSN-001 corrections local and review the decision-complete
-proposed HSN-002 contract. Do not begin HSN-002 implementation until the owner
-first approves and freezes an exact contract revision, then separately
-authorizes local implementation. Public push, tags, RPMs, OCI builds, target
-rebases, and HSN-001 physical RB/LB reruns remain held for an explicit delivery
-greenlight.
+Complete and commit the decision-complete HIN-001, HSN-002, and HIN-002
+documentation, then obtain explicit owner approval and freeze each contract at
+its own exact product revision. After separate implementation authorization,
+the train order is HIN-001, HSN-002, then HIN-002. Public push, tags, RPMs, OCI
+builds, deployment, target rebases, and HSN-001 physical RB/LB reruns remain
+held for a later explicit delivery greenlight.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,

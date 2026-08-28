@@ -1,8 +1,8 @@
 # Reuse, licensing, and provenance ledger
 
 **License direction:** hearthOS Shell `GPL-3.0-only`
-**Ledger state:** HSN-001 imports packaged in RC.1; target verification pending
-**Last reconciled:** 2026-08-25
+**Ledger state:** HSN-001 imports packaged in RC.1; HSN-002 Blob subset proposed only
+**Last reconciled:** 2026-08-29
 
 Design inspiration is not source reuse. Before copying source, assets, shaders,
 fonts, icons, models, or generated artifacts, record the exact upstream object,
@@ -59,3 +59,34 @@ third-party code import. Its checksums live in
 Historical candidate `e7745a672edc868f693826cf3c1f9cd5f7128deb` may supply only
 reviewed Rust routing/focus logic and tests. Its DMS launcher UI and
 `org.starlight.HearthShell.Controller1` wire contract are explicitly excluded.
+
+## Proposed HSN-002 Blob boundary
+
+No Blob source has been imported by this documentation reconciliation. If the
+HSN-002 contract is approved, frozen, and separately authorized, the maximum
+direct-import set is pinned to Caelestia Shell
+`1d0e5a588c61f1d905eba5fe8446ec222d37f50c`:
+
+- `plugin/src/Caelestia/Blobs/blobgroup.hpp` and `.cpp`;
+- `blobshape.hpp` and `.cpp`;
+- `blobrect.hpp` and `.cpp`;
+- `blobmaterial.hpp` and `.cpp`;
+- `shaders/blob.vert` and `shaders/blob.frag`.
+
+Each adapted file must carry `GPL-3.0-only` SPDX identification, the upstream
+project, exact commit and source path, and a concise adaptation note. Packaged
+GPL notices must identify the same files. The adaptation removes inverted-rect
+support and unrelated module dependencies and is bounded to the App Menu
+content↔index-overview transition. `BlobPopup.qml`, `BlobInvertedRect`,
+Hyprland-specific services, the Caelestia product shell, continuously animated
+effects, and all unrelated Blob consumers remain excluded.
+
+## Shared-component rule
+
+HSN-001 and pre-HSN implementation may be reused only after contract and
+license review. HIN-001 owns shared headless semantic input state; HSN-002 is
+planned to deliver the one reusable `InputHintBar` and `CollectionBrowser`;
+HIN-002 must consume the same hint component. Later OSK/Text Mode, System Bar,
+Settings, Portal, and plugin surfaces improve those primitives instead of
+creating behaviorally duplicate private components. Reuse never transfers
+evidence or an owner verdict between outcomes.

@@ -1,7 +1,7 @@
 # hearthOS requirements register
 
 **Authority:** canonical product requirements
-**Last reconciled:** 2026-08-28
+**Last reconciled:** 2026-08-29
 **Freeze state:** the HSN-001 subset is frozen by its exact v2 slice contract;
 remaining requirements retain their row states
 
@@ -28,6 +28,7 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `ARCH-008` | Accepted | Invalid user configuration must fail visibly and fall back safely rather than preventing shell startup. |
 | `ARCH-009` | Accepted | The eventual runtime performs a hard Hearth rename; DMS command, service, IPC, and config compatibility are not target contracts. |
 | `ARCH-010` | Accepted | In hearthOS Desktop, `niri.service` exclusively owns companion/UI startup and teardown; the companion acquires the public D-Bus name before the UI starts, and no compositor command duplicates the systemd start path. |
+| `ARCH-011` | Accepted | Before creating a new system component, inspect and extend the current shared primitive or record why reuse is impossible; HSN-001, HSN-002, HIN-001/HIN-002, later outcomes, and selectively salvaged pre-HSN work must not accumulate duplicate focus, hint, catalog, motion, configuration, or provider implementations. |
 
 ## Input, focus, and glyphs
 
@@ -40,10 +41,16 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `INPUT-005` | Accepted | `i`, `/`, and `Ctrl+F` invoke a surface's primary search; auto-focused fields do not silently enter Text Mode. |
 | `INPUT-006` | Accepted | Controller/touch text activation may open the OSK; physical keyboard entry does not and instead shows a small mode indicator. |
 | `INPUT-007` | Accepted | Reusable glyphs adapt to Xbox, PlayStation, Nintendo physical positions, and a generic fallback; mappings are data-driven. |
-| `INPUT-008` | Accepted | D-pad controls focus, left stick scrolls, and right stick controls the pointer outside the OSK. |
+| `INPUT-008` | Accepted | D-pad controls focus, right stick controls the pointer, and left stick is context-sensitive: base Desktop scroll remains available, while registered Hearth navigation surfaces such as App Menu consume its axis as semantic focus with hysteresis and repeat. |
 | `INPUT-009` | Proposed | Controller Settings provides a layout illustration, family-correct face labels, leader lines, action descriptions, modifier support, and a New Keybind flow. |
-| `INPUT-010` | Accepted | Active specific-context actions override broader/global actions; L3+LB/RB cycle windows, L3+West closes, L3+North toggles fullscreen, and R3+LB/RB cycle workspaces. Guide, View, media, pointer tuning, and glyph precedence remain open. |
+| `INPUT-010` | Accepted | Active specific-context actions override broader/global actions and suppress the losing action completely. Base RB/LB remain primary/secondary pointer clicks. Proposed HIN-001 makes R3 navigation and L3 manipulation; historical L3-window/R3-workspace bumper defaults are superseded planning. |
 | `INPUT-011` | Proposed | First Setup offers Classic and Vim keyboard presets while preserving shared search, activation, and context commands; this is future work outside HSN-002. |
+| `INPUT-012` | Proposed | HIN-001 provides an always-available headless hold/chord layer backed by real niri IPC: R3 plus D-pad/left stick focuses windows/workspaces; L3 plus LB/RB/West/North moves, closes, or maximizes the focused window. |
+| `INPUT-013` | Proposed | HIN-001 adds Guide+left-stick media, Guide+RT niri screenshot, capability-gated controller power-off, and a 2.4-second capability-gated force-quit that targets only a verified user application scope. |
+| `INPUT-014` | Proposed | Disconnect, reconnect, provider loss, context transfer, and session teardown release all dependent actions, clear modifiers/repeat timers, and never replay stale input. |
+| `INPUT-015` | Proposed | HIN-002 provides mutually exclusive visible R3 Navigate and L3 Manipulate latches, switches directly between them, uses niri Overview/state/animation, and never emulates windows or workspaces in QML. |
+| `INPUT-016` | Proposed | `Meta+Tab` toggles HIN-002 Navigate; `Meta+H/L` directly focuses left/right; Vim HJKL navigates and `x`/`f` close/maximize through the same semantic actions. Bindings remain configurable and future First Setup owns preset choice. |
+| `INPUT-017` | Proposed | `InputHintBar` is a first-class shared primitive with semantic action sourcing, context precedence, modifier-first expansion, controller-family glyphs, bottom-safe placement, accessibility text, reduced motion, and reuse across HSN-002, HIN-002, OSK/Text Mode, System Bar, and later surfaces. HIN-001 supplies headless state; HSN-002 supplies the first visual implementation. |
 
 ## hearthOS System Bar and shell surfaces
 
@@ -58,6 +65,7 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `SURFACE-001` | Accepted | Opening a shell panel coordinates dim/blur with its originating bar item; the active bar and surface stay visually connected. |
 | `SURFACE-002` | Accepted | Do not restore the inherited enlarged-panel treatment merely by renaming DMS components. |
 | `WORKSPACE-001` | Proposed | Workspace and window surfaces use real niri IPC/state and expressive directional overlays rather than a duplicate shell model. |
+| `WORKSPACE-002` | Proposed | HIN-001/HIN-002 focus niri columns left/right and workspaces up/down; manipulation swaps only the focused window left/right in the same workspace. Moving apps between workspaces, moving whole columns, and workspace reordering remain later scope. |
 | `CONTROL-001` | Proposed | Start with a small customizable control-center/notification surface, controller-aware sliders, and conditional hardware controls. |
 | `CONTROL-002` | Open | Merged notification/control-center behavior and final placement remain unresolved; Steam notification behavior requires investigation. |
 
@@ -68,7 +76,7 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `LAUNCH-001` | Accepted | App Menu is a right drawer, approximately 38% logical width and clamped near 520–760 logical pixels with safe margins; narrow outputs may use near-full width. |
 | `LAUNCH-002` | Accepted | The drawer dims/subtly blurs the desktop, leaves any hearthOS System Bar opener active, and closes from its scrim. |
 | `LAUNCH-003` | Accepted | Exactly two persistent modes exist: Grid and List. West face toggles them; `Ctrl+1` selects Grid and `Ctrl+2` selects List. |
-| `LAUNCH-004` | Accepted | Initial tabs are Favorites, Recents, By Name, and By Category; RT/LT move next/previous tab and `Ctrl+Tab`/`Ctrl+Shift+Tab` are keyboard equivalents. |
+| `LAUNCH-004` | Accepted | Initial tabs are Favorites, Recents, By Name, and By Category; App Menu-context L3+RB/LB moves next/previous tab and `Ctrl+Tab`/`Ctrl+Shift+Tab` are keyboard equivalents. RT/LT are not tab controls. |
 | `LAUNCH-005` | Accepted | By Name groups letters; By Category uses freedesktop Main Categories, allows all matching groups, and has an Other fallback. |
 | `LAUNCH-006` | Proposed | HSN-002 places a right index rail and right icon-only Grid/List selector around reusable `CollectionBrowser`/read-only `Category1` content; the active tab has no redundant title. |
 | `LAUNCH-007` | Accepted | Opening focuses the first favorite or, if none exists, the first alphabetically visible application. Search never steals initial focus. |
@@ -81,6 +89,9 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `LAUNCH-014` | Proposed | Every App Menu open starts on Favorites; clearing search restores the prior tab, selection, and scroll position; those states are transient while Grid/List persists. |
 | `LAUNCH-015` | Proposed | Before OSK delivery, controller can enter/exit search and navigate results, but physical keyboard input is required to compose the query and the limitation remains visible. |
 | `LAUNCH-016` | Proposed | Add read-only `Category1` and typed `AppCatalog1` at `/Catalog` without reinterpreting `Launcher1` or `Config1`; exact wire shapes are frozen only with the HSN-002 contract. |
+| `LAUNCH-017` | Proposed | HSN-002 maps both D-pad and left stick to semantic focus in App Menu. A held direction repeats after 260 ms at 90 ms and accelerates to 55 ms after one second so sustained movement retargets the existing 140 ms selection surface by sliding. |
+| `LAUNCH-018` | Proposed | HSN-002 delivers the shared `InputHintBar`; App Menu supplies ordered actions and placement but does not own a private glyph/modifier implementation. |
+| `LAUNCH-019` | Proposed | HSN-002 may adapt only the pinned Caelestia Blob subset named in its contract for the contained right-index overview transition, with per-file GPL attribution, reduced-motion fallback, visual containment, allocation/memory/frame-time gates, and no continuous/full-screen/selection replacement. |
 
 ## On-screen keyboard
 
@@ -112,6 +123,10 @@ interaction behavior lives in `docs/contracts/`; unresolved policy lives in
 | `MOTION-002` | Accepted | Default interaction remains lively; reduced motion is a deliberate alternate path, not a reason to make default feedback timid. |
 | `PLUGIN-001` | Proposed | Provide a secure but powerful plugin model with explicit trust, service, state, failure-containment, and lifecycle boundaries. |
 | `PLUGIN-002` | Proposed | Online wallpaper providers and broader wallpaper plugin architecture are later independent outcomes, not HWP-001. |
+| `PLUGIN-003` | Proposed | Built-in plugins such as local wallpaper and independent search are first-party packaged and audited components with clear first-party labeling. |
+| `PLUGIN-004` | Proposed | Third-party plugins are explicitly trusted user-installed code; hearthOS does not guarantee their security, correctness, privacy, maintenance, or compatibility. Installation requires clear third-party labeling and explicit user consent. |
+| `PLUGIN-005` | Proposed | Users and downstream developers may create GPL-3.0-compatible plugins, including with LLM assistance, but generated code is not inherently safe and still requires human review, provenance/license verification, and explicit installation consent. |
+| `PLUGIN-006` | Proposed | Plugin architecture must provide version compatibility, bounded capabilities, failure containment, visible diagnostics, disable/recovery paths, and a first-party/third-party distinction before third-party loading is authorized. |
 | `SETUP-001` | Proposed | First Setup configures the future Classic/Vim keyboard preset and other owner-approved onboarding choices; it is not HSN-002 scope. |
 | `INSTALL-001` | Proposed | Install hearthOS remains a separate future owner-visible outcome with its own recovery and rollback contract. |
 
