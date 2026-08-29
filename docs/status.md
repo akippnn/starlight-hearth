@@ -1,8 +1,8 @@
 # Current status
 
 **Last updated:** 2026-08-29
-**Current phase:** HSN-001 promotion and HIN-001 contract freeze
-**Active implementation slice:** none; HIN-001 is authorized next
+**Current phase:** HIN-001 implementation
+**Active implementation slice:** HIN-001
 **New owner verdict:** HSN-001 accepted
 
 This is the single mutable delivery-status authority for `starlight-hearth`.
@@ -242,12 +242,10 @@ still require their own explicit delivery greenlight.
 
 ## Next gate
 
-Promote the exact accepted HSN-001 product evidence revision and shell
-`e2ff2e564fb17e4123eafe1378dc90e7fb10b914` to their public `main` branches
-with the recorded recovery and fresh-clone safeguards, then remove only the
-verified legacy delivery branches.
-
-The owner separately authorized HIN-001 implementation on 2026-08-30. Freeze
-its decision-complete v1 contract at an exact post-HSN product revision before
-creating isolated implementation worktrees. HSN-002 and HIN-002 remain
-proposed and unauthorized; the RC.3 owner findings are planning inputs only.
+Implement HIN-001 against frozen v1 contract
+`bd93779fc4388df968796d90955578af8e30da79`, accepted product baseline
+`be2da6c0972e549584bbf6e6211261cf69a817bd`, and accepted shell baseline
+`e2ff2e564fb17e4123eafe1378dc90e7fb10b914`. Prove the router/domain,
+canonical/derived manifests, real niri provider, system providers, package,
+and authentic target progressively. HSN-002 and HIN-002 remain proposed and
+unauthorized; the RC.3 owner findings are planning inputs only.
