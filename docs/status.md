@@ -148,9 +148,19 @@ The clean RC.3 shell source is published at
 `hearth-v0.3.0-rc.3` resolves to that exact revision, and its sole main RPM
 asset has SHA-256
 `89895cc2ab05435c7496e5192132b6195892394c2e7eb44caac01b27e4cf4763`.
-The product now pins that immutable artifact for the RC.3 image candidate;
-signed-image, target, physical mapping, owner-motion, and audit gates remain
-pending.
+The clean product candidate is
+`c91a45516259c2de404c8cb809efda3f1fdd69d2`. BlueBuild run `33250710107`
+passed contracts, image verification, build, publication, and workflow Cosign
+verification. Signed OCI index
+`sha256:0cc5b33733a601c34aa31f7ee026d7f373ba14a6b1b766710f8b6aea4f3a0c96`
+contains linux/amd64 manifest
+`sha256:539cbb319712c24d9c96af34a16ce5967dde30b0214d6dcdfc5420c3f6c0962b`;
+independent registry identity inspection agrees. Exact details and evidence
+reuse are recorded in the
+[RC.3 image checkpoint](evidence/artifacts/hsn-001-rc3-image-c91a455/RESULTS.md).
+Target rebase/boot, physical mapping, owner-motion, and audit gates remain
+pending. `aki@hearth` was unreachable during candidate preparation, so no
+RC.3 target claim is made.
 
 R3/L3 are packaged navigation/manipulation defaults rather than immutable
 controls. The proposed router and hint contracts keep semantic layers separate
@@ -230,9 +240,9 @@ still require their own explicit delivery greenlight.
 
 ## Next gate
 
-Produce the exact HSN-001 RC.3 shell package and signed image, independently
-verify and boot that immutable target, rerun the physical RB-primary/LB-secondary
-and cross-repository compatibility proof, and perform the owner audit. Public
+Independently verify and boot the exact HSN-001 RC.3 image on `aki@hearth`,
+rerun the physical RB-primary/LB-secondary and cross-repository compatibility
+proof, and perform the owner motion review and audit. Public
 product and shell `main` promotion and legacy-branch cleanup remain gated on an
 explicit HSN-001 `accepted` verdict plus exact revision verification.
 
