@@ -26,6 +26,12 @@ normal-drawer blur namespace. Product revision `c91a4551…` corrects that stale
 assertion and guards both the required xray fallback and absence of the old
 normal-drawer rule.
 
+A deterministic comparison of the exact product and shell
+`inputplumber-v4.json` mirrors passed: `RightBumper=pointer-primary` and
+`LeftBumper=pointer-secondary`. Both repositories' contract suites also pass.
+This proves source compatibility only; it does not replace the physical
+signed-candidate controller test.
+
 The frozen contract, Rust service behavior, session/application lifecycle, and
 recovery procedures are unchanged. Their immutable RC.2 evidence remains
 applicable where exact source and procedure are unchanged. The RC.3 shell
