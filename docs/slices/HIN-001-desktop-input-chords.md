@@ -2,7 +2,7 @@
 id: "HIN-001"
 title: "Desktop Input Chords"
 contract_version: 1
-contract_state: proposed
+contract_state: frozen
 owner: "@akippnn"
 repositories:
   - "akippnn/starlight-hearth"
@@ -10,14 +10,14 @@ repositories:
 target: "hearthOS Desktop on the owner 8BitDo Pro 3 target"
 current_status: "../status.md"
 evidence: "../evidence/HIN-001.md"
-updated: "2026-08-29"
+updated: "2026-08-30"
 ---
 
 # HIN-001 — Desktop Input Chords
 
-This is a decision-complete proposed contract. It does not authorize
-implementation, publication, deployment, or an acceptance claim. Freeze an
-exact owner-approved product revision before implementation begins.
+This decision-complete v1 contract is owner-approved and frozen for HIN-001
+implementation. Publication, deployment, audit-readiness, and acceptance
+retain their independent gates.
 
 ## Owner-visible outcome
 
@@ -220,6 +220,6 @@ Owner verdict: `pending`. No candidate exists.
 
 | Version | Supersedes | Reason / source finding | Approved by/date | Material change |
 | --- | --- | --- | --- | --- |
-| 1 | — | Owner separated headless hold/chord routing from visible navigation and clarified remappable hold/latch defaults on 2026-08-29 | Pending | Initial proposed contract, including binding-independent semantics and free-control reservations |
+| 1 | — | Owner separated headless hold/chord routing from visible navigation and clarified remappable hold/latch defaults on 2026-08-29 | @akippnn / 2026-08-30 | Initial frozen contract, including binding-independent semantics and free-control reservations |
 
 Canonical evidence: [HIN-001 evidence](../evidence/HIN-001.md)
