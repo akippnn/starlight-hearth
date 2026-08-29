@@ -1,9 +1,9 @@
 # Current status
 
 **Last updated:** 2026-08-29
-**Current phase:** documentation-first HIN-001/HSN-002/HIN-002 contract review; delivery held
-**Active implementation slice:** HSN-001
-**New owner verdict:** pending
+**Current phase:** HSN-001 promotion and HIN-001 contract freeze
+**Active implementation slice:** none; HIN-001 is authorized next
+**New owner verdict:** HSN-001 accepted
 
 This is the single mutable delivery-status authority for `starlight-hearth`.
 
@@ -15,7 +15,7 @@ The documentation foundation is clean at
 `43ca3393adf1dbbc2448ea8bfbfddc80761f386f`. Immutable v1 remains byte-for-byte
 unchanged at `17fedae8776ff38b53c07d4098d8ee8b13852253`.
 
-Delivery state is `active`; owner verdict remains `pending`. RC.1 remains
+HSN-001 delivery state is `closed`; owner verdict is `accepted`. RC.1 remains
 released at signed tag `hearth-v0.3.0-rc.1`, source revision
 `a3503dc734cab9111b065691609bc339918bd779`. Fedora package, real user-bus,
 native QtDBus/M3Shapes, and source/static checks pass. Product integration
@@ -118,10 +118,9 @@ primitives: pointer hover immediately retargets the one canonical controller/
 keyboard selection through the native sliding/morphing surface, and activation
 adds at most one contained ripple/deformation. macOS and Fedora suites pass;
 real-niri selection and panel/view workloads both measured p95/p99/max
-`16/16/16 ms`, with stable peak memory and no QML warnings. HSN-001 keeps its
-frozen v2 contract and remains `active/pending` because the repair is unpublished,
-has no explicit owner motion verdict, and has not been audited on a signed
-immutable image. The over-eager invisible right-edge hover anchor is
+`16/16/16 ms`, with stable peak memory and no QML warnings. At that checkpoint
+HSN-001 remained `active/pending`; RC.3 later packaged the repair and received
+the accepted owner verdict recorded below. The over-eager invisible right-edge hover anchor is
 nonblocking for HSN-001 and is allocated to the future System Bar, where a
 generous click target will surround the visible App Menu button.
 
@@ -130,14 +129,16 @@ authorized HSN-001 to proceed independently through an RC.3 package, signed
 image, target rebase, owner audit, and—only after explicit acceptance—public
 `main` promotion. This authorization is limited to the frozen HSN-001 v2
 outcome and its existing blur, unified-selection, and physical bumper-mapping
-repairs. It does not authorize HIN-001, HSN-002, or HIN-002 implementation or
-infer an HSN-001 acceptance verdict. Product
+repairs. That directive did not itself authorize later slices or infer an
+HSN-001 verdict. The owner subsequently accepted RC.3 and separately authorized
+HIN-001 on 2026-08-30. Product
 `3c88f23f9f341e4e812baec653eb3f3fdb628a26` and shell
 `f80b365ebda1d4f226918f76328375e25cb52969` remain preserved local evidence
-checkpoints rather than audit targets; the next exact clean RC.3 inputs replace
-them as candidate identities. HSN-001 stays `active/pending`. HIN-001, HSN-002,
-and HIN-002 stay `proposed/pending` with no candidates, implementation
-authority, or evidence. Their decision-complete review material keeps outcomes separate:
+checkpoints rather than audit targets; the exact clean RC.3 inputs replaced
+them as candidate identities. HSN-001 is `closed/accepted`. HIN-001 is
+authorized for an exact freeze and implementation; HSN-002 and HIN-002 remain
+`proposed/pending` with no candidates or implementation authority. Their
+decision-complete review material keeps outcomes separate:
 HIN-001 owns headless hold/chord routing, HSN-002 owns App Menu and the first
 reusable `InputHintBar`, and HIN-002 owns visible niri-backed latches. No exact
 revision is approved or frozen yet.
@@ -158,9 +159,10 @@ contains linux/amd64 manifest
 independent registry identity inspection agrees. Exact details and evidence
 reuse are recorded in the
 [RC.3 image checkpoint](evidence/artifacts/hsn-001-rc3-image-c91a455/RESULTS.md).
-Target rebase/boot, physical mapping, owner-motion, and audit gates remain
-pending. `aki@hearth` was unreachable during candidate preparation, so no
-RC.3 target claim is made.
+The target later booted that exact index and manifest with the RC.3 RPM and
+both shell units active. The owner accepted the candidate while recording the
+motion/color limitations and skipped physical bumper repeat in
+[the RC.3 owner audit](evidence/artifacts/hsn-001-rc3-owner-audit/RESULTS.md).
 
 R3/L3 are packaged navigation/manipulation defaults rather than immutable
 controls. The proposed router and hint contracts keep semantic layers separate
@@ -240,15 +242,12 @@ still require their own explicit delivery greenlight.
 
 ## Next gate
 
-Independently verify and boot the exact HSN-001 RC.3 image on `aki@hearth`,
-rerun the physical RB-primary/LB-secondary and cross-repository compatibility
-proof, and perform the owner motion review and audit. Public
-product and shell `main` promotion and legacy-branch cleanup remain gated on an
-explicit HSN-001 `accepted` verdict plus exact revision verification.
+Promote the exact accepted HSN-001 product evidence revision and shell
+`e2ff2e564fb17e4123eafe1378dc90e7fb10b914` to their public `main` branches
+with the recorded recovery and fresh-clone safeguards, then remove only the
+verified legacy delivery branches.
 
-HIN-001, HSN-002, and HIN-002 retain separate contracts, tests, evidence,
-readiness, and owner verdicts. Their next gate remains explicit owner approval
-at an exact product revision, followed by a separate freeze/status commit and
-separate implementation authorization. Until then, do not create their
-implementation worktrees or add their shell behavior. No audit-ready or
-accepted claim is currently permitted for any slice.
+The owner separately authorized HIN-001 implementation on 2026-08-30. Freeze
+its decision-complete v1 contract at an exact post-HSN product revision before
+creating isolated implementation worktrees. HSN-002 and HIN-002 remain
+proposed and unauthorized; the RC.3 owner findings are planning inputs only.

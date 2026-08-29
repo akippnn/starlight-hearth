@@ -3,10 +3,9 @@
 > [!WARNING]
 > **Pre-alpha — owner testing only.**
 >
-> hearthOS is not ready for general installation. HSN-001 is active at its
-> exact v2 frozen contract revision. Signed RC.2 boots, but has recorded
-> closed-launcher blur and presentation defects. It is not audit-ready or
-> owner-accepted.
+> hearthOS is not ready for general installation. HSN-001 is owner-accepted
+> for the recorded RC.3 target cohort, but the wider operating system remains
+> pre-alpha and later shell capabilities are not accepted.
 >
 > Existing GHCR images are historical development artifacts; download counts
 > do not imply a supported release. Do not rebase to `latest` or infer current
@@ -24,17 +23,13 @@ WebView, or localhost shell.
 
 ## Current phase
 
-**HSN-001 remains active/pending. HIN-001, HSN-002, and HIN-002 are proposed only; documentation, approval, and exact freeze come before implementation.**
+**HSN-001 is closed/accepted. HIN-001 is the next authorized slice; HSN-002 and HIN-002 remain proposed only.**
 
-The signed RC.2 image booted and starts hearthOS Shell automatically, but
-field testing found an unconditional compositor-blur artifact while the
-launcher is closed and competing selection/press shapes. Both corrections
-pass local real-niri staging and remain unpublished. The next proposed outcomes
-are the headless HIN-001 Desktop Input Chords, HSN-002 App Menu, and visible
-HIN-002 Desktop Navigation Mode. None has a frozen revision, candidate,
-implementation authority, or evidence claim. Their intended implementation
-order, after separate approval/freeze/start gates, is HIN-001, HSN-002, then
-HIN-002. Do not treat RC.2 or the local corrections as an audit candidate.
+The exact signed RC.3 image boots the accepted launcher nucleus and corrected
+presentation on the owner target. HIN-001 Desktop Input Chords is authorized
+next and must freeze its exact contract revision before implementation.
+HSN-002 App Menu and HIN-002 Desktop Navigation Mode retain separate proposed
+contracts, candidates, evidence, and owner verdicts.
 
 Historical VS/HS work, including HS-003, is retained as implementation and
 audit evidence without being promoted to current support. No documentation

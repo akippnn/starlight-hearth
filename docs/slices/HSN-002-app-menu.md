@@ -130,6 +130,9 @@ write leaves the intact v1 file in place.
   a redundant content title.
 - The icon-only Grid/List segmented selector is on the right and does not
   resemble an on/off switch. Grid/List mode persists across tabs and restarts.
+  Controller and keyboard commands change the mode without synthesizing a
+  pointer-style button press; the content transition and selected mode are the
+  feedback. Direct pointer activation retains contained press feedback.
 - App-local search matches Name, GenericName, and Keywords. Exact, prefix, and
   name-word matches rank ahead of generic-name/keyword and substring matches.
 - Recents contain the 12 most recent unique successful application launches.
@@ -150,6 +153,14 @@ write leaves the intact v1 file in place.
   repeat is deliberately faster than the 140 ms selection transition so the
   existing canonical surface retargets by sliding instead of restarting its
   initial morph for every item.
+- On a normal discrete focus move, the outgoing icon backplate begins the
+  shape morph while the canonical card surface slides over the incoming app
+  icon. Sustained rapid repeat retargets that same in-flight surface instead
+  of spawning overlapping morphs.
+- Expanding selection shapes consume shared semantic surface/container and
+  content color tokens; they must not hardcode a fixed accent hue. This keeps
+  the App Menu compatible with later wallpaper-derived MD3E schemes without
+  making wallpaper extraction or card-blur policy part of HSN-002.
 - Base RB/LB remain HSN-001 primary/secondary pointer clicks. With the packaged
   defaults, holding L3 in the App Menu context makes LB/RB previous/next tab
   and cannot leak pointer clicks. The semantic tab actions follow a remapped
