@@ -125,17 +125,19 @@ immutable image. The over-eager invisible right-edge hover anchor is
 nonblocking for HSN-001 and is allocated to the future System Bar, where a
 generous click target will surround the visible App Menu button.
 
-The current owner directive supersedes any earlier continuing-delivery
-authorization: public delivery is postponed until the combined
-HSN-001/HIN-001/HSN-002/HIN-002 integration train is separately greenlit. No
-feature-branch push, tag, RPM publication, OCI build, or target rebase may
-occur without a new explicit owner greenlight. Existing HSN-001 local repair
-tests, screenshots, and evidence remain authorized. Product
+The owner superseded the combined-train delivery hold on 2026-08-29 and
+authorized HSN-001 to proceed independently through an RC.3 package, signed
+image, target rebase, owner audit, and—only after explicit acceptance—public
+`main` promotion. This authorization is limited to the frozen HSN-001 v2
+outcome and its existing blur, unified-selection, and physical bumper-mapping
+repairs. It does not authorize HIN-001, HSN-002, or HIN-002 implementation or
+infer an HSN-001 acceptance verdict. Product
 `3c88f23f9f341e4e812baec653eb3f3fdb628a26` and shell
-`f80b365ebda1d4f226918f76328375e25cb52969` are clean local-only checkpoints,
-not audit targets. HSN-001 stays `active/pending`. HIN-001, HSN-002, and HIN-002
-stay `proposed/pending` with no candidates, implementation authority, or
-evidence. Their decision-complete review material keeps outcomes separate:
+`f80b365ebda1d4f226918f76328375e25cb52969` remain preserved local evidence
+checkpoints rather than audit targets; the next exact clean RC.3 inputs replace
+them as candidate identities. HSN-001 stays `active/pending`. HIN-001, HSN-002,
+and HIN-002 stay `proposed/pending` with no candidates, implementation
+authority, or evidence. Their decision-complete review material keeps outcomes separate:
 HIN-001 owns headless hold/chord routing, HSN-002 owns App Menu and the first
 reusable `InputHintBar`, and HIN-002 owns visible niri-backed latches. No exact
 revision is approved or frozen yet.
@@ -211,23 +213,22 @@ The host now boots that exact RC.2 index and retains the previous RC.1
 deployment as rollback. The local blur correction is not installed in the
 booted deployment.
 
-Existing image/build metadata may still project historical VS-002 state. No
-new image may be built or presented as current without the owner's explicit
-delivery greenlight and reconciliation of those non-document public
-projections against this status.
+Existing image/build metadata may still project historical VS-002 state. The
+HSN-001 RC.3 authorization permits a new image only after those non-document
+public projections are reconciled against this status; later-slice images
+still require their own explicit delivery greenlight.
 
 ## Next gate
 
-Review the decision-complete proposed HIN-001, HSN-002, and HIN-002 contracts.
-Each next gate is explicit owner approval at its own exact product revision,
-followed by a separate freeze/status commit and separate implementation
-authorization. Until then, do not create implementation worktrees or change
-shell code. After authorization, the intended order is HIN-001, HSN-002, then
-HIN-002; the first is headless and the latter two provide UI in sequence.
+Produce the exact HSN-001 RC.3 shell package and signed image, independently
+verify and boot that immutable target, rerun the physical RB-primary/LB-secondary
+and cross-repository compatibility proof, and perform the owner audit. Public
+product and shell `main` promotion and legacy-branch cleanup remain gated on an
+explicit HSN-001 `accepted` verdict plus exact revision verification.
 
-The locally verified HSN-001 repairs may later enter the same combined package
-and signed image, but HSN-001, HIN-001, HSN-002, and HIN-002 retain separate
-contracts, tests, evidence, readiness, and owner verdicts. Publication, shell
-main cutover, signed OCI work, deployment, and RB/LB physical/compatibility
-reruns remain held for a later explicit delivery greenlight. No audit-ready
-claim is currently permitted.
+HIN-001, HSN-002, and HIN-002 retain separate contracts, tests, evidence,
+readiness, and owner verdicts. Their next gate remains explicit owner approval
+at an exact product revision, followed by a separate freeze/status commit and
+separate implementation authorization. Until then, do not create their
+implementation worktrees or add their shell behavior. No audit-ready or
+accepted claim is currently permitted for any slice.

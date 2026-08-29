@@ -100,9 +100,10 @@ their individual contracts are approved.
 Complete and commit the decision-complete HIN-001, HSN-002, and HIN-002
 documentation, then obtain explicit owner approval and freeze each contract at
 its own exact product revision. After separate implementation authorization,
-the train order is HIN-001, HSN-002, then HIN-002. Public push, tags, RPMs, OCI
-builds, deployment, target rebases, and HSN-001 physical RB/LB reruns remain
-held for a later explicit delivery greenlight.
+the train order is HIN-001, HSN-002, then HIN-002. HSN-001 public push, tags,
+RPMs, OCI builds, deployment, target rebase, and physical RB/LB reruns are
+independently authorized for its RC.3 audit target. Later-slice implementation
+remains held behind its own approval, freeze, and start gates.
 
 Public product naming is **hearthOS** or **HearthOS**, part of the u128
 Starlight family. Repository names and the current technical bus, service,
