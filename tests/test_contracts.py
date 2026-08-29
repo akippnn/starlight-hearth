@@ -710,6 +710,11 @@ class ImageContractTests(unittest.TestCase):
         self.assertIn("blur true", niri_rules)
         self.assertIn("xray true", niri_rules)
 
+        image_verifier = (ROOT / "files/scripts/verify-hearth-image.sh").read_text(encoding="utf-8")
+        self.assertIn('namespace="^hearth-launcher-drawer-xray$"', image_verifier)
+        self.assertIn("! grep -Fq", image_verifier)
+        self.assertIn('namespace="^hearth-launcher-drawer$"', image_verifier)
+
     def test_scripts_are_syntactically_valid_and_executable(self):
         scripts = [
             ROOT / "files/scripts/configure-hearth-session.sh",
