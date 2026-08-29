@@ -142,6 +142,16 @@ HIN-001 owns headless hold/chord routing, HSN-002 owns App Menu and the first
 reusable `InputHintBar`, and HIN-002 owns visible niri-backed latches. No exact
 revision is approved or frozen yet.
 
+The clean RC.3 shell source is published at
+`e2ff2e564fb17e4123eafe1378dc90e7fb10b914`. Fedora verification run
+`33250142200` and RPM run `33250142134` pass. Signed tag
+`hearth-v0.3.0-rc.3` resolves to that exact revision, and its sole main RPM
+asset has SHA-256
+`89895cc2ab05435c7496e5192132b6195892394c2e7eb44caac01b27e4cf4763`.
+The product now pins that immutable artifact for the RC.3 image candidate;
+signed-image, target, physical mapping, owner-motion, and audit gates remain
+pending.
+
 R3/L3 are packaged navigation/manipulation defaults rather than immutable
 controls. The proposed router and hint contracts keep semantic layers separate
 from physical bindings so hold and latch triggers can differ; later Controller

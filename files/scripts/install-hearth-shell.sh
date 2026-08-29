@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-readonly default_url="https://github.com/akippnn/starlight-hearth-shell/releases/download/hearth-v0.3.0-rc.2/hearth-shell-0.3.0-0.2.rc2.fc44.x86_64.rpm"
-readonly default_sha256="02084a8f3197d34553088464e0d4321a484c04c4c841ee998c0388d88437f1e3"
+readonly default_url="https://github.com/akippnn/starlight-hearth-shell/releases/download/hearth-v0.3.0-rc.3/hearth-shell-0.3.0-0.3.rc3.fc44.x86_64.rpm"
+readonly default_sha256="89895cc2ab05435c7496e5192132b6195892394c2e7eb44caac01b27e4cf4763"
 
 shell_url="${HEARTH_SHELL_URL:-$default_url}"
 shell_sha256="${HEARTH_SHELL_SHA256:-$default_sha256}"
